@@ -34,10 +34,16 @@ export const heroCarouselSlides = [
 
 export function HeroSafariCarousel() {
   const [activeIndex, setActiveIndex] = useState(0);
+  const [mounted, setMounted] = useState(false);
   const reduceMotion = useReducedMotion() ?? false;
+  const slide = heroCarouselSlides[activeIndex];
 
   useEffect(() => {
-    if (reduceMotion) {
+    setMounted(true);
+  }, []);
+
+  useEffect(() => {
+    if (!mounted || reduceMotion) {
       return;
     }
 
@@ -46,31 +52,45 @@ export function HeroSafariCarousel() {
     }, CAROUSEL_INTERVAL_MS);
 
     return () => window.clearInterval(intervalId);
-  }, [reduceMotion]);
+  }, [mounted, reduceMotion]);
 
   return (
     <Safari url="www.industrialdevices.in">
       <div className="relative size-full bg-neutral-950">
-        <AnimatePresence mode="sync" initial={false}>
-          <motion.div
-            key={heroCarouselSlides[activeIndex].src}
-            initial={reduceMotion ? false : { opacity: 0 }}
-            animate={{ opacity: 1 }}
-            exit={reduceMotion ? undefined : { opacity: 0 }}
-            transition={{ duration: reduceMotion ? 0 : 0.65, ease: "easeInOut" }}
-            className="absolute inset-0"
-          >
+        {mounted && !reduceMotion ? (
+          <AnimatePresence mode="sync" initial={false}>
+            <motion.div
+              key={slide.src}
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              exit={{ opacity: 0 }}
+              transition={{ duration: 0.65, ease: "easeInOut" }}
+              className="absolute inset-0"
+            >
+              <Image
+                src={slide.src}
+                alt={slide.alt}
+                fill
+                priority={activeIndex === 0}
+                quality={90}
+                sizes="(max-width: 768px) 100vw, 1200px"
+                className="object-cover object-center"
+              />
+            </motion.div>
+          </AnimatePresence>
+        ) : (
+          <div className="absolute inset-0">
             <Image
-              src={heroCarouselSlides[activeIndex].src}
-              alt={heroCarouselSlides[activeIndex].alt}
+              src={slide.src}
+              alt={slide.alt}
               fill
-              priority={activeIndex === 0}
+              priority
               quality={90}
               sizes="(max-width: 768px) 100vw, 1200px"
               className="object-cover object-center"
             />
-          </motion.div>
-        </AnimatePresence>
+          </div>
+        )}
 
         <div
           className="pointer-events-none absolute inset-x-0 bottom-0 h-24 bg-linear-to-t from-black/35 to-transparent"
