@@ -1,10 +1,10 @@
 import Link from "next/link";
 
+import { HeroSafariCarousel } from "@/components/landing/hero-safari-carousel";
 import { HeroClientGrid } from "@/components/landing/hero-client-grid";
 import { BlurFade } from "@/components/ui/blur-fade";
 import { Button } from "@/components/ui/button";
 import { DottedGlowBackground } from "@/components/ui/dotted-glow-background";
-import { Safari } from "@/components/ui/safari";
 
 export function HeroSection() {
   return (
@@ -88,7 +88,7 @@ export function HeroSection() {
           duration={1}
           className="mx-auto mt-14 w-full max-w-[1203px]"
         >
-          <Safari url="www.industrialdevices.in" videoSrc="/demo.mp4" />
+          <HeroSafariCarousel />
         </BlurFade>
       </div>
       <HeroClientGrid />

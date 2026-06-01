@@ -1,4 +1,4 @@
-import type { HTMLAttributes } from "react"
+import type { HTMLAttributes, ReactNode } from "react"
 
 const SAFARI_WIDTH = 1203
 const SAFARI_HEIGHT = 753
@@ -20,6 +20,7 @@ export interface SafariProps extends HTMLAttributes<HTMLDivElement> {
   imageSrc?: string
   videoSrc?: string
   mode?: SafariMode
+  children?: ReactNode
 }
 
 export function Safari({
@@ -29,10 +30,20 @@ export function Safari({
   mode = "default",
   className,
   style,
+  children,
   ...props
 }: SafariProps) {
   const hasVideo = !!videoSrc
-  const hasMedia = hasVideo || !!imageSrc
+  const hasImage = !!imageSrc
+  const hasChildren = !!children
+  const hasMedia = hasVideo || hasImage || hasChildren
+
+  const screenStyle = {
+    left: `${LEFT_PCT}%`,
+    top: `${TOP_PCT}%`,
+    width: `${WIDTH_PCT}%`,
+    height: `${HEIGHT_PCT}%`,
+  } as const
 
   return (
     <div
@@ -46,12 +57,7 @@ export function Safari({
       {hasVideo && (
         <div
           className="pointer-events-none absolute z-0 overflow-hidden"
-          style={{
-            left: `${LEFT_PCT}%`,
-            top: `${TOP_PCT}%`,
-            width: `${WIDTH_PCT}%`,
-            height: `${HEIGHT_PCT}%`,
-          }}
+          style={screenStyle}
         >
           <video
             className="block size-full object-cover"
@@ -65,14 +71,11 @@ export function Safari({
         </div>
       )}
 
-      {!hasVideo && imageSrc && (
+      {!hasVideo && hasImage && (
         <div
           className="pointer-events-none absolute z-0 overflow-hidden"
           style={{
-            left: `${LEFT_PCT}%`,
-            top: `${TOP_PCT}%`,
-            width: `${WIDTH_PCT}%`,
-            height: `${HEIGHT_PCT}%`,
+            ...screenStyle,
             borderRadius: "0 0 11px 11px",
           }}
         >
@@ -81,6 +84,18 @@ export function Safari({
             alt=""
             className="block size-full object-cover object-top"
           />
+        </div>
+      )}
+
+      {!hasVideo && !hasImage && hasChildren && (
+        <div
+          className="pointer-events-none absolute z-0 overflow-hidden bg-white"
+          style={{
+            ...screenStyle,
+            borderRadius: "0 0 11px 11px",
+          }}
+        >
+          {children}
         </div>
       )}
 
