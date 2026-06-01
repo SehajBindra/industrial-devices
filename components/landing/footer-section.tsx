@@ -13,10 +13,10 @@ export function FooterSection() {
         <div className="mx-0 flex max-w-xs flex-col items-start justify-start">
           <div className="flex items-center gap-2">
             <h3 className="text-sm font-semibold text-primary">
-              QMS India Limited
+              Industrial Devices (India)
             </h3>
           </div>
-          <p className="mt-3 font-medium tracking-tight text-muted-foreground">
+          <p className="mt-3 line-clamp-2 font-medium tracking-tight text-muted-foreground">
             {siteConfig.hero.description}
           </p>
           <div className="flex items-center mt-4 gap-3">
@@ -64,7 +64,7 @@ export function FooterSection() {
         <div className="absolute inset-0 bg-gradient-to-t from-transparent to-background z-10 from-40%" />
         <div className="absolute inset-0 mx-6">
           <FlickeringGrid
-            text="QMS India Limited"
+            text="Industrial Devices"
             fontSize={56}
             className="h-full w-full md:hidden"
             squareSize={2}
@@ -74,7 +74,7 @@ export function FooterSection() {
             flickerChance={0.1}
           />
           <FlickeringGrid
-            text="QMS India Limited"
+            text="Industrial Devices"
             fontSize={90}
             className="hidden h-full w-full md:block"
             squareSize={2}

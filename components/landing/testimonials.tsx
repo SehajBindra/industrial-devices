@@ -37,9 +37,15 @@ export default function WallOfLoveSection() {
         headingId={`${baseId}-heading`}
         align="start"
         description={
-          "We work with teams that value moving fast, staying clear, and building things that genuinely make a difference."
+          "Municipal, power, health, and process industries rely on our chlorination systems across India."
         }
-        title={"Execution over everything"}
+        descriptionClassName="line-clamp-2"
+        title={
+          <>
+            Trusted where{" "}
+            <span className="text-primary">water treatment</span> matters
+          </>
+        }
       />
       <div className=" max-w-6xl overflow-hidden   bg-white p-4">
         <div className="grid grid-cols-1 gap-3 sm:gap-px md:grid-cols-2 md:gap-2 lg:grid-cols-3">
@@ -72,7 +78,7 @@ export default function WallOfLoveSection() {
                     &ldquo;
                   </span>
                   <blockquote className="relative z-1">
-                    <p className="text-lg  leading-relaxed tracking-tight text-neutral-900">
+                    <p className="text-lg line-clamp-2 leading-relaxed tracking-tight text-neutral-900">
                       {text}
                     </p>
                   </blockquote>

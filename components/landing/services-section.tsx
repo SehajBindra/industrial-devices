@@ -2,7 +2,6 @@
 
 import { useReducedMotion } from "motion/react";
 
-import { Separator } from "@/components/ui/separator";
 import {
   AuditsAssessmentsBentoCard,
   ConsultingAdvisoryBentoCard,
@@ -25,17 +24,24 @@ export function ServicesSection() {
 
   return (
     <section
-      id="services"
+      id="products"
       className="scroll-mt-28 border-b border-gray-100 bg-white pt-32 pb-20 sm:scroll-mt-32 sm:py-24"
     >
       <div className="mx-auto max-w-6xl px-4 sm:px-6">
         <SectionIntro
-          headingId={`services-heading`}
+          headingId={`products-heading`}
           align="start"
           description={
-            "From plant-floor inspections to enterprise systems, we stay close to how work actually happens—so recommendations survive contact with reality."
+            "Vacuum and gas chlorinators, vaporizers, dosing systems, and safety equipment, manufactured and commissioned for municipal, power, and industrial sites."
           }
-          title={"One partner across standards, safety, and execution."}
+          descriptionClassName="line-clamp-2"
+          title={
+            <>
+              Complete{" "}
+              <span className="text-primary">chlorination systems</span>, built
+              in India.
+            </>
+          }
         />
 
         <div className="mt-12 grid grid-cols-1 gap-4 sm:mt-14 md:grid-cols-6 lg:gap-5">

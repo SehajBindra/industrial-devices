@@ -25,6 +25,7 @@ const copyCell = clientCells.find((cell) => cell.kind === "copy");
 const rotatingCells = clientCells.filter(
   (cell): cell is RotatingCell => cell.kind === "image",
 );
+const hasRotatingLogos = rotatingCells.length > 0;
 const rotatingCellCount = copyCell
   ? TOTAL_VISIBLE_CELLS - 1
   : TOTAL_VISIBLE_CELLS;
@@ -48,6 +49,10 @@ function shuffleCells<T>(cells: T[]) {
 }
 
 function getInitialVisibleCells(): ClientCell[] {
+  if (!hasRotatingLogos) {
+    return clientCells.slice(0, TOTAL_VISIBLE_CELLS);
+  }
+
   const nextCells = rotatingCells.slice(
     0,
     Math.min(rotatingCellCount, rotatingCells.length),
@@ -57,6 +62,10 @@ function getInitialVisibleCells(): ClientCell[] {
 }
 
 function rotateVisibleCells(currentCells: ClientCell[]): ClientCell[] {
+  if (!hasRotatingLogos) {
+    return currentCells;
+  }
+
   if (rotatingCells.length <= rotatingCellCount) {
     return currentCells;
   }
@@ -227,7 +236,7 @@ export function HeroClientGrid() {
 
   return (
     <LazyMotion features={domAnimation}>
-      <div className="relative w-full overflow-hidden rounded-md border-y mt-10 border-neutral-200/80 bg-white/65 backdrop-blur-[2px] sm:border-x">
+      <div id="clients" className="relative w-full overflow-hidden rounded-md border-y mt-10 border-neutral-200/80 bg-white/65 backdrop-blur-[2px] sm:border-x">
         <div className="grid grid-cols-2 sm:grid-cols-4">
           {visibleCells.map((cell, index) => {
             const mobileRow = Math.floor(index / mobileColumnCount);
@@ -241,7 +250,11 @@ export function HeroClientGrid() {
 
             return (
               <div
-                key={cell.kind === "copy" ? "copy" : `client-cell-${index}`}
+                key={
+                  cell.kind === "copy"
+                    ? `copy-${cell.text}`
+                    : `client-cell-${index}`
+                }
                 className={cn(
                   "flex min-h-28 items-center justify-center px-5 py-8 text-neutral-900 sm:min-h-32 md:min-h-36",
                   !isMobileLastInRow &&
@@ -253,7 +266,7 @@ export function HeroClientGrid() {
                 )}
               >
                 {cell.kind === "copy" ? (
-                  <p className="max-w-48 text-left text-lg font-medium leading-snug tracking-[-0.03em] text-neutral-900 sm:text-xl md:text-2xl">
+                  <p className="max-w-48 text-left text-lg font-medium leading-snug tracking-[-0.03em] text-neutral-900 sm:text-xl md:text-2xl line-clamp-2">
                     {cell.text}
                   </p>
                 ) : (

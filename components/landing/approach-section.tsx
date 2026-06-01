@@ -2,11 +2,11 @@
 
 import {
   Award,
-  HeartHandshake,
-  Leaf,
-  Lightbulb,
-  Scale,
+  Factory,
+  Globe2,
   ShieldCheck,
+  Sparkles,
+  Wrench,
   type LucideIcon,
 } from "lucide-react";
 import Link from "next/link";
@@ -19,40 +19,40 @@ const CORE_VALUES: readonly {
   icon: LucideIcon;
 }[] = [
   {
-    title: "Safety And Assurance",
+    title: "Manufacturing In Okhla",
     description:
-      "We lead on safety and assure what we design, construct, operate, and maintain.",
+      "Full-fledged facility with design, production, and servicing under one roof in New Delhi.",
+    icon: Factory,
+  },
+  {
+    title: "Operational Safety",
+    description:
+      "Leak detectors, absorption systems, and emergency kits built into every chlorination solution.",
     icon: ShieldCheck,
   },
   {
-    title: "Trusted Client Relationships",
+    title: "Decades Of Expertise",
     description:
-      "Mutually beneficial ties—some customer relationships extend beyond twenty years.",
-    icon: HeartHandshake,
-  },
-  {
-    title: "Structured Practical Innovation",
-    description:
-      "Rapid testing, shared learning, and continual improvement in every solution.",
-    icon: Lightbulb,
-  },
-  {
-    title: "Integrity And Transparency",
-    description:
-      "Honesty, ethics, and rules compliance that protect trust built over many years.",
-    icon: Scale,
-  },
-  {
-    title: "Sustainability In Practice",
-    description:
-      "Solutions for sustainable progress—balancing environment, compliance, and productive operations for clients.",
-    icon: Leaf,
-  },
-  {
-    title: "Rewarded Through Deliveries",
-    description:
-      "We get rewarded for our deliveries; our job is customer success.",
+      "Trusted chlorination partner for municipal corporations, power stations, and process industries.",
     icon: Award,
+  },
+  {
+    title: "Complete Product Range",
+    description:
+      "Chlorinators, vaporizers, dosers, dosing systems, and site accessories from a single manufacturer.",
+    icon: Wrench,
+  },
+  {
+    title: "Accredited Quality",
+    description:
+      "Accredited by the Dutch Council for Accreditation, with quality systems aligned to international standards.",
+    icon: Globe2,
+  },
+  {
+    title: "New Technology",
+    description:
+      "Chlorine dioxide generators and advanced dosing for modern disinfection requirements.",
+    icon: Sparkles,
   },
 ];
 
@@ -63,9 +63,15 @@ export function ApproachSection() {
         headingId={`approach-heading`}
         align="start"
         description={
-          "QMS India Limited grew from a management consultancy into a multi‑discipline practice—still grounded in the same idea: we get rewarded for our deliveries."
+          "Industrial Devices (India) Pvt. Ltd. designs, manufactures, and commissions chlorination systems trusted across India."
         }
-        title={"Standards on paper. Evidence in the field."}
+        descriptionClassName="line-clamp-2"
+        title={
+          <>
+            Built for safe,{" "}
+            <span className="text-primary">reliable chlorine handling</span>.
+          </>
+        }
       />
       <div className="mx-auto max-w-6xl px-4 mt-4 sm:px-6">
         <div className="grid grid-cols-1 gap-6 md:grid-cols-2 lg:grid-cols-3">
@@ -83,13 +89,13 @@ export function ApproachSection() {
                 </h2>
               </div>
               <p
-                className="text-muted-foreground mb-4 text-sm leading-normal"
+                className="text-muted-foreground mb-4 line-clamp-2 text-sm leading-normal"
                 title={description}
               >
                 {description}
               </p>
               <Link
-                href="https://www.qmsil.co.in/index.php"
+                href="https://www.industrialdevices.in/"
                 className="text-primary text-sm hover:underline"
                 rel="noopener noreferrer"
                 target="_blank"

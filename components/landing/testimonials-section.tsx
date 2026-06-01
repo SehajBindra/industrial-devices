@@ -6,21 +6,21 @@ import { motion } from "motion/react"
 const QUOTES = [
   {
     quote:
-      "Excellent consulting and training inputs for our integrated management system—ultimately leading to IMS certification. Their expertise integrating IATF, EMS, and OHS tools was commendable.",
+      "Excellent consulting and training inputs for our integrated management system, ultimately leading to IMS certification. Their expertise integrating IATF, EMS, and OHS tools was commendable.",
     name: "Mr. Pradeep Ghadi",
-    role: "GM, TMTL — Bhopal",
+    role: "GM, TMTL, Bhopal",
   },
   {
     quote:
-      "Professionalism and knowledge on ISO requirements were outstanding—positive, dedicated, and focused on finishing on time.",
+      "Professionalism and knowledge on ISO requirements were outstanding, positive, dedicated, and focused on finishing on time.",
     name: "Piyush Joshi",
     role: "AVP (Tech Cell), Wonder Cement",
   },
   {
     quote:
-      "Their grasp on IRIS showed in the procedures and content they drafted—and in the guidance during implementation at Bombardier Transportation.",
+      "Their grasp on IRIS showed in the procedures and content they drafted, and in the guidance during implementation at Bombardier Transportation.",
     name: "Ajay Haldar",
-    role: "Director, Quality — Bombardier Transportation India",
+    role: "Director, Quality, Bombardier Transportation India",
   },
 ] as const
 

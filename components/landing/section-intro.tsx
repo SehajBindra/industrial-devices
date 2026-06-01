@@ -6,7 +6,7 @@ import { BlurFade } from "@/components/ui/blur-fade";
 import { cn } from "@/lib/utils";
 
 /** Default highlighter color for `SectionIntro` titles that use `<Highlighter />`. */
-export const SECTION_HIGHLIGHT_GREEN = "#86efac";
+export const SECTION_HIGHLIGHT_BLUE = "#0077b6";
 
 const transitionEase = [0.16, 1, 0.3, 1] as const;
 
@@ -80,8 +80,8 @@ export function SectionIntro({
         duration={1}
         className={cn(
           isStart
-            ? "max-w-3xl text-left text-lg leading-relaxed text-gray-500 sm:text-xl"
-            : "mx-auto max-w-lg text-center text-xl leading-relaxed text-gray-500",
+            ? "max-w-3xl text-left text-lg leading-relaxed text-gray-500 sm:text-xl line-clamp-2"
+            : "mx-auto max-w-lg text-center text-xl leading-relaxed text-gray-500 line-clamp-2",
           descriptionClassName,
         )}
       >

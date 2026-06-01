@@ -1,18 +1,18 @@
 import { cn } from "@/lib/utils"
 
 const ITEMS = [
-  "ISO 9001",
-  "IATF 16949",
-  "ISO 14001",
-  "ISO 45001",
-  "ISO 50001",
-  "IRIS / ISO-TS 22163",
-  "Industrial safety",
-  "NDT & inspection",
-  "Energy & water audits",
-  "IT & ISO 27001",
-  "ERP & data",
-  "Training & auditors",
+  "Gas Chlorinators",
+  "Vacuum Chlorinators",
+  "Chlorine Vaporizers",
+  "Chlorine Dosing",
+  "Water Chlorination",
+  "Leak Detectors",
+  "Absorption Systems",
+  "Emergency Repair Kits",
+  "Chlorine Dioxide",
+  "Chemical Dosing",
+  "Pressure Reducing Valves",
+  "Manifolds & Accessories",
 ] as const
 
 export function StandardsMarquee({ reverse }: { reverse?: boolean }) {

@@ -13,13 +13,13 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "QMS India Limited — Quality, Safety & Assurance",
+  title: "Industrial Devices (India): Chlorination Systems",
   description:
-    "Consulting, industrial safety inspection, training, audits, NDT, and software solutions across India since 1998.",
+    "Chlorinator manufacturers in India. Gas chlorinators, vaporizers, dosing systems, and chlorine safety equipment.",
   openGraph: {
-    title: "QMS India Limited",
+    title: "Industrial Devices (India) Pvt. Ltd.",
     description:
-      "Consulting, safety, training, audits, and NDT—delivered by engineers who understand the shop floor.",
+      "Leader in chlorinators, vaporizers, and safety systems, designed and manufactured in New Delhi.",
   },
 };
 

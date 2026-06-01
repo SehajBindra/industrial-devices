@@ -27,33 +27,33 @@ import { cn } from "@/lib/utils";
 
 const serviceColumns = [
   {
-    title: "Consulting and Advisory Services",
+    title: "Chlorinators",
     items: [
-      "ISO9001:2015",
-      "IATF16949:2016",
-      "ISO/TS 22163:2017 / IRIS/AAR",
-      "ISO 14001:2015",
-      "ISO45001:2018 / OHSAS 18001:2007",
+      "Vacuum Operated Chlorinators",
+      "Gas Chlorinators",
+      "Vacuum Chlorinators",
+      "Cylinder Vacuum Auto Changeover",
+      "Cylinder Flexible Copper Connector",
     ],
   },
   {
-    title: "Industrial Safety Inspection",
+    title: "Vaporizers & Dosing",
     items: [
-      "Safety Inspection and Testing",
-      "NDT",
-      "Safety Audits",
-      "Fire Safety Audits",
-      "Fire Load Calculations",
+      "Chlorine Vaporizers & Evaporators",
+      "Chlorine Dosing Systems",
+      "Chemical Dosing Systems",
+      "Chlorine Dosers",
+      "Chlorine Dioxide Generators",
     ],
   },
   {
-    title: "Training Learning & Development",
+    title: "Safety & Accessories",
     items: [
-      "Internal Auditor Courses for ISO Standards",
-      "HIRA, QRA, What if, RCA",
-      "TRIZ, DOE, QFD, GD&T & DWM",
-      "Site applicable Legal Training",
-      "VDA, a German Automotive Standard",
+      "Chlorine Leak Detectors",
+      "Chlorine Leak Absorption Systems",
+      "Emergency Repair Kits",
+      "Pressure Reducing Valves",
+      "Manifolds & Lifting Beams",
     ],
   },
 ] as const;
@@ -81,7 +81,7 @@ function ServicesMegaMenu() {
                 <li key={label}>
                   <NavigationMenuLink asChild>
                     <Link
-                      href="#services"
+                      href="#products"
                       className={cn(
                         "rounded-md px-2 py-1.5 text-[13px] leading-snug font-normal text-white/92",
                         "hover:bg-white/10 hover:text-white focus:bg-white/10 focus-visible:ring-1 focus-visible:ring-white/30",
@@ -110,8 +110,8 @@ export function SiteHeader() {
           href="/"
           className="relative z-20 flex shrink-0 items-center rounded-full px-1 py-0.5 outline-none transition-colors hover:text-neutral-600 focus-visible:ring-2 focus-visible:ring-neutral-950/25"
         >
-          <span className="text-[13px] font-semibold tracking-tight text-neutral-950 dark:text-white">
-            QMS India
+          <span className="text-[13px] font-semibold tracking-tight text-primary dark:text-primary">
+            Industrial Devices
           </span>
         </Link>
 
@@ -130,7 +130,7 @@ export function SiteHeader() {
                   "gap-1 data-open:bg-neutral-100/90 [&_svg]:size-3 [&_svg]:opacity-70",
                 )}
               >
-                Services
+                Products
               </NavigationMenuTrigger>
               <NavigationMenuContent>
                 <ServicesMegaMenu />
@@ -144,7 +144,7 @@ export function SiteHeader() {
             </NavigationMenuItem>
             <NavigationMenuItem>
               <NavigationMenuLink asChild className={navLinkClass}>
-                <Link href="#clients">Clients</Link>
+                <Link href="#clients">Industries</Link>
               </NavigationMenuLink>
             </NavigationMenuItem>
             <NavigationMenuItem>
@@ -157,9 +157,8 @@ export function SiteHeader() {
 
         <Button
           asChild
-          variant="outline"
           size="sm"
-          className="relative z-20 hidden h-9 shrink-0 rounded-full border-neutral-300 bg-white px-4 text-[13px] font-medium shadow-none hover:bg-neutral-50 sm:inline-flex dark:bg-neutral-950 dark:hover:bg-neutral-900"
+          className="relative z-20 hidden h-9 shrink-0 rounded-full bg-primary px-4 text-[13px] font-medium text-primary-foreground shadow-none hover:bg-primary/90 sm:inline-flex"
         >
           <Link href="#contact" className="gap-1.5">
             Get Started
@@ -176,7 +175,7 @@ export function SiteHeader() {
             onClick={() => setMobileOpen(false)}
           >
             <span className="text-[13px] font-semibold tracking-tight text-neutral-950 dark:text-white">
-              QMS India
+              Industrial Devices
             </span>
           </Link>
           <MobileNavToggle
@@ -192,7 +191,7 @@ export function SiteHeader() {
         >
           <div>
             <p className="px-1 pb-2 text-xs font-semibold tracking-wide text-neutral-500 uppercase">
-              Services
+              Products
             </p>
             <div className="flex flex-col gap-6">
               {serviceColumns.map((column) => (
@@ -204,7 +203,7 @@ export function SiteHeader() {
                     {column.items.map((label) => (
                       <li key={label}>
                         <Link
-                          href="#services"
+                          href="#products"
                           onClick={() => setMobileOpen(false)}
                           className="block rounded-lg px-2 py-1.5 text-sm text-neutral-700 transition-colors hover:bg-neutral-100 dark:text-neutral-300 dark:hover:bg-neutral-800"
                         >
@@ -221,7 +220,7 @@ export function SiteHeader() {
           {(
             [
               ["#approach", "Approach"],
-              ["#clients", "Clients"],
+              ["#clients", "Industries"],
               ["#contact", "Contact"],
             ] as const
           ).map(([href, label]) => (
@@ -244,7 +243,7 @@ export function SiteHeader() {
           <Link
             href="#contact"
             onClick={() => setMobileOpen(false)}
-            className="mt-2 flex items-center justify-center gap-2 rounded-full border border-neutral-300 bg-white px-4 py-3 text-sm font-medium shadow-sm dark:border-neutral-600 dark:bg-neutral-900"
+            className="mt-2 flex items-center justify-center gap-2 rounded-full bg-primary px-4 py-3 text-sm font-medium text-primary-foreground shadow-sm hover:bg-primary/90"
           >
             Get Started
             <ArrowRight aria-hidden className="size-4" />
