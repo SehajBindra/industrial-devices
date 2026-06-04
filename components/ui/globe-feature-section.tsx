@@ -22,7 +22,7 @@ export default function CTASection() {
           >
             <h2 className="text-3xl font-normal text-gray-900 dark:text-white">
               <span className="text-primary">Industrial Devices (India)</span>
-              , chlorination equipment from New Delhi.
+              , complete chlorination systems from New Delhi.
             </h2>
           </BlurFade>
           <BlurFade
@@ -31,12 +31,13 @@ export default function CTASection() {
             direction="up"
             blur="24px"
             duration={1}
-            className="mt-4 line-clamp-2 text-pretty text-base leading-relaxed text-gray-500 dark:text-gray-400"
+            className="mt-4 text-pretty text-base leading-relaxed text-gray-500 dark:text-gray-400"
           >
             <p>
-              Gas and vacuum chlorinators, vaporizers, dosing systems, and
-              safety devices, supplied to municipal, power, and industrial
-              clients nationwide.
+              We design, manufacture, supply, install, and commission gas
+              chlorinators, chlorine dioxide generators, vaporizers, leak
+              detection systems, vacuum regulators, dosing accessories, and
+              complete chlorination packages.
             </p>
           </BlurFade>
           <BlurFade
@@ -51,8 +52,8 @@ export default function CTASection() {
               asChild
               className="inline-flex items-center gap-2 rounded-full bg-primary px-5 py-2 text-sm font-semibold text-primary-foreground transition hover:bg-primary/90"
             >
-              <Link href="#contact">
-                Request a call <ArrowRight className="h-4 w-4" />
+              <Link href="https://www.industrialdevices.in/" target="_blank" rel="noopener noreferrer">
+                Contact Industrial Devices <ArrowRight className="h-4 w-4" />
               </Link>
             </Button>
           </BlurFade>

@@ -29,31 +29,30 @@ const serviceColumns = [
   {
     title: "Chlorinators",
     items: [
-      "Vacuum Operated Chlorinators",
       "Gas Chlorinators",
-      "Vacuum Chlorinators",
-      "Cylinder Vacuum Auto Changeover",
-      "Cylinder Flexible Copper Connector",
+      "Vacuum Operated Chlorinators",
+      "Cylinder Mounted Chlorinators",
+      "Wall Mounted Chlorinators",
+      "Floor Mounted Chlorinators",
     ],
   },
   {
-    title: "Vaporizers & Dosing",
+    title: "Disinfection Systems",
     items: [
-      "Chlorine Vaporizers & Evaporators",
-      "Chlorine Dosing Systems",
-      "Chemical Dosing Systems",
-      "Chlorine Dosers",
       "Chlorine Dioxide Generators",
+      "Electro Chlorination Systems",
+      "Chlorine Vaporizers",
+      "Steam Heated Vaporizers",
     ],
   },
   {
     title: "Safety & Accessories",
     items: [
-      "Chlorine Leak Detectors",
-      "Chlorine Leak Absorption Systems",
-      "Emergency Repair Kits",
-      "Pressure Reducing Valves",
-      "Manifolds & Lifting Beams",
+      "Chlorine Leak Detection",
+      "Leak Absorption Systems",
+      "Emergency Safety Kits",
+      "Cylinder Vacuum Auto Changeover",
+      "Cylinder Flexible Copper Connector",
     ],
   },
 ] as const;
@@ -81,7 +80,11 @@ function ServicesMegaMenu() {
                 <li key={label}>
                   <NavigationMenuLink asChild>
                     <Link
-                      href="#products"
+                      href={
+                        label === "Gas Chlorinators"
+                          ? "/gas-chlorination"
+                          : "#products"
+                      }
                       className={cn(
                         "rounded-md px-2 py-1.5 text-[13px] leading-snug font-normal text-white/92",
                         "hover:bg-white/10 hover:text-white focus:bg-white/10 focus-visible:ring-1 focus-visible:ring-white/30",
@@ -139,7 +142,7 @@ export function SiteHeader() {
 
             <NavigationMenuItem>
               <NavigationMenuLink asChild className={navLinkClass}>
-                <Link href="#approach">Approach</Link>
+                <Link href="#applications">Applications</Link>
               </NavigationMenuLink>
             </NavigationMenuItem>
             <NavigationMenuItem>
@@ -161,7 +164,7 @@ export function SiteHeader() {
           className="relative z-20 hidden h-9 shrink-0 rounded-full bg-primary px-4 text-[13px] font-medium text-primary-foreground shadow-none hover:bg-primary/90 sm:inline-flex"
         >
           <Link href="#contact" className="gap-1.5">
-            Get Started
+            Request Quote
             <ArrowRight aria-hidden className="size-[15px]" strokeWidth={2} />
           </Link>
         </Button>
@@ -203,7 +206,11 @@ export function SiteHeader() {
                     {column.items.map((label) => (
                       <li key={label}>
                         <Link
-                          href="#products"
+                          href={
+                            label === "Gas Chlorinators"
+                              ? "/gas-chlorination"
+                              : "#products"
+                          }
                           onClick={() => setMobileOpen(false)}
                           className="block rounded-lg px-2 py-1.5 text-sm text-neutral-700 transition-colors hover:bg-neutral-100 dark:text-neutral-300 dark:hover:bg-neutral-800"
                         >
@@ -219,7 +226,7 @@ export function SiteHeader() {
           <Separator />
           {(
             [
-              ["#approach", "Approach"],
+              ["#applications", "Applications"],
               ["#clients", "Industries"],
               ["#contact", "Contact"],
             ] as const
@@ -236,16 +243,9 @@ export function SiteHeader() {
           <Link
             href="#contact"
             onClick={() => setMobileOpen(false)}
-            className="rounded-lg px-1 py-2.5 text-base font-medium text-neutral-700 transition-colors hover:bg-neutral-100 dark:text-neutral-300 dark:hover:bg-neutral-800"
-          >
-            Login
-          </Link>
-          <Link
-            href="#contact"
-            onClick={() => setMobileOpen(false)}
             className="mt-2 flex items-center justify-center gap-2 rounded-full bg-primary px-4 py-3 text-sm font-medium text-primary-foreground shadow-sm hover:bg-primary/90"
           >
-            Get Started
+            Request a quote
             <ArrowRight aria-hidden className="size-4" />
           </Link>
         </MobileNavMenu>

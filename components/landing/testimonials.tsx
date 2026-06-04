@@ -30,20 +30,20 @@ export default function WallOfLoveSection() {
 
   return (
     <section
-      className="w-full sm:max-w-6xl py-20 bg-white"
+      id="clients"
+      className="w-full scroll-mt-28 sm:max-w-6xl py-20 bg-white sm:scroll-mt-32"
       aria-labelledby={`${baseId}-heading`}
     >
       <SectionIntro
         headingId={`${baseId}-heading`}
         align="start"
         description={
-          "Municipal, power, health, and process industries rely on our chlorination systems across India."
+          "Water treatment plants, process industries, power plants, refineries, and public utilities use our disinfection systems across demanding environments."
         }
-        descriptionClassName="line-clamp-2"
         title={
           <>
-            Trusted where{" "}
-            <span className="text-primary">water treatment</span> matters
+            Industries and sectors{" "}
+            <span className="text-primary">using our systems</span>.
           </>
         }
       />

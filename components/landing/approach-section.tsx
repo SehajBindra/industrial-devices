@@ -1,12 +1,12 @@
 "use client";
 
 import {
-  Award,
+  Activity,
+  Biohazard,
+  Droplets,
   Factory,
-  Globe2,
-  ShieldCheck,
-  Sparkles,
-  Wrench,
+  Flame,
+  Waves,
   type LucideIcon,
 } from "lucide-react";
 import Link from "next/link";
@@ -19,57 +19,59 @@ const CORE_VALUES: readonly {
   icon: LucideIcon;
 }[] = [
   {
-    title: "Manufacturing In Okhla",
+    title: "Drinking Water",
     description:
-      "Full-fledged facility with design, production, and servicing under one roof in New Delhi.",
+      "Safe water disinfection for municipal supply, reservoirs, pipelines, and treatment plants.",
+    icon: Droplets,
+  },
+  {
+    title: "Wastewater Treatment",
+    description:
+      "Chlorination for STP, ETP, treated water reuse, and environmental discharge compliance.",
+    icon: Waves,
+  },
+  {
+    title: "Cooling Tower Control",
+    description:
+      "Biofouling, algae, bacterial contamination, and process water control for cooling systems.",
     icon: Factory,
   },
   {
-    title: "Operational Safety",
+    title: "Process Water",
     description:
-      "Leak detectors, absorption systems, and emergency kits built into every chlorination solution.",
-    icon: ShieldCheck,
+      "Reliable disinfection for chemical, pharmaceutical, food processing, and industrial water loops.",
+    icon: Activity,
   },
   {
-    title: "Decades Of Expertise",
+    title: "Odour & Bacteria Control",
     description:
-      "Trusted chlorination partner for municipal corporations, power stations, and process industries.",
-    icon: Award,
+      "Chlorine dioxide and chlorination systems for odour control, biofilm removal, and microbial reduction.",
+    icon: Biohazard,
   },
   {
-    title: "Complete Product Range",
+    title: "Seawater & Brine",
     description:
-      "Chlorinators, vaporizers, dosers, dosing systems, and site accessories from a single manufacturer.",
-    icon: Wrench,
-  },
-  {
-    title: "Accredited Quality",
-    description:
-      "Accredited by the Dutch Council for Accreditation, with quality systems aligned to international standards.",
-    icon: Globe2,
-  },
-  {
-    title: "New Technology",
-    description:
-      "Chlorine dioxide generators and advanced dosing for modern disinfection requirements.",
-    icon: Sparkles,
+      "Electro chlorination systems for on-site generation in seawater and brine applications.",
+    icon: Flame,
   },
 ];
 
 export function ApproachSection() {
   return (
-    <section id="approach" className="border-b border-gray-100 bg-white py-20">
+    <section
+      id="applications"
+      className="scroll-mt-28 border-b border-gray-100 bg-white py-20 sm:scroll-mt-32"
+    >
       <SectionIntro
-        headingId={`approach-heading`}
+        headingId={`applications-heading`}
         align="start"
         description={
-          "Industrial Devices (India) Pvt. Ltd. designs, manufactures, and commissions chlorination systems trusted across India."
+          "Industrial Devices provides reliable chlorination and disinfection systems across the main water, wastewater, and process safety applications."
         }
-        descriptionClassName="line-clamp-2"
         title={
           <>
-            Built for safe,{" "}
-            <span className="text-primary">reliable chlorine handling</span>.
+            Applications for{" "}
+            <span className="text-primary">reliable disinfection</span>.
           </>
         }
       />

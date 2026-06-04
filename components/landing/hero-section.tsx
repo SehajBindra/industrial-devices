@@ -39,9 +39,8 @@ export function HeroSection() {
             className="w-full"
           >
             <h1 className="text-balance text-5xl tracking-tight text-neutral-950 sm:text-6xl sm:leading-[1.08] lg:text-7xl lg:leading-[1.05]">
-              Leader in chlorinators,{" "}
-              <span className="text-primary">vaporizers,</span> and safety
-              systems.
+              Gas chlorination systems &{" "}
+              <span className="text-primary">water treatment</span> equipment.
             </h1>
           </BlurFade>
           <BlurFade
@@ -50,11 +49,13 @@ export function HeroSection() {
             direction="up"
             blur="24px"
             duration={1}
-            className="mt-6 max-w-xl line-clamp-2 text-pretty text-base leading-relaxed text-neutral-600 sm:text-lg"
+            className="mt-6 max-w-2xl text-pretty text-base leading-relaxed text-neutral-600 sm:text-lg"
           >
             <p>
-              Gas chlorination systems from 250 gms/hr to 1000+ Kgs/hr, designed,
-              manufactured, and commissioned in Okhla, New Delhi.
+              Welcome to Industrial Devices (India) Pvt. Ltd., a trusted Indian
+              manufacturer of gas chlorination systems, chlorine dosing
+              equipment, gas chlorine safety systems, and water treatment
+              solutions for municipal, industrial, and process applications.
             </p>
           </BlurFade>
           <BlurFade
@@ -69,14 +70,14 @@ export function HeroSection() {
               asChild
               className="h-11 rounded-full bg-primary px-7 text-sm font-medium text-primary-foreground shadow-none transition-transform hover:bg-primary/90 active:scale-[0.98]"
             >
-              <Link href="#contact">Request a call</Link>
+              <Link href="#contact">Request a quote</Link>
             </Button>
             <Button
               asChild
               variant="outline"
               className="h-11 rounded-full border-primary/30 bg-white/80 px-7 text-sm font-medium text-primary shadow-none backdrop-blur-sm transition-transform hover:border-primary/50 hover:bg-primary/5 active:scale-[0.98]"
             >
-              <Link href="#products">Explore products</Link>
+              <Link href="#products">Explore systems</Link>
             </Button>
           </BlurFade>
         </div>

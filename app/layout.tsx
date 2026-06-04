@@ -13,13 +13,13 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "Industrial Devices (India): Chlorination Systems",
+  title: "Industrial Devices (India): Gas Chlorination & Water Treatment",
   description:
-    "Chlorinator manufacturers in India. Gas chlorinators, vaporizers, dosing systems, and chlorine safety equipment.",
+    "Manufacturer and supplier of gas chlorination systems, chlorine dosing equipment, safety systems, chlorine dioxide generators, and water treatment solutions.",
   openGraph: {
     title: "Industrial Devices (India) Pvt. Ltd.",
     description:
-      "Leader in chlorinators, vaporizers, and safety systems, designed and manufactured in New Delhi.",
+      "Gas chlorination systems and water treatment equipment for municipal, industrial, and process applications.",
   },
 };
 

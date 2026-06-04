@@ -9,6 +9,11 @@ const nextConfig: NextConfig = {
         hostname: "svgl.app",
         pathname: "/library/**",
       },
+      {
+        protocol: "https",
+        hostname: "www.industrialdevices.in",
+        pathname: "/uploads/**",
+      },
     ],
   },
 };

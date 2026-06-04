@@ -5,6 +5,7 @@ import { useReducedMotion } from "motion/react";
 import {
   AuditsAssessmentsBentoCard,
   ConsultingAdvisoryBentoCard,
+  ElectroChlorinationBentoCard,
   IndustrialSafetyBentoCard,
   SoftwareItBentoCard,
   TrainingDevelopmentBentoCard,
@@ -17,6 +18,7 @@ const SERVICE_BENTO_SECTIONS = [
   { id: "training-development", Component: TrainingDevelopmentBentoCard },
   { id: "audits-assessments", Component: AuditsAssessmentsBentoCard },
   { id: "software-it", Component: SoftwareItBentoCard },
+  { id: "electro-chlorination", Component: ElectroChlorinationBentoCard },
 ] as const;
 
 export function ServicesSection() {
@@ -32,19 +34,18 @@ export function ServicesSection() {
           headingId={`products-heading`}
           align="start"
           description={
-            "Vacuum and gas chlorinators, vaporizers, dosing systems, and safety equipment, manufactured and commissioned for municipal, power, and industrial sites."
+            "Technically advanced, field-proven chlorination and disinfection equipment for municipal, industrial, and process requirements."
           }
-          descriptionClassName="line-clamp-2"
           title={
             <>
               Complete{" "}
-              <span className="text-primary">chlorination systems</span>, built
-              in India.
+              <span className="text-primary">chlorination & disinfection</span>{" "}
+              solutions.
             </>
           }
         />
 
-        <div className="mt-12 grid grid-cols-1 gap-4 sm:mt-14 md:grid-cols-6 lg:gap-5">
+        <div className="mt-12 grid grid-cols-1 gap-4 sm:mt-14 md:grid-cols-3 md:gap-5">
           {SERVICE_BENTO_SECTIONS.map(({ id, Component }, index) => (
             <Component index={index} key={id} reduceMotion={reduceMotion} />
           ))}

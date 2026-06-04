@@ -12,7 +12,7 @@ const transitionEase = [0.16, 1, 0.3, 1] as const;
 
 type SectionIntroProps = {
   title: ReactNode;
-  description: string;
+  description?: string;
   headingId?: string;
 
   /** `start` aligns intro copy to the start (e.g. landing sections); default matches marketing. */
@@ -72,21 +72,23 @@ export function SectionIntro({
           {title}
         </h2>
       </BlurFade>
-      <BlurFade
-        delay={0.25 * 2}
-        inView
-        direction="up"
-        blur="24px"
-        duration={1}
-        className={cn(
-          isStart
-            ? "max-w-3xl text-left text-lg leading-relaxed text-gray-500 sm:text-xl line-clamp-2"
-            : "mx-auto max-w-lg text-center text-xl leading-relaxed text-gray-500 line-clamp-2",
-          descriptionClassName,
-        )}
-      >
-        <p>{description}</p>
-      </BlurFade>
+      {description ? (
+        <BlurFade
+          delay={0.25 * 2}
+          inView
+          direction="up"
+          blur="24px"
+          duration={1}
+          className={cn(
+            isStart
+              ? "max-w-3xl text-left text-lg leading-relaxed text-gray-500 sm:text-xl line-clamp-2"
+              : "mx-auto max-w-lg text-center text-xl leading-relaxed text-gray-500 line-clamp-2",
+            descriptionClassName,
+          )}
+        >
+          <p>{description}</p>
+        </BlurFade>
+      ) : null}
     </motion.div>
   );
 }
