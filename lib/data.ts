@@ -159,12 +159,17 @@ export const siteConfig = {
         {
           id: "vaporizers",
           title: "Chlorine vaporizers",
-          url: "/#products",
+          url: "/chlorine-vaporizer",
         },
         {
           id: "dosing",
+          title: "Electro chlorination",
+          url: "/chlorine-dosing-system",
+        },
+        {
+          id: "safety",
           title: "Leak detection & safety",
-          url: "/#products",
+          url: "/safety-system",
         },
         {
           id: "accessories",

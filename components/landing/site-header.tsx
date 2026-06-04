@@ -23,6 +23,7 @@ import {
   MobileNavMenu,
   MobileNavToggle,
 } from "@/components/ui/resizable-navbar";
+import { hrefForProductLabel } from "@/lib/products";
 import { cn } from "@/lib/utils";
 
 const serviceColumns = [
@@ -80,11 +81,7 @@ function ServicesMegaMenu() {
                 <li key={label}>
                   <NavigationMenuLink asChild>
                     <Link
-                      href={
-                        label === "Gas Chlorinators"
-                          ? "/gas-chlorination"
-                          : "#products"
-                      }
+                      href={hrefForProductLabel(label)}
                       className={cn(
                         "rounded-md px-2 py-1.5 text-[13px] leading-snug font-normal text-white/92",
                         "hover:bg-white/10 hover:text-white focus:bg-white/10 focus-visible:ring-1 focus-visible:ring-white/30",
@@ -206,11 +203,7 @@ export function SiteHeader() {
                     {column.items.map((label) => (
                       <li key={label}>
                         <Link
-                          href={
-                            label === "Gas Chlorinators"
-                              ? "/gas-chlorination"
-                              : "#products"
-                          }
+                          href={hrefForProductLabel(label)}
                           onClick={() => setMobileOpen(false)}
                           className="block rounded-lg px-2 py-1.5 text-sm text-neutral-700 transition-colors hover:bg-neutral-100 dark:text-neutral-300 dark:hover:bg-neutral-800"
                         >

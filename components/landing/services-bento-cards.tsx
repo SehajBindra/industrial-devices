@@ -127,6 +127,7 @@ export function IndustrialSafetyBentoCard(props: ServiceBentoCardProps) {
     <ServiceBentoCardShell
       {...props}
       description="Heavy-duty vaporizers that safely convert liquid chlorine into gas for medium and high-capacity chlorination systems."
+      href="/chlorine-vaporizer"
       imageAlt="Chlorine vaporizer skid with gas feed piping"
       imageSrc={PRODUCT_IMAGES.chlorineVaporizer}
       title="Chlorine vaporizers"
@@ -139,6 +140,7 @@ export function TrainingDevelopmentBentoCard(props: ServiceBentoCardProps) {
     <ServiceBentoCardShell
       {...props}
       description="Leak monitoring, alarms, scrubbers, absorption systems, emergency kits, and operator safety solutions for chlorine handling."
+      href="/safety-system"
       imageAlt="Chlorine heater JB skid with XP chamber safety equipment"
       imageSrc={PRODUCT_IMAGES.leakDetectionSafety}
       title="Leak detection & safety"
@@ -175,6 +177,7 @@ export function ElectroChlorinationBentoCard(props: ServiceBentoCardProps) {
     <ServiceBentoCardShell
       {...props}
       description="On-site chlorine generation for seawater and brine applications, with skid-mounted capacities from 5 g/hr to 500 kg/hr."
+      href="/chlorine-dosing-system"
       imageAlt="Dual PT gas chlorinator skid for high-capacity chlorination"
       imageSrc={PRODUCT_IMAGES.electroChlorination}
       title="Electro chlorination systems"
