@@ -92,7 +92,7 @@ export function HeroSection() {
           <HeroSafariCarousel />
         </BlurFade>
       </div>
-      <HeroClientGrid />
+      {/* <HeroClientGrid /> */}
     </section>
   );
 }

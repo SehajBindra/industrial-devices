@@ -152,10 +152,14 @@ export function AuditsAssessmentsBentoCard(props: ServiceBentoCardProps) {
   return (
     <ServiceBentoCardShell
       {...props}
-      description="Precision-engineered ejectors, vacuum regulators, rotameters, dosing valves, manifolds, pressure reducers, and accessories."
+      description="Chlorination system accessories like Gas Chlorination System , these include Tonner Lifting
+Beams, Weighing Systems, etc. Spares for the system
+
+that include precision-engineered ejectors, vacuum regulators
+other chlorination accessories"
       imageAlt="Dual-stream vacuum regulator and gas metering skid"
       imageSrc={PRODUCT_IMAGES.vacuumRegulators}
-      title="Vacuum regulators & accessories"
+      title="Chlorination System Accessories &amp; Spares"
     />
   );
 }
