@@ -1,12 +1,9 @@
 const SITE = "https://www.industrialdevices.in";
 
 export const gasChlorinationImages = {
-  cylinderMounted:
-    `${SITE}/uploads/industrialdevicesindiapvtltd/Cylinder%20mounted%20chlorinators.jpg`,
-  floorMounted:
-    `${SITE}/uploads/industrialdevicesindiapvtltd/Floor%20Mounted%20chlorinators.jpg`,
-  wallMounted:
-    `${SITE}/uploads/industrialdevicesindiapvtltd/Wall%20Mounted%20chlorinators.png`,
+  cylinderMounted: `${SITE}/uploads/industrialdevicesindiapvtltd/Cylinder%20mounted%20chlorinators.jpg`,
+  floorMounted: `${SITE}/uploads/industrialdevicesindiapvtltd/Floor%20Mounted%20chlorinators.jpg`,
+  wallMounted: `${SITE}/uploads/industrialdevicesindiapvtltd/Wall%20Mounted%20chlorinators.png`,
 } as const;
 
 /** SEO headings from the legacy page (hidden on source site). */
@@ -88,7 +85,7 @@ export const gasChlorinationPage = {
   models: [
     {
       id: "cylinder-tonner",
-      heading: "Cylinder or Tonner Mounted Models",
+      heading: "Cylinder Mounted Models",
       imageSrc: gasChlorinationImages.cylinderMounted,
       imageAlt: "Chlorine Leak Detector",
       descriptionPoints: [
@@ -114,7 +111,7 @@ export const gasChlorinationPage = {
     },
     {
       id: "wall-mounted",
-      heading: "Wall Mounted Models (Model: INDICHLOR VW)",
+      heading: "Wall Mounted Chlorinators",
       imageSrc: gasChlorinationImages.wallMounted,
       imageAlt: "Chlorine Leak Absorption system",
       descriptionPoints: [

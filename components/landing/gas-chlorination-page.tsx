@@ -9,21 +9,12 @@ import {
   gasChlorinationSeoHeadings,
 } from "@/lib/products/gas-chlorination";
 
-function specGridClass(count: number) {
-  if (count >= 4) {
-    return "grid grid-cols-1 gap-3 sm:grid-cols-2 lg:grid-cols-4";
-  }
-  return "grid grid-cols-1 gap-3 sm:grid-cols-3";
-}
-
 function ModelSpecCard({ label, value }: GasChlorinatorSpec) {
   return (
-    <li className="flex h-full min-h-0">
-      <div className="flex h-full w-full flex-col rounded-sm border border-neutral-200 border-l-2 border-l-primary bg-white px-4 py-3.5 shadow-[0_1px_2px_rgba(15,23,42,0.04)]">
-        <p className="text-xs font-semibold uppercase tracking-wide text-primary">
-          {label}
-        </p>
-        <p className="mt-2 flex-1 text-sm leading-snug text-neutral-800">
+    <li className="flex flex-col items-start justify-start h-full min-h-0">
+      <div className="flex border-b border-dashed border-neutral-200 h-full w-full flex-col">
+        <p className="text-base font-semibold  text-primary">{label}</p>
+        <p className="my-2 flex-1 text-sm leading-snug max-w-sm text-neutral-800">
           {value}
         </p>
       </div>
@@ -57,7 +48,7 @@ export function GasChlorinationPageContent() {
           headingId="gas-chlorinator-models"
           title={
             <>
-              Gas chlorinator <span className="text-primary">models</span>.
+              Gas chlorinator <span className="text-primary">models</span>
             </>
           }
         />
@@ -65,14 +56,7 @@ export function GasChlorinationPageContent() {
         <div className="mt-10 flex flex-col gap-12">
           {models.map(
             (
-              {
-                id,
-                heading,
-                imageSrc,
-                imageAlt,
-                descriptionPoints,
-                specs,
-              },
+              { id, heading, imageSrc, imageAlt, descriptionPoints, specs },
               index,
             ) => (
               <article
@@ -80,7 +64,7 @@ export function GasChlorinationPageContent() {
                 className="grid grid-cols-1 items-start gap-8 rounded-md border border-neutral-200 bg-neutral-50/80 p-6 sm:p-8 lg:grid-cols-2 lg:gap-10"
               >
                 <div className={index % 2 === 1 ? "lg:order-2" : undefined}>
-                  <div className="overflow-hidden rounded-md border border-neutral-200 bg-white p-4">
+                  <div className="overflow-hidden rounded-md shadow-2xl border border-dashed border-neutral-300 bg-white p-2">
                     <Image
                       src={imageSrc}
                       alt={imageAlt}
@@ -88,7 +72,7 @@ export function GasChlorinationPageContent() {
                       height={900}
                       quality={88}
                       sizes="(max-width: 1024px) 100vw, 50vw"
-                      className="h-auto w-full rounded-md object-contain"
+                      className="h-auto w-full rounded-md object-cover"
                     />
                   </div>
                 </div>
@@ -102,7 +86,9 @@ export function GasChlorinationPageContent() {
                       <li key={point}>{point}</li>
                     ))}
                   </ul>
-                  <ul className={`mt-6 ${specGridClass(specs.length)}`}>
+                  <ul
+                    className={`mt-10 grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-1`}
+                  >
                     {specs.map((spec) => (
                       <ModelSpecCard
                         key={`${spec.label}-${spec.value}`}
