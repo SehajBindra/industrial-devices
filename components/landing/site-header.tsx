@@ -167,8 +167,8 @@ export function SiteHeader() {
         </Link>
 
         <NavigationMenu
-          className="max-w-none min-w-0 flex-1 justify-end md:flex-1 md:justify-center"
-          viewportClassName="overflow-visible rounded-2xl border border-neutral-200 bg-white text-neutral-950 shadow-[0_24px_70px_-12px_rgba(15,23,42,0.12)] ring-0"
+          className="static max-w-none min-w-0 flex-1 justify-end md:flex-1 md:justify-center"
+          viewportClassName="overflow-hidden rounded-md border border-neutral-200 bg-white text-neutral-950 shadow-[0_24px_70px_-12px_rgba(15,23,42,0.12)] ring-0"
         >
           <NavigationMenuList className="hidden flex-none flex-wrap justify-center gap-0.5 sm:gap-1 md:flex">
             <NavigationMenuItem>
