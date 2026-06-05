@@ -1,5 +1,4 @@
 import { ApproachSection } from "@/components/landing/approach-section";
-import { ApplicationDetailsSection } from "@/components/landing/application-details-section";
 import { HeroSection } from "@/components/landing/hero-section";
 import { ServicesSection } from "@/components/landing/services-section";
 import { FooterSection } from "@/components/landing/footer-section";
@@ -15,7 +14,6 @@ export default function Home() {
         <HeroSection />
         <ServicesSection />
         <ApproachSection />
-        <ApplicationDetailsSection />
         <WallOfLoveSection />
         <CTASection />
       </main>
