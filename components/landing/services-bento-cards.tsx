@@ -86,7 +86,10 @@ function ServiceBentoCardShell({
           <h3 className="text-2xl font-medium tracking-tight text-primary">
             {title}
           </h3>
-          <p className="mt-3 max-w-2xl text-sm leading-relaxed text-neutral-600 sm:text-base">
+          <p
+            className="mt-3 max-w-2xl text-sm leading-relaxed text-neutral-600 sm:text-base"
+            title={description}
+          >
             {description}
           </p>
         </div>

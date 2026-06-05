@@ -91,7 +91,7 @@ export function ApproachSection() {
                 </h2>
               </div>
               <p
-                className="text-muted-foreground mb-4 line-clamp-2 text-sm leading-normal"
+                className="text-muted-foreground mb-4 text-sm leading-normal"
                 title={description}
               >
                 {description}

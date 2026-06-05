@@ -42,8 +42,8 @@ export default function WallOfLoveSection() {
         }
         title={
           <>
-            Industries and sectors{" "}
-            <span className="text-primary">using our systems</span>.
+            Industries We <span className="text-primary">Serve</span> Across{" "}
+            <span className="text-primary"> Multiple Sectors</span>.
           </>
         }
       />
@@ -78,7 +78,7 @@ export default function WallOfLoveSection() {
                     &ldquo;
                   </span>
                   <blockquote className="relative z-1">
-                    <p className="text-lg line-clamp-2 leading-relaxed tracking-tight text-neutral-900">
+                    <p className="text-lg leading-relaxed tracking-tight text-neutral-900">
                       {text}
                     </p>
                   </blockquote>
