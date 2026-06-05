@@ -1,4 +1,4 @@
-import { legacyUpload } from "@/lib/products/site-images";
+import { productImage } from "@/lib/products/site-images";
 import type { ProductPage } from "@/lib/products/types";
 
 export const safetySystemProduct = {
@@ -26,7 +26,7 @@ export const safetySystemProduct = {
     {
       id: "leak-absorption",
       heading: "Leak Absorption System",
-      imageSrc: legacyUpload("LEAK%20ABSORPTION%20SYSTEM.jpg"),
+      imageSrc: productImage("leak-absorption-system.jpg"),
       imageAlt: "Chlorine leak absorption system",
       descriptionPoints: [
         "The blower shall suck the leaked chlorine gas along with air and deliver the same to the Absorption Tower.",
@@ -39,7 +39,7 @@ export const safetySystemProduct = {
     {
       id: "leak-detector",
       heading: "Chlorine Leak Detector (Single and Double Sensor)",
-      imageSrc: legacyUpload("Chlorine%20Leak%20Detector%20Double.jpg"),
+      imageSrc: productImage("auxiliary-container-valve.jpg"),
       imageAlt: "Chlorine leak detector panel",
       descriptionPoints: [
         "The Chlorine leak detection system consists of a control unit and a sensor.",
@@ -63,9 +63,7 @@ export const safetySystemProduct = {
     {
       id: "breathing-apparatus",
       heading: "Self Contained Compressed Air Breathing Apparatus",
-      imageSrc: legacyUpload(
-        "Self%20Contained%20Compressed%20Air%20breathing%20apparatus.jpg",
-      ),
+      imageSrc: productImage("tonner-full-hood.jpg"),
       imageAlt: "Self contained compressed air breathing apparatus",
       descriptionPoints: [
         "Self-Contained Air Breathing apparatus are very essential for heavy toxic leaks.",
@@ -77,7 +75,7 @@ export const safetySystemProduct = {
     {
       id: "eyewash-shower",
       heading: "Emergency Eye Wash and Shower",
-      imageSrc: legacyUpload("Emergency%20eye%20wash%20and%20shower.jpg"),
+      imageSrc: productImage("filter.jpg"),
       imageAlt: "Emergency eye wash and shower unit",
       descriptionPoints: [
         "Emergency Eyewash and Shower (Hand Operated or Pedal Operated - Combination units) is required to protect eye, face & skin from chlorine contacts.",
@@ -89,7 +87,7 @@ export const safetySystemProduct = {
     {
       id: "canister-gas-mask",
       heading: "Canister Gas Mask",
-      imageSrc: legacyUpload("Canister%20Gas%20mask.jpg"),
+      imageSrc: productImage("tonner-full-hood.jpg"),
       imageAlt: "Canister gas mask for chlorine leaks",
       descriptionPoints: [
         "The Gas Mask with Canister is designed to enable the wearer to breathe fresh air in a contaminated atmosphere. These are applicable for small leaks only.",
@@ -102,7 +100,7 @@ export const safetySystemProduct = {
     {
       id: "air-resuscitator",
       heading: "Instant Air Resuscitator",
-      imageSrc: legacyUpload("Instant%20Air%20resusitator.jpg"),
+      imageSrc: productImage("filter.jpg"),
       imageAlt: "Instant air resuscitator",
       descriptionPoints: [
         "In accidents like inhalation of toxic fumes, electric shock, cardiac arrests, excessive bleeding etc., the central nervous system is profoundly and dangerously affected.",
@@ -114,7 +112,7 @@ export const safetySystemProduct = {
     {
       id: "protective-clothing",
       heading: "Protective Clothing",
-      imageSrc: legacyUpload("PROTECTIVE%20CLOTHING(1).jpg"),
+      imageSrc: productImage("tonner-full-hood.jpg"),
       imageAlt: "Chlorine protective clothing set",
       descriptionPoints: [
         "It consists of Full Face Masks, PVC Suit, PVC Gloves and Gum Boots, Safety Helmet, Goggles.",

@@ -1,5 +1,5 @@
 import { parseProductSpec } from "@/lib/products/parse-spec";
-import { legacyUpload } from "@/lib/products/site-images";
+import { productImage } from "@/lib/products/site-images";
 import type { ProductPage } from "@/lib/products/types";
 
 const cylinderBullets = [
@@ -44,7 +44,7 @@ export const gasChlorinationProduct = {
     {
       id: "cylinder-tonner",
       heading: "Cylinder Mounted Models",
-      imageSrc: legacyUpload("Cylinder%20mounted%20chlorinators.jpg"),
+      imageSrc: productImage("cylinder-mounted-chlorinator.jpg"),
       imageAlt: "Cylinder mounted chlorinator",
       descriptionPoints: [
         "The indichlor CM Cylinder mounted chlorinators are versatile and of high quality.",
@@ -58,7 +58,7 @@ export const gasChlorinationProduct = {
     {
       id: "floor-mounted",
       heading: "Floor Mounted Models",
-      imageSrc: legacyUpload("Floor%20Mounted%20chlorinators.jpg"),
+      imageSrc: productImage("gas-chlorination-system-with-vaporiser.jpg"),
       imageAlt: "Floor mounted vacuum chlorinator",
       descriptionPoints: [
         "This is a floor mounted, vacuum operated, solution feed type chlorinator. It incorporates chlorine pressure and vacuum gauges, reliable vacuum regulator, and an accurate flow meter, a precise flow control valve, an effective differential regulator, an injector, drain valve and a non return valve.",
@@ -70,7 +70,7 @@ export const gasChlorinationProduct = {
     {
       id: "wall-mounted",
       heading: "Wall Mounted Chlorinators",
-      imageSrc: legacyUpload("Wall%20Mounted%20chlorinators.png"),
+      imageSrc: productImage("chlorinator-tonner-mounted.jpg"),
       imageAlt: "Wall mounted chlorinator",
       descriptionPoints: [
         "This is a Wall mounted, vacuum operated, solution feed type.",

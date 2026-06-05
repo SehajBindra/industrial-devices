@@ -1,4 +1,4 @@
-import { legacyUpload } from "@/lib/products/site-images";
+import { productImage } from "@/lib/products/site-images";
 import type { ProductPage } from "@/lib/products/types";
 
 export const chlorineDosingSystemProduct = {
@@ -24,7 +24,7 @@ export const chlorineDosingSystemProduct = {
     {
       id: "on-site-hypo",
       heading: "On-Site Sodium Hypochlorite Generation",
-      imageSrc: legacyUpload("Sodium%20Hypochlorite%20Generation.jpg"),
+      imageSrc: productImage("gas-chlorination-system-with-vaporiser.jpg"),
       imageAlt: "On-site sodium hypochlorite generation system",
       descriptionPoints: [
         "Requires only salt, water and electricity.",

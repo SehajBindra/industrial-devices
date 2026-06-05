@@ -1,5 +1,3 @@
-const SITE = "https://www.industrialdevices.in";
-
-export function legacyUpload(path: string): string {
-  return `${SITE}/uploads/industrialdevicesindiapvtltd/${path}`;
+export function productImage(filename: string): string {
+  return `/product/${filename}`;
 }

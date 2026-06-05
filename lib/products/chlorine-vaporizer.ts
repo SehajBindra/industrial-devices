@@ -1,5 +1,5 @@
 import { parseProductSpec } from "@/lib/products/parse-spec";
-import { legacyUpload } from "@/lib/products/site-images";
+import { productImage } from "@/lib/products/site-images";
 import type { ProductPage } from "@/lib/products/types";
 
 const electricBullets = [
@@ -32,7 +32,7 @@ export const chlorineVaporizerProduct = {
     {
       id: "electrically-heated",
       heading: "Electrically Heated Vaporizer",
-      imageSrc: legacyUpload("Electrically%20Heated%20Vaporizer.jpg"),
+      imageSrc: productImage("gas-chlorination-system-with-vaporiser.jpg"),
       imageAlt: "Electrically heated chlorine vaporizer",
       descriptionPoints: [
         "The evaporator or vaporizer is used where chlorine requirement is large in quantity. We offer electrically heated evaporator up to a capacity of 1000 kg/hr.",
@@ -44,7 +44,7 @@ export const chlorineVaporizerProduct = {
     {
       id: "steam-heated",
       heading: "Steam Heated Vaporizer",
-      imageSrc: legacyUpload("Steam%20Heated%20Vaporizer.jpg"),
+      imageSrc: productImage("filter.jpg"),
       imageAlt: "Steam heated chlorine vaporizer",
       descriptionPoints: [
         "Chlorine Vaporizer can also be powered by steam. Steam is abundantly available in Paper & Pulp Mills, where steam is used to evaporate liquid Chlorine to form gas Chlorine.",
