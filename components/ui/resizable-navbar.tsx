@@ -64,7 +64,7 @@ export const Navbar = ({ children, className }: NavbarProps) => {
   return (
     <motion.div
       // Pass `fixed inset-x-0 top-0 z-40` (etc.) from the parent for overlay headers.
-      className={cn("sticky inset-x-0 top-20 z-40 w-full", className)}
+      className={cn("inset-x-0 z-40 w-full", className)}
       animate={{
         paddingTop: visible ? "1rem" : 0,
       }}
@@ -103,10 +103,11 @@ export const NavBody = ({ children, className, visible }: NavBodyProps) => {
         stiffness: 200,
         damping: 50,
       }}
+      style={{ backgroundColor: "#ffffff" }}
       className={cn(
-        "relative z-[60] mx-auto hidden min-h-0 min-w-0 max-w-7xl flex-row items-center justify-between self-center border-0 bg-transparent px-4 py-2 md:flex dark:bg-transparent",
+        "relative z-[60] mx-auto hidden min-h-0 min-w-0 max-w-7xl flex-row items-center justify-between self-center overflow-visible border-0 bg-white px-4 py-2 md:flex dark:bg-white",
         visible &&
-          "border border-neutral-200 bg-white/95 supports-backdrop-filter:backdrop-blur-sm dark:border-neutral-800 dark:bg-neutral-950/90",
+          "border border-neutral-200 supports-backdrop-filter:backdrop-blur-sm",
         className,
       )}
     >
@@ -166,10 +167,11 @@ export const MobileNav = ({ children, className, visible }: MobileNavProps) => {
         stiffness: 200,
         damping: 50,
       }}
+      style={{ backgroundColor: "#ffffff" }}
       className={cn(
-        "relative z-50 mx-auto flex w-full max-w-full flex-col items-center justify-between border-0 bg-transparent px-0 py-2 md:hidden dark:bg-transparent",
+        "relative z-50 mx-auto flex w-full max-w-full flex-col items-center justify-between overflow-visible border-0 bg-white px-0 py-2 md:hidden dark:bg-white",
         visible &&
-          "border border-neutral-200 bg-white/95 supports-backdrop-filter:backdrop-blur-sm dark:border-neutral-800 dark:bg-neutral-950/90",
+          "border border-neutral-200 supports-backdrop-filter:backdrop-blur-sm",
         className,
       )}
     >

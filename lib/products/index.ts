@@ -28,17 +28,20 @@ export function productPath(slug: ProductSlug): string {
 
 /** Maps mega-menu / bento labels to product detail routes. */
 export const productHrefByLabel: Partial<Record<string, string>> = {
-  "Gas Chlorinators": productPath("gas-chlorination"),
-  "Vacuum Operated Chlorinators": productPath("gas-chlorination"),
   "Cylinder Mounted Chlorinators": productPath("gas-chlorination"),
   "Wall Mounted Chlorinators": productPath("gas-chlorination"),
   "Floor Mounted Chlorinators": productPath("gas-chlorination"),
-  "Chlorine Vaporizers": productPath("chlorine-vaporizer"),
-  "Steam Heated Vaporizers": productPath("chlorine-vaporizer"),
-  "Electro Chlorination Systems": productPath("chlorine-dosing-system"),
-  "Chlorine Leak Detection": productPath("safety-system"),
-  "Leak Absorption Systems": productPath("safety-system"),
-  "Emergency Safety Kits": productPath("safety-system"),
+  "Steam Heated Vaporizer": productPath("chlorine-vaporizer"),
+  "Electrically Heated Vaporizer": productPath("chlorine-vaporizer"),
+  "Hot Water Heated Vaporizer": productPath("chlorine-vaporizer"),
+  "Chlorination System Accessories & Spares": "/#products",
+  "Chlorine Dioxide Generators": "/#products",
+  Electrochlorinators: productPath("chlorine-dosing-system"),
+  "Chlorine Leak Detector": productPath("safety-system"),
+  "Emergency Repair Kits": productPath("safety-system"),
+  "Chlorine Leak Absorption Systems": productPath("safety-system"),
+  "Protective Clothing": productPath("safety-system"),
+  "Gas Mask & Air Breathing Apparatus": productPath("safety-system"),
 };
 
 export function hrefForProductLabel(label: string): string {
