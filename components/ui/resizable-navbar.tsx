@@ -64,7 +64,7 @@ export const Navbar = ({ children, className }: NavbarProps) => {
   return (
     <motion.div
       // Pass `fixed inset-x-0 top-0 z-40` (etc.) from the parent for overlay headers.
-      className={cn("inset-x-0 z-40 w-full", className)}
+      className={cn("inset-x-0 z-40 w-full overflow-visible", className)}
       animate={{
         paddingTop: visible ? "1rem" : 0,
       }}
@@ -96,7 +96,7 @@ export const NavBody = ({ children, className, visible }: NavBodyProps) => {
           : "none",
         width: visible ? "min(56rem, calc(100vw - 2rem))" : "100%",
         borderRadius: visible ? "9999px" : "0px",
-        y: visible ? 20 : 0,
+        marginTop: visible ? 20 : 0,
       }}
       transition={{
         type: "spring",
@@ -160,7 +160,7 @@ export const MobileNav = ({ children, className, visible }: MobileNavProps) => {
         paddingRight: visible ? "12px" : "0px",
         paddingLeft: visible ? "12px" : "0px",
         borderRadius: visible ? "2rem" : "0px",
-        y: visible ? 20 : 0,
+        marginTop: visible ? 20 : 0,
       }}
       transition={{
         type: "spring",

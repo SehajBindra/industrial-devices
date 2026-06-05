@@ -150,7 +150,7 @@ export function SiteHeader() {
   const [mobileOpen, setMobileOpen] = useState(false);
 
   return (
-    <Navbar className="pointer-events-none fixed inset-x-0 top-0 z-50 mx-auto flex max-w-6xl justify-center px-4 sm:h-24 sm:px-2">
+    <Navbar className="pointer-events-none fixed inset-x-0 top-0 z-50 mx-auto flex max-w-6xl justify-center overflow-visible px-4 sm:px-2">
       <NavBody
         className={cn(
           "pointer-events-auto h-10 gap-2 overflow-visible px-5 sm:h-16 sm:gap-3 sm:px-6",
@@ -168,7 +168,7 @@ export function SiteHeader() {
 
         <NavigationMenu
           className="max-w-none min-w-0 flex-1 justify-end md:flex-1 md:justify-center"
-          viewportClassName="overflow-hidden rounded-2xl border border-neutral-200 bg-white text-neutral-950 shadow-[0_24px_70px_-12px_rgba(15,23,42,0.12)] ring-0"
+          viewportClassName="overflow-visible rounded-2xl border border-neutral-200 bg-white text-neutral-950 shadow-[0_24px_70px_-12px_rgba(15,23,42,0.12)] ring-0"
         >
           <NavigationMenuList className="hidden flex-none flex-wrap justify-center gap-0.5 sm:gap-1 md:flex">
             <NavigationMenuItem>
