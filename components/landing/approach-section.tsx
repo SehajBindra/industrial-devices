@@ -1,5 +1,4 @@
 import Image from "next/image";
-import Link from "next/link";
 
 import { SectionIntro } from "./section-intro";
 
@@ -92,7 +91,7 @@ export function ApproachSection() {
             ({ title, description, imageSrc, imageAlt }) => (
               <div
                 key={title}
-                className="group flex h-full flex-col overflow-hidden rounded-md border border-neutral-100 bg-neutral-50 text-left shadow-[0_18px_60px_rgba(15,23,42,0.04)] transition duration-300 hover:-translate-y-1 hover:border-neutral-200 hover:bg-white hover:shadow-[0_24px_80px_rgba(15,23,42,0.075)]"
+                className="group flex h-full flex-col overflow-hidden rounded-md border border-dashed border-neutral-200 bg-neutral-50 text-left shadow-[0_18px_60px_rgba(15,23,42,0.04)] transition duration-300 hover:-translate-y-1 hover:border-neutral-300 hover:bg-white hover:shadow-[0_24px_80px_rgba(15,23,42,0.075)]"
               >
                 <div className="relative aspect-[16/9] overflow-hidden">
                   <Image
@@ -112,19 +111,11 @@ export function ApproachSection() {
                     </h2>
                   </div>
                   <p
-                    className="text-muted-foreground mb-5 text-sm leading-normal"
+                    className="text-muted-foreground text-sm leading-normal"
                     title={description}
                   >
                     {description}
                   </p>
-                  <Link
-                    href="https://www.industrialdevices.in/"
-                    className="text-primary mt-auto text-sm hover:underline"
-                    rel="noopener noreferrer"
-                    target="_blank"
-                  >
-                    Learn more &gt;
-                  </Link>
                 </div>
               </div>
             ),
