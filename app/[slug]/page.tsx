@@ -1,9 +1,6 @@
 import type { Metadata } from "next";
 import { notFound } from "next/navigation";
-
 import { ProductPageContent } from "@/components/landing/product-page-content";
-import { FooterSection } from "@/components/landing/footer-section";
-import { SiteHeader } from "@/components/landing/site-header";
 import { getProductPage, productSlugs } from "@/lib/products";
 
 type PageProps = {
@@ -40,11 +37,7 @@ export default async function ProductSlugPage({ params }: PageProps) {
 
   return (
     <div className="min-h-full bg-neutral-100 bg-[radial-gradient(circle_at_center,rgba(15,23,42,0.055)_1px,transparent_1px)] bg-size-[20px_20px] text-neutral-950">
-      <SiteHeader />
-      <main>
-        <ProductPageContent product={product} />
-      </main>
-      <FooterSection />
+      <ProductPageContent product={product} />
     </div>
   );
 }
