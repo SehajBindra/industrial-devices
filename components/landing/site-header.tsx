@@ -62,6 +62,10 @@ const productMenuColumns: readonly ProductMenuColumn[] = [
         title: "Disinfection Systems",
         items: ["Chlorine Dioxide Generators", "Electrochlorinators"],
       },
+      {
+        title: "Dosing Systems",
+        items: ["Chemical Dosing Systems"],
+      },
     ],
   },
   {

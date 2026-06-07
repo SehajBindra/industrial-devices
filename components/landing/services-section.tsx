@@ -4,6 +4,7 @@ import { useReducedMotion } from "motion/react";
 
 import {
   AuditsAssessmentsBentoCard,
+  ChemicalDosingSystemBentoCard,
   ConsultingAdvisoryBentoCard,
   ElectroChlorinationBentoCard,
   IndustrialSafetyBentoCard,
@@ -19,6 +20,7 @@ const SERVICE_BENTO_SECTIONS = [
   { id: "audits-assessments", Component: AuditsAssessmentsBentoCard },
   { id: "software-it", Component: SoftwareItBentoCard },
   { id: "electro-chlorination", Component: ElectroChlorinationBentoCard },
+  { id: "chemical-dosing-system", Component: ChemicalDosingSystemBentoCard },
 ] as const;
 
 export function ServicesSection() {

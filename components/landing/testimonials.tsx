@@ -38,12 +38,11 @@ export default function WallOfLoveSection() {
         headingId={`${baseId}-heading`}
         align="start"
         description={
-          "Water treatment plants, process industries, power plants, refineries, and public utilities use our disinfection systems across demanding environments."
+          "Hear from plant managers, quality leaders, and operations teams who rely on our chlorination and disinfection systems."
         }
         title={
           <>
-            Industries We <span className="text-primary">Serve</span> Across{" "}
-            <span className="text-primary"> Multiple Sectors</span>.
+            Customer <span className="text-primary">testimonials</span>.
           </>
         }
       />

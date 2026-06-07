@@ -37,6 +37,7 @@ export const productHrefByLabel: Partial<Record<string, string>> = {
   "Chlorination System Accessories & Spares": "/#products",
   "Chlorine Dioxide Generators": "/#products",
   Electrochlorinators: productPath("chlorine-dosing-system"),
+  "Chemical Dosing Systems": "/#products",
   "Chlorine Leak Detector": productPath("safety-system"),
   "Emergency Repair Kits": productPath("safety-system"),
   "Chlorine Leak Absorption Systems": productPath("safety-system"),

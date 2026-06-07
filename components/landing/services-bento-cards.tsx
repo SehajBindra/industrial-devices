@@ -25,8 +25,9 @@ const PRODUCT_IMAGES = {
   chlorineVaporizer: "/client-list/chlorine-vaporizer-skid.webp",
   leakDetectionSafety: "/client-list/chlorine-heater-jb-skid.webp",
   vacuumRegulators: "/client-list/vacuum-regulator-dual-stream-skid.webp",
-  chlorineDioxide: "/client-list/gas-metering-skid.webp",
+  chlorineDioxide: "/client-list/chlorine-dioxide-generator.jpg",
   electroChlorination: "/client-list/gas-chlorinator-dual-pt.webp",
+  chemicalDosingSystem: "/client-list/chemical-dosing-system.jpg",
 } as const;
 
 function ProductBentoImage({
@@ -172,7 +173,7 @@ export function SoftwareItBentoCard(props: ServiceBentoCardProps) {
     <ServiceBentoCardShell
       {...props}
       description="Advanced ClO2 generators for superior disinfection, odour control, biofilm removal, and organic contamination treatment."
-      imageAlt="Gas metering skid for precision chlorination and dosing"
+      imageAlt="Chlorine dioxide generator with NaClO2 and HCl storage tanks, reactor, and control panel"
       imageSrc={PRODUCT_IMAGES.chlorineDioxide}
       title="Chlorine dioxide generators"
     />
@@ -188,6 +189,18 @@ export function ElectroChlorinationBentoCard(props: ServiceBentoCardProps) {
       imageAlt="Dual PT gas chlorinator skid for high-capacity chlorination"
       imageSrc={PRODUCT_IMAGES.electroChlorination}
       title="Electro chlorination systems"
+    />
+  );
+}
+
+export function ChemicalDosingSystemBentoCard(props: ServiceBentoCardProps) {
+  return (
+    <ServiceBentoCardShell
+      {...props}
+      description="Automated setup designed to precisely measure, mix, and dose measured quantities of chemicals into a process stream. It eliminates manual handling, preventing overdosing and underdosing, equipment damage, and reduced processing efficiency."
+      imageAlt="Chemical dosing system with storage tanks, pumps, and automated metering skid"
+      imageSrc={PRODUCT_IMAGES.chemicalDosingSystem}
+      title="Chemical dosing systems"
     />
   );
 }
