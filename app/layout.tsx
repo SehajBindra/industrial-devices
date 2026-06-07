@@ -1,6 +1,9 @@
 import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
+import { SiteHeader } from "@/components/landing/site-header";
+import { FooterSection } from "@/components/landing/footer-section";
+import CTASection from "@/components/ui/globe-feature-section";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -32,9 +35,16 @@ export default function RootLayout({
     <html
       lang="en"
       className={`${geistSans.variable} ${geistMono.variable} h-full scroll-smooth antialiased`}
+      suppressHydrationWarning
     >
-      <body className="min-h-full bg-neutral-100 bg-[radial-gradient(circle_at_center,rgba(15,23,42,0.055)_1px,transparent_1px)] bg-size-[20px_20px] max-w-6xl mx-auto flex flex-col">
+      <body
+        className="min-h-full bg-neutral-100 bg-[radial-gradient(circle_at_center,rgba(15,23,42,0.055)_1px,transparent_1px)] bg-size-[20px_20px] max-w-6xl mx-auto flex flex-col"
+        suppressHydrationWarning
+      >
+        <SiteHeader />
         {children}
+        <CTASection />
+        <FooterSection />
       </body>
     </html>
   );

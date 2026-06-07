@@ -12,57 +12,57 @@ const CORE_VALUES: readonly {
     title: "Drinking Water",
     description:
       "Safe water disinfection for municipal supply, reservoirs, pipelines, and treatment plants.",
-    imageSrc: "/applications/drinking-water.webp",
+    imageSrc: "/applications/drinking-water-experience.webp",
     imageAlt:
-      "Clean municipal water treatment channel with stainless dosing pipework",
+      "Children drinking clean water from a public fountain in a school courtyard",
   },
   {
     title: "Swimming Pools",
     description:
       "Controlled chlorination for commercial pools, clubs, hotels, and public aquatic facilities.",
-    imageSrc: "/applications/swimming-pools.webp",
+    imageSrc: "/applications/swimming-pools-experience.webp",
     imageAlt:
-      "Swimming pool chlorination dosing equipment beside clear pool water",
+      "Families swimming in clear water at a well-maintained public pool",
   },
   {
     title: "Wastewater Treatment",
     description:
       "Chlorination for STP, ETP, treated water reuse, and environmental discharge compliance.",
-    imageSrc: "/applications/wastewater-treatment.webp",
+    imageSrc: "/applications/wastewater-treatment-experience.webp",
     imageAlt:
-      "Modern wastewater treatment basin with railings and dosing pipework",
+      "Technician checking treated water reuse beside landscaped irrigation",
   },
   {
     title: "Cooling Tower Control",
     description:
       "Biofouling, algae, bacterial contamination, and process water control for cooling systems.",
-    imageSrc: "/applications/cooling-tower-control.webp",
+    imageSrc: "/applications/cooling-tower-control-experience.webp",
     imageAlt:
-      "Cooling tower water basin with controlled recirculation and stainless lines",
+      "Plant technician inspecting water quality beside an operating cooling tower",
   },
   {
     title: "Process Water",
     description:
       "Reliable disinfection for chemical, pharmaceutical, food processing, and industrial water loops.",
-    imageSrc: "/applications/process-water.webp",
+    imageSrc: "/applications/process-water-experience.webp",
     imageAlt:
-      "Clean industrial process room with stainless steel water loop piping",
+      "Operators checking a sanitized process water loop in a clean industrial room",
   },
   {
     title: "Odour & Bacteria Control",
     description:
       "Chlorine dioxide and chlorination systems for odour control, biofilm removal, and microbial reduction.",
-    imageSrc: "/applications/odour-bacteria-control.webp",
+    imageSrc: "/applications/odour-bacteria-control-experience.webp",
     imageAlt:
-      "Compact chemical dosing cabinet connected to sanitized pipework",
+      "Technician inspecting covered treatment infrastructure near a comfortable facility walkway",
   },
   {
     title: "Seawater & Brine",
     description:
       "Electro chlorination systems for on-site generation in seawater and brine applications.",
-    imageSrc: "/applications/seawater-brine.webp",
+    imageSrc: "/applications/seawater-brine-experience.webp",
     imageAlt:
-      "Electrochlorination skid beside seawater intake piping and calm water",
+      "Technician inspecting seawater intake piping at a coastal electrochlorination facility",
   },
 ];
 

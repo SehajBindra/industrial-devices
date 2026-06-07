@@ -1,3 +1,4 @@
+import { chlorineDioxideGeneratorProduct } from "@/lib/products/chlorine-dioxide-generator";
 import { chlorineDosingSystemProduct } from "@/lib/products/chlorine-dosing-system";
 import { chlorineVaporizerProduct } from "@/lib/products/chlorine-vaporizer";
 import { gasChlorinationProduct } from "@/lib/products/gas-chlorination";
@@ -7,6 +8,7 @@ import type { ProductPage } from "@/lib/products/types";
 export const productPages = {
   "gas-chlorination": gasChlorinationProduct,
   "chlorine-vaporizer": chlorineVaporizerProduct,
+  "chlorine-dioxide-generator": chlorineDioxideGeneratorProduct,
   "chlorine-dosing-system": chlorineDosingSystemProduct,
   "safety-system": safetySystemProduct,
 } as const satisfies Record<string, ProductPage>;
@@ -26,22 +28,60 @@ export function productPath(slug: ProductSlug): string {
   return `/${slug}`;
 }
 
+function productAnchor(slug: ProductSlug, anchor: string): string {
+  return `${productPath(slug)}#${anchor}`;
+}
+
 /** Maps mega-menu / bento labels to product detail routes. */
 export const productHrefByLabel: Partial<Record<string, string>> = {
-  "Cylinder Mounted Chlorinators": productPath("gas-chlorination"),
-  "Wall Mounted Chlorinators": productPath("gas-chlorination"),
-  "Floor Mounted Chlorinators": productPath("gas-chlorination"),
-  "Steam Heated Vaporizer": productPath("chlorine-vaporizer"),
-  "Electrically Heated Vaporizer": productPath("chlorine-vaporizer"),
-  "Hot Water Heated Vaporizer": productPath("chlorine-vaporizer"),
+  "Cylinder Mounted Chlorinators": productAnchor(
+    "gas-chlorination",
+    "cylinder-tonner",
+  ),
+  "Wall Mounted Chlorinators": productAnchor(
+    "gas-chlorination",
+    "wall-mounted",
+  ),
+  "Floor Mounted Chlorinators": productAnchor(
+    "gas-chlorination",
+    "floor-mounted",
+  ),
+  "Steam Heated Vaporizer": productAnchor(
+    "chlorine-vaporizer",
+    "steam-heated",
+  ),
+  "Electrically Heated Vaporizer": productAnchor(
+    "chlorine-vaporizer",
+    "electrically-heated",
+  ),
+  "Hot Water Heated Vaporizer": productAnchor(
+    "chlorine-vaporizer",
+    "hot-water-heated",
+  ),
   "Chlorination System Accessories & Spares": "/#products",
-  "Chlorine Dioxide Generators": "/#products",
-  Electrochlorinators: productPath("chlorine-dosing-system"),
-  "Chlorine Leak Detector": productPath("safety-system"),
-  "Emergency Repair Kits": productPath("safety-system"),
-  "Chlorine Leak Absorption Systems": productPath("safety-system"),
-  "Protective Clothing": productPath("safety-system"),
-  "Gas Mask & Air Breathing Apparatus": productPath("safety-system"),
+  "Chlorine Dioxide Generators": productAnchor(
+    "chlorine-dioxide-generator",
+    "chlorine-dioxide-generator",
+  ),
+  Electrochlorinators: productAnchor(
+    "chlorine-dosing-system",
+    "electrochlorinator",
+  ),
+  "Chemical Dosing Systems": "/#products",
+  "Chlorine Leak Detector": productAnchor("safety-system", "leak-detector"),
+  "Emergency Repair Kits": productAnchor(
+    "safety-system",
+    "emergency-repair-kit",
+  ),
+  "Chlorine Leak Absorption Systems": productAnchor(
+    "safety-system",
+    "leak-absorption",
+  ),
+  "Protective Clothing": productAnchor("safety-system", "protective-clothing"),
+  "Gas Mask & Air Breathing Apparatus": productAnchor(
+    "safety-system",
+    "canister-gas-mask",
+  ),
 };
 
 export function hrefForProductLabel(label: string): string {

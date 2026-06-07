@@ -1,11 +1,5 @@
-import { parseProductSpec } from "@/lib/products/parse-spec";
 import { productImage } from "@/lib/products/site-images";
 import type { ProductPage } from "@/lib/products/types";
-
-const electricBullets = [
-  "For capacities from 50 kgs/hr to 1000 kgs/hr.",
-  "Suitable for – Cooling Water & Raw Water gas chlorination in power plants, bigger capacity Water treatment and sewage treatment plants.",
-] as const;
 
 export const chlorineVaporizerProduct = {
   slug: "chlorine-vaporizer",
@@ -13,7 +7,7 @@ export const chlorineVaporizerProduct = {
     title:
       "Chlorine Vaporizer | Chlorine Evaporator | Chlorine doser in India | Delhi",
     description:
-      "Chlorine vaporizer and evaporator manufacturers in India. Electrically heated and steam heated vaporizers for high-capacity gas chlorination in power plants, water treatment, and pulp mills.",
+      "Chlorine vaporizer and evaporator manufacturers in India. Electrically heated, steam heated, and hot water heated vaporizers for high-capacity gas chlorination in power plants, water treatment, and pulp mills.",
   },
   seoHeadings: [
     { level: 1, text: "Chlorine Vaporizer Manufacturers in India" },
@@ -26,8 +20,6 @@ export const chlorineVaporizerProduct = {
   sectionHeadingId: "chlorine-vaporizer-models",
   sectionTitle: "Chlorine vaporizer",
   sectionTitleHighlight: "models",
-  intro:
-    "As per International Specification it is not safe to manifold more than 5 tonners together. Hence to meet the requirement of more than 50 Kg/Hr we recommend an electrically heated or steam heated evaporator. Using these evaporators we can draw liquid chlorine from chlorine ton containers and convert it into gas chlorine.",
   models: [
     {
       id: "electrically-heated",
@@ -35,11 +27,23 @@ export const chlorineVaporizerProduct = {
       imageSrc: productImage("gas-chlorination-system-with-vaporiser.jpg"),
       imageAlt: "Electrically heated chlorine vaporizer",
       descriptionPoints: [
-        "The evaporator or vaporizer is used where chlorine requirement is large in quantity. We offer electrically heated evaporator up to a capacity of 1000 kg/hr.",
-        "The material used for the evaporator is of very good quality and is highly resistant to chlorine corrosion. The design of the evaporator and its accessories ensure safe and accurate operation.",
-        "The evaporator is designed and fabricated to meet the standards of The Chlorine Institute Inc. The electrically heated evaporator incorporates inter locks for level and temperature controls.",
+        "**High-Capacity Chlorine Vaporization for Reliable & Safe Operations**",
+        "INDEVICE Electrically Heated Vaporizers convert liquid chlorine into dry gas for large-volume demand. Engineered for high-capacity chlorination with precise performance and maximum safety.",
+        "Available up to 1000 kg/hr — ideal for industrial and municipal applications where uninterrupted chlorine supply is critical.",
+        "Manufactured from high-grade, chlorine-resistant materials to withstand corrosive environments and ensure long service life.",
+        "Designed per The Chlorine Institute Inc. standards with advanced safety features and intelligent controls for operational efficiency.",
+        "**Advanced Safety & Control Features**",
+        "Integrated interlocks for level and temperature control protect against abnormal conditions. Automated safety mechanisms maintain consistent vaporization while minimizing operational risks.",
+        "The preferred choice for facilities requiring continuous, efficient chlorine gas generation at higher capacities.",
       ],
-      specs: electricBullets.map(parseProductSpec),
+      specs: [
+        { label: "Capacity", value: "50 kg/hr to 1000 kg/hr" },
+        {
+          label: "Applications",
+          value:
+            "Cooling water gas chlorination in power plants, raw water chlorination, large water treatment plants, and high-capacity sewage treatment plants (STP).",
+        },
+      ],
     },
     {
       id: "steam-heated",
@@ -47,16 +51,32 @@ export const chlorineVaporizerProduct = {
       imageSrc: productImage("filter.jpg"),
       imageAlt: "Steam heated chlorine vaporizer",
       descriptionPoints: [
-        "Chlorine Vaporizer can also be powered by steam. Steam is abundantly available in Paper & Pulp Mills, where steam is used to evaporate liquid Chlorine to form gas Chlorine.",
-        "A temperature controller opens or closes a steam valve, thus maintaining a constant temperature in the steam chamber.",
+        "**Efficient & Reliable Chlorine Vaporization for High-Capacity Applications**",
+        "INDEVICE Steam Heated Vaporizers convert liquid chlorine into dry gas using steam as the heating medium. Precise temperature control ensures stable, uninterrupted chlorine gas generation.",
+        "ASME-compliant construction ensures maximum safety, structural integrity, and long-term reliability in demanding industrial environments.",
+        "Custom-designed for specific chlorine flow rates, heating requirements, and installation layouts. Advanced heat transfer maximizes efficiency while minimizing energy consumption.",
+        "Also available for other gases such as Sulphur Dioxide (SO₂) and Ammonia.",
+        "**Material of Construction Options**",
+        "**SS 304**",
+        "**SS 316**",
+        "**Carbon Steel**",
+        "**Quality Assurance & Documentation**",
+        "Every vaporizer is inspected and tested prior to dispatch with complete documentation including hydro test reports, material test certificates, inspection records, and warranty documentation.",
+        "Ideal for continuous, efficient chlorine gas supply in large-scale industrial applications.",
       ],
-      specs: [
-        {
-          label: "Applications",
-          value:
-            "Paper and pulp mills and other facilities with abundant process steam.",
-        },
+      specs: [],
+    },
+    {
+      id: "hot-water-heated",
+      heading: "Hot Water Heated Vaporizer",
+      imageSrc: "/client-list/chlorine-heater-jb-skid.webp",
+      imageAlt: "Hot water heated chlorine vaporizer",
+      descriptionPoints: [
+        "**Efficient & Controlled Chlorine Vaporization for High-Demand Applications**",
+        "INDEVICE Hot Water Heated Vaporizers convert liquid chlorine into dry gas using hot water as the heating medium. Uniform heat transfer ensures stable vaporization with enhanced safety.",
+        "Consistent operating temperature delivers uninterrupted chlorine gas flow while minimizing risks from temperature fluctuations. Ideal for demanding industrial and municipal water treatment processes.",
       ],
+      specs: [],
     },
   ],
 } satisfies ProductPage;
