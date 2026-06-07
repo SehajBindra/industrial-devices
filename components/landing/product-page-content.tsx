@@ -76,7 +76,7 @@ export function ProductPageContent({ product }: ProductPageContentProps) {
             ) => (
               <article
                 key={id}
-                className="grid grid-cols-1 items-start gap-8 rounded-sm  bg-neutral-50/80 p-6 sm:p-8 lg:grid-cols-2 lg:gap-10"
+                className="grid grid-cols-1 items-start gap-8 rounded-sm lg:grid-cols-2 lg:gap-20"
               >
                 <div className={index % 2 === 1 ? "lg:order-2" : undefined}>
                   <div className="overflow-hidden rounded-md border border-dashed border-neutral-300 bg-white p-2 shadow-2xl">
@@ -86,6 +86,8 @@ export function ProductPageContent({ product }: ProductPageContentProps) {
                       width={1200}
                       height={900}
                       quality={90}
+                      priority={index === 0}
+                      loading={index === 0 ? "eager" : "lazy"}
                       sizes="(max-width: 1024px) 100vw, 50vw"
                       className="h-auto w-full rounded-md object-cover"
                     />

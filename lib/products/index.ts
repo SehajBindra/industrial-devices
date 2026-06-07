@@ -1,3 +1,4 @@
+import { chlorineDioxideGeneratorProduct } from "@/lib/products/chlorine-dioxide-generator";
 import { chlorineDosingSystemProduct } from "@/lib/products/chlorine-dosing-system";
 import { chlorineVaporizerProduct } from "@/lib/products/chlorine-vaporizer";
 import { gasChlorinationProduct } from "@/lib/products/gas-chlorination";
@@ -7,6 +8,7 @@ import type { ProductPage } from "@/lib/products/types";
 export const productPages = {
   "gas-chlorination": gasChlorinationProduct,
   "chlorine-vaporizer": chlorineVaporizerProduct,
+  "chlorine-dioxide-generator": chlorineDioxideGeneratorProduct,
   "chlorine-dosing-system": chlorineDosingSystemProduct,
   "safety-system": safetySystemProduct,
 } as const satisfies Record<string, ProductPage>;
@@ -35,7 +37,7 @@ export const productHrefByLabel: Partial<Record<string, string>> = {
   "Electrically Heated Vaporizer": productPath("chlorine-vaporizer"),
   "Hot Water Heated Vaporizer": productPath("chlorine-vaporizer"),
   "Chlorination System Accessories & Spares": "/#products",
-  "Chlorine Dioxide Generators": "/#products",
+  "Chlorine Dioxide Generators": productPath("chlorine-dioxide-generator"),
   Electrochlorinators: productPath("chlorine-dosing-system"),
   "Chemical Dosing Systems": "/#products",
   "Chlorine Leak Detector": productPath("safety-system"),
