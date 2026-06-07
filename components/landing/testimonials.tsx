@@ -84,13 +84,13 @@ export default function WallOfLoveSection() {
                 </div>
 
                 <div className="mt-8 flex items-center gap-3">
-                  <div className="relative size-10 shrink-0 overflow-hidden rounded-xl border border-neutral-200/60  bg-neutral-100">
+                  <div className="relative size-10 shrink-0 overflow-hidden rounded-xl border border-neutral-200/60 bg-white p-1">
                     <Image
                       src={image}
                       alt=""
                       width={40}
                       height={40}
-                      className="size-full object-cover"
+                      className="size-full object-contain"
                     />
                   </div>
                   <div className="min-w-0">
