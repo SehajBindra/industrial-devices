@@ -2,6 +2,7 @@ import Image from "next/image";
 import Link from "next/link";
 import { ArrowLeft } from "lucide-react";
 
+import { HashScroll } from "@/components/landing/hash-scroll";
 import { SectionIntro } from "@/components/landing/section-intro";
 import { splitDescriptionPoints } from "@/lib/products/split-description-points";
 import type { ProductPage, ProductSpec } from "@/lib/products/types";
@@ -54,6 +55,7 @@ export function ProductPageContent({ product }: ProductPageContentProps) {
 
   return (
     <section className="border-b border-neutral-200 bg-white pt-28 pb-16 sm:pt-32 sm:pb-20">
+      <HashScroll />
       <div className="mx-auto max-w-6xl px-4 sm:px-6">
         <Link
           href="/#products"
@@ -96,7 +98,8 @@ export function ProductPageContent({ product }: ProductPageContentProps) {
             ) => (
               <article
                 key={id}
-                className="grid grid-cols-1 items-start gap-8 rounded-sm lg:grid-cols-2 lg:gap-"
+                id={id}
+                className="scroll-mt-28 grid grid-cols-1 items-start gap-8 rounded-sm sm:scroll-mt-32 lg:grid-cols-2 lg:gap-"
               >
                 <div className={index % 2 === 1 ? "lg:order-2" : undefined}>
                   <div className="overflow-hidden rounded-md border border-dashed border-neutral-300 bg-white p-2 shadow-2xl">
