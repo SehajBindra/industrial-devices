@@ -26,7 +26,7 @@ const PRODUCT_IMAGES = {
   leakDetectionSafety: "/client-list/chlorine-heater-jb-skid.webp",
   vacuumRegulators: "/client-list/vacuum-regulator-dual-stream-skid.webp",
   chlorineDioxide: "/client-list/chlorine-dioxide-generator.jpg",
-  electroChlorination: "/client-list/gas-chlorinator-dual-pt.webp",
+  electroChlorination: "/product/electrochlorinator.JPG",
   chemicalDosingSystem: "/client-list/chemical-dosing-system.jpg",
 } as const;
 
@@ -186,7 +186,7 @@ export function ElectroChlorinationBentoCard(props: ServiceBentoCardProps) {
       {...props}
       description="On-site chlorine generation for seawater and brine applications, with skid-mounted capacities from 5 g/hr to 500 kg/hr."
       href="/chlorine-dosing-system"
-      imageAlt="Dual PT gas chlorinator skid for high-capacity chlorination"
+      imageAlt="Electrochlorination system with dual electrolyzers, rectifier, and process piping"
       imageSrc={PRODUCT_IMAGES.electroChlorination}
       title="Electro chlorination systems"
     />
