@@ -3,7 +3,27 @@ import Link from "next/link";
 import { ArrowLeft } from "lucide-react";
 
 import { SectionIntro } from "@/components/landing/section-intro";
+import { splitDescriptionPoints } from "@/lib/products/split-description-points";
 import type { ProductPage, ProductSpec } from "@/lib/products/types";
+
+function renderDescriptionPoint(point: string) {
+  const parts = point.split(/(\*\*[^*]+\*\*)/g);
+
+  return parts.map((part, index) => {
+    if (part.startsWith("**") && part.endsWith("**")) {
+      return (
+        <strong
+          key={index}
+          className="font-semibold text-neutral-800"
+        >
+          {part.slice(2, -2)}
+        </strong>
+      );
+    }
+
+    return part;
+  });
+}
 
 function ModelSpecCard({ label, value }: ProductSpec) {
   return (
@@ -76,7 +96,7 @@ export function ProductPageContent({ product }: ProductPageContentProps) {
             ) => (
               <article
                 key={id}
-                className="grid grid-cols-1 items-start gap-8 rounded-sm lg:grid-cols-2 lg:gap-20"
+                className="grid grid-cols-1 items-start gap-8 rounded-sm lg:grid-cols-2 lg:gap-"
               >
                 <div className={index % 2 === 1 ? "lg:order-2" : undefined}>
                   <div className="overflow-hidden rounded-md border border-dashed border-neutral-300 bg-white p-2 shadow-2xl">
@@ -99,9 +119,13 @@ export function ProductPageContent({ product }: ProductPageContentProps) {
                     {heading}
                   </h2>
                   <ul className="mt-4 list-disc space-y-2 pl-5 text-sm leading-relaxed text-neutral-600 sm:text-base">
-                    {descriptionPoints.map((point) => (
-                      <li key={point}>{point}</li>
-                    ))}
+                    {splitDescriptionPoints(descriptionPoints).map(
+                      (point, pointIndex) => (
+                        <li key={`${id}-${pointIndex}`}>
+                          {renderDescriptionPoint(point)}
+                        </li>
+                      ),
+                    )}
                   </ul>
                   {specs.length > 0 ? (
                     <ul className="mt-10 grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-1">
