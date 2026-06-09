@@ -28,9 +28,6 @@ const PRODUCT_IMAGES = {
   chlorineDioxide: "/client-list/chlorine-dioxide-generator.jpg",
   electroChlorination: "/product/electrochlorinator-bg-white.png",
   chemicalDosingSystem: "/client-list/chemical-dosing-system.jpg",
-  chlorineDioxide: "/client-list/chlorine-dioxide-generator.jpg",
-  electroChlorination: "/product/electrochlorinator.JPG",
-  chemicalDosingSystem: "/client-list/chemical-dosing-system.jpg",
 } as const;
 
 function ProductBentoImage({
