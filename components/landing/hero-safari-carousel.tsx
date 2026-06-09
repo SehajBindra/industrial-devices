@@ -11,39 +11,43 @@ const CAROUSEL_INTERVAL_MS = 5000;
 
 export const heroCarouselSlides = [
   {
-    src: "/hero-carousel/banner1.jpg",
-    alt: "Chlorination systems by Industrial Devices",
+    src: "/hero-carousel/drinking-water-fountain-application.jpg",
+    alt: "Clean drinking water application",
   },
   {
-    src: "/hero-carousel/banner2.jpg",
-    alt: "Chlorination manufacturing company in India",
+    src: "/hero-carousel/thermal-power-application.jpg",
+    alt: "Thermal power plant cooling tower application",
   },
   {
-    src: "/hero-carousel/banner3.jpg",
-    alt: "Chlorination supply company in India",
+    src: "/hero-carousel/wastewater-treatment-application.jpg",
+    alt: "Wastewater treatment plant application",
   },
   {
-    src: "/hero-carousel/banner4.jpg",
-    alt: "Chlorination system manufacturers in India",
+    src: "/hero-carousel/swimming-pool-application.jpg",
+    alt: "Swimming pool water treatment application",
   },
   {
-    src: "/hero-carousel/banner5.jpg",
-    alt: "Industrial chlorination systems",
+    src: "/hero-carousel/process-water-application.jpg",
+    alt: "Industrial process water piping application",
   },
 ] as const;
 
 export function HeroSafariCarousel() {
   const [activeIndex, setActiveIndex] = useState(0);
-  const [mounted, setMounted] = useState(false);
+  const [canAnimate, setCanAnimate] = useState(false);
   const reduceMotion = useReducedMotion() ?? false;
   const slide = heroCarouselSlides[activeIndex];
 
   useEffect(() => {
-    setMounted(true);
+    const frameId = window.requestAnimationFrame(() => {
+      setCanAnimate(true);
+    });
+
+    return () => window.cancelAnimationFrame(frameId);
   }, []);
 
   useEffect(() => {
-    if (!mounted || reduceMotion) {
+    if (!canAnimate || reduceMotion) {
       return;
     }
 
@@ -52,12 +56,12 @@ export function HeroSafariCarousel() {
     }, CAROUSEL_INTERVAL_MS);
 
     return () => window.clearInterval(intervalId);
-  }, [mounted, reduceMotion]);
+  }, [canAnimate, reduceMotion]);
 
   return (
     <Safari url="www.industrialdevices.in">
       <div className="relative size-full bg-neutral-950">
-        {mounted && !reduceMotion ? (
+        {canAnimate && !reduceMotion ? (
           <AnimatePresence mode="sync" initial={false}>
             <motion.div
               key={slide.src}
