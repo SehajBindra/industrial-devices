@@ -22,9 +22,12 @@ const ease = [0.22, 1, 0.36, 1] as const;
 
 const PRODUCT_IMAGES = {
   gasChlorinator: "/client-list/gas-chlorinator-cw-skid.webp",
-  chlorineVaporizer: "/client-list/chlorine-vaporizer-skid.webp",
+  chlorineVaporizer: "/product/vacuum-chlorinator-bg-white.png",
   leakDetectionSafety: "/client-list/chlorine-heater-jb-skid.webp",
   vacuumRegulators: "/client-list/vacuum-regulator-dual-stream-skid.webp",
+  chlorineDioxide: "/client-list/chlorine-dioxide-generator.jpg",
+  electroChlorination: "/product/electrochlorinator-bg-white.png",
+  chemicalDosingSystem: "/client-list/chemical-dosing-system.jpg",
   chlorineDioxide: "/client-list/chlorine-dioxide-generator.jpg",
   electroChlorination: "/product/electrochlorinator.JPG",
   chemicalDosingSystem: "/client-list/chemical-dosing-system.jpg",
@@ -132,7 +135,7 @@ export function IndustrialSafetyBentoCard(props: ServiceBentoCardProps) {
       {...props}
       description="Heavy-duty vaporizers that safely convert liquid chlorine into gas for medium and high-capacity chlorination systems."
       href="/chlorine-vaporizer"
-      imageAlt="Chlorine vaporizer skid with gas feed piping"
+      imageAlt="Vacuum chlorinator units with control panel and flowmeter by Industrial Devices"
       imageSrc={PRODUCT_IMAGES.chlorineVaporizer}
       title="Chlorine vaporizers"
     />
