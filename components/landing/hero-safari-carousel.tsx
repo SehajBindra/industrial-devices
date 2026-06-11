@@ -54,7 +54,7 @@ export function HeroSafariCarousel() {
     <Safari url="www.industrialdevices.in">
       <div className="relative size-full bg-neutral-950">
         {reduceMotion ? (
-          <div className="absolute inset-0">
+          <div className="pointer-events-none absolute inset-0">
             <Image
               src={activeSlide.src}
               alt={activeSlide.alt}
@@ -76,7 +76,7 @@ export function HeroSafariCarousel() {
                 duration: FADE_DURATION_S,
                 ease: "easeInOut",
               }}
-              className="absolute inset-0"
+              className="pointer-events-none absolute inset-0"
               style={{ zIndex: index === activeIndex ? 2 : 1 }}
             >
               <Image
@@ -93,25 +93,35 @@ export function HeroSafariCarousel() {
         )}
 
         <div
-          className="pointer-events-none absolute inset-x-0 bottom-0 h-24 bg-linear-to-t from-black/35 to-transparent"
+          className="pointer-events-none absolute inset-x-0 bottom-0 z-10 h-24 bg-linear-to-t from-black/45 to-transparent"
           aria-hidden
         />
 
-        <div className="absolute inset-x-0 bottom-4 flex items-center justify-center gap-2">
+        <div
+          role="tablist"
+          aria-label="Carousel slides"
+          className="pointer-events-auto absolute inset-x-0 bottom-4 z-20 flex items-center justify-center gap-2.5"
+        >
           {heroCarouselSlides.map((slide, index) => (
             <button
               key={slide.src}
               type="button"
-              aria-label={`Show slide ${index + 1}`}
-              aria-current={index === activeIndex ? "true" : undefined}
+              role="tab"
+              aria-label={`Show slide ${index + 1}: ${slide.alt}`}
+              aria-selected={index === activeIndex}
               onClick={() => setActiveIndex(index)}
-              className={cn(
-                "pointer-events-auto size-2 rounded-full transition-all duration-300",
-                index === activeIndex
-                  ? "scale-110 bg-sky-300"
-                  : "bg-sky-300/60 hover:bg-sky-300/80",
-              )}
-            />
+              className="group flex size-4 cursor-pointer items-center justify-center rounded-full"
+            >
+              <span
+                aria-hidden
+                className={cn(
+                  "size-2.5 rounded-full shadow-sm ring-1 ring-black/25 transition-all duration-300",
+                  index === activeIndex
+                    ? "scale-125 bg-white ring-white/80"
+                    : "bg-white/55 group-hover:bg-white/80",
+                )}
+              />
+            </button>
           ))}
         </div>
       </div>
