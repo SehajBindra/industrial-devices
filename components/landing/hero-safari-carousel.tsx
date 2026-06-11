@@ -2,12 +2,13 @@
 
 import Image from "next/image";
 import { useEffect, useState } from "react";
-import { AnimatePresence, motion, useReducedMotion } from "motion/react";
+import { motion, useReducedMotion } from "motion/react";
 
 import { Safari } from "@/components/ui/safari";
 import { cn } from "@/lib/utils";
 
 const CAROUSEL_INTERVAL_MS = 5000;
+const FADE_DURATION_S = 1.25;
 
 export const heroCarouselSlides = [
   {
@@ -34,20 +35,11 @@ export const heroCarouselSlides = [
 
 export function HeroSafariCarousel() {
   const [activeIndex, setActiveIndex] = useState(0);
-  const [canAnimate, setCanAnimate] = useState(false);
   const reduceMotion = useReducedMotion() ?? false;
-  const slide = heroCarouselSlides[activeIndex];
+  const activeSlide = heroCarouselSlides[activeIndex];
 
   useEffect(() => {
-    const frameId = window.requestAnimationFrame(() => {
-      setCanAnimate(true);
-    });
-
-    return () => window.cancelAnimationFrame(frameId);
-  }, []);
-
-  useEffect(() => {
-    if (!canAnimate || reduceMotion) {
+    if (reduceMotion) {
       return;
     }
 
@@ -56,37 +48,16 @@ export function HeroSafariCarousel() {
     }, CAROUSEL_INTERVAL_MS);
 
     return () => window.clearInterval(intervalId);
-  }, [canAnimate, reduceMotion]);
+  }, [reduceMotion]);
 
   return (
     <Safari url="www.industrialdevices.in">
       <div className="relative size-full bg-neutral-950">
-        {canAnimate && !reduceMotion ? (
-          <AnimatePresence mode="sync" initial={false}>
-            <motion.div
-              key={slide.src}
-              initial={{ opacity: 0 }}
-              animate={{ opacity: 1 }}
-              exit={{ opacity: 0 }}
-              transition={{ duration: 0.65, ease: "easeInOut" }}
-              className="absolute inset-0"
-            >
-              <Image
-                src={slide.src}
-                alt={slide.alt}
-                fill
-                priority={activeIndex === 0}
-                quality={90}
-                sizes="(max-width: 768px) 100vw, 1200px"
-                className="object-cover object-center"
-              />
-            </motion.div>
-          </AnimatePresence>
-        ) : (
+        {reduceMotion ? (
           <div className="absolute inset-0">
             <Image
-              src={slide.src}
-              alt={slide.alt}
+              src={activeSlide.src}
+              alt={activeSlide.alt}
               fill
               priority
               quality={90}
@@ -94,6 +65,31 @@ export function HeroSafariCarousel() {
               className="object-cover object-center"
             />
           </div>
+        ) : (
+          heroCarouselSlides.map((slide, index) => (
+            <motion.div
+              key={slide.src}
+              aria-hidden={index !== activeIndex}
+              initial={false}
+              animate={{ opacity: index === activeIndex ? 1 : 0 }}
+              transition={{
+                duration: FADE_DURATION_S,
+                ease: "easeInOut",
+              }}
+              className="absolute inset-0"
+              style={{ zIndex: index === activeIndex ? 2 : 1 }}
+            >
+              <Image
+                src={slide.src}
+                alt={slide.alt}
+                fill
+                priority={index === 0}
+                quality={90}
+                sizes="(max-width: 768px) 100vw, 1200px"
+                className="object-cover object-center"
+              />
+            </motion.div>
+          ))
         )}
 
         <div
