@@ -12,6 +12,13 @@ export function FooterSection() {
       <div className="flex flex-col gap-10 p-0 mt-10 md:flex-row md:items-start md:justify-between md:gap-12">
         <div className="mx-0 flex max-w-xs flex-col items-start justify-start">
           <div className="flex items-center gap-2">
+            <Image
+              src="/product/IDI LOGO.JPG"
+              alt="Industrial Devices (India) logo"
+              width={32}
+              height={32}
+              className="size-10 shrink-0 object-contain"
+            />
             <h3 className="text-sm font-semibold text-primary">
               Industrial Devices (India)
             </h3>

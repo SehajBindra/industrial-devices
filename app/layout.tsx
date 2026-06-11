@@ -19,6 +19,10 @@ export const metadata: Metadata = {
   title: "Industrial Devices (India): Gas Chlorination & Water Treatment",
   description:
     "Manufacturer and supplier of gas chlorination systems, chlorine dosing equipment, safety systems, chlorine dioxide generators, and water treatment solutions.",
+  icons: {
+    icon: "/product/IDI LOGO.JPG",
+    apple: "/product/IDI LOGO.JPG",
+  },
   openGraph: {
     title: "Industrial Devices (India) Pvt. Ltd.",
     description:
