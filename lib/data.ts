@@ -107,7 +107,7 @@ export const siteConfig = {
         { id: "home", title: "Home", url: "/" },
         { id: "products", title: "Products", url: "/#products" },
         { id: "applications", title: "Applications", url: "/#applications" },
-        { id: "clientele", title: "Industries", url: "/#clients" },
+        { id: "clientele", title: "Customer Testimonial", url: "/#clients" },
         { id: "contact", title: "Contact", url: "/#contact" },
       ],
     },
