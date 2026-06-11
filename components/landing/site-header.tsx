@@ -196,7 +196,7 @@ export function SiteHeader() {
             </NavigationMenuItem>
             <NavigationMenuItem>
               <NavigationMenuLink asChild className={navLinkClass}>
-                <Link href="/#clients">Customer Testimonial</Link>
+                <Link href="/#clients">Customer Testimonials</Link>
               </NavigationMenuLink>
             </NavigationMenuItem>
             <NavigationMenuItem>
@@ -281,7 +281,7 @@ export function SiteHeader() {
           {(
             [
               ["/#applications", "Applications"],
-              ["/#clients", "Customer Testimonial"],
+              ["/#clients", "Customer Testimonials"],
               ["/#contact", "Contact"],
             ] as const
           ).map(([href, label]) => (
