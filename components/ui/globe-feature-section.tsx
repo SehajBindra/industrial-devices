@@ -21,8 +21,8 @@ export default function CTASection() {
             className="w-full"
           >
             <h2 className="text-3xl font-normal text-gray-900 dark:text-white">
-              <span className="text-primary">Industrial Devices (India)</span>
-              , complete chlorination systems from New Delhi.
+              World-Class Chlorination & Disinfection Systems – Crafted in
+              India for Global Applications
             </h2>
           </BlurFade>
           <BlurFade
@@ -35,9 +35,9 @@ export default function CTASection() {
           >
             <p>
               We design, manufacture, supply, install, and commission gas
-              chlorinators, chlorine dioxide generators, vaporizers, leak
-              detection systems, vacuum regulators, dosing accessories, and
-              complete chlorination packages.
+              chlorinators, chlorine vaporizers, leak detection systems,
+              chlorine dioxide generators, electrochlorinators, dosing systems,
+              and complete chlorination packages system.
             </p>
           </BlurFade>
           <BlurFade

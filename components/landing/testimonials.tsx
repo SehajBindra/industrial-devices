@@ -60,8 +60,8 @@ export default function WallOfLoveSection() {
                   cross ? "bg-[#F4F4F4]" : "bg-white",
                 )}
               >
-                <div className="flex h-9 items-center">
-                  <span className="text-lg font-semibold tracking-tight text-neutral-900">
+                <div className="flex min-w-0 items-center">
+                  <span className="text-nowrap text-base font-semibold tracking-tight text-neutral-900 sm:text-lg">
                     {wordmarkFromRole(role)}
                   </span>
                 </div>
@@ -77,14 +77,14 @@ export default function WallOfLoveSection() {
                     &ldquo;
                   </span>
                   <blockquote className="relative z-1">
-                    <p className="text-lg leading-relaxed tracking-tight text-neutral-900">
+                    <p className="text-sm leading-relaxed tracking-tight text-neutral-900">
                       {text}
                     </p>
                   </blockquote>
                 </div>
 
                 <div className="mt-8 flex items-center gap-3">
-                  <div className="relative size-10 shrink-0 overflow-hidden rounded-xl border border-neutral-200/60 bg-white p-1">
+                  <div className="relative size-12 shrink-0 overflow-hidden rounded-xl border border-neutral-200/60 bg-white p-1">
                     <Image
                       src={image}
                       alt=""

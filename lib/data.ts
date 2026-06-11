@@ -39,7 +39,7 @@ export const testimonials: SiteTestimonial[] = [
   {
     id: "doosan-power-systems",
     name: "D G Shin",
-    role: "General Manager, Doosan Power Systems India Pvt. Ltd.",
+    role: "General Manager, Doosan Power Systems India Pvt Ltd.",
     text: "Industrial Devices (India) Pvt. Ltd. successfully carried out commissioning of the chlorination systems for the UPRVUNL 2x660 MW Obra-C Thermal Power Extension Project. Functional performance tests were conducted, and the systems were found to be operating satisfactorily and meeting the intended design parameters.",
     image: "/testimonials/doosan.png",
   },
@@ -136,7 +136,7 @@ export const siteConfig = {
         },
         {
           id: "accessories",
-          title: "Vacuum regulators",
+          title: "Chlorination System Accessories",
           url: "/#products",
         },
         {
