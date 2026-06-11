@@ -17,13 +17,13 @@ export function FooterSection() {
               alt="Industrial Devices (India) logo"
               width={32}
               height={32}
-              className="size-10 shrink-0 object-contain"
+              className="size-10 shrink-0 object-cover"
             />
-            <h3 className="text-sm font-semibold text-primary">
-              Industrial Devices (India)
+            <h3 className="text-base font-semibold text-primary">
+              Industrial Devices
             </h3>
           </div>
-          <p className="mt-3 line-clamp-2 font-medium tracking-tight text-muted-foreground">
+          <p className="mt-3 text-sm font-medium tracking-tight text-muted-foreground">
             {siteConfig.hero.description}
           </p>
           <div className="flex items-center mt-4 gap-3">
