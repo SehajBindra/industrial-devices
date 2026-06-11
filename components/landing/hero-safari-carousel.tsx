@@ -14,22 +14,22 @@ export const heroCarouselSlides = [
   {
     src: "/hero-carousel/drinking-water-fountain-application.jpg",
     alt: "Clean drinking water application",
+    caption: "Reliable Chlorination for Safe Drinking Water",
   },
   {
     src: "/hero-carousel/thermal-power-application.jpg",
     alt: "Thermal power plant cooling tower application",
+    caption: "Efficient Cooling Water Chlorination for Peak Plant Reliability",
+  },
+  {
+    src: "/hero-carousel/process-water-application.jpg",
+    alt: "Industrial water treatment plant application",
+    caption: "Reliable Water Treatment Begins with Precise Disinfection",
   },
   {
     src: "/hero-carousel/wastewater-treatment-application.jpg",
     alt: "Wastewater treatment plant application",
-  },
-  {
-    src: "/hero-carousel/swimming-pool-application.jpg",
-    alt: "Swimming pool water treatment application",
-  },
-  {
-    src: "/hero-carousel/process-water-application.jpg",
-    alt: "Industrial process water piping application",
+    caption: "Advanced Disinfection for Sustainable Wastewater Treatment",
   },
 ] as const;
 
@@ -93,9 +93,20 @@ export function HeroSafariCarousel() {
         )}
 
         <div
-          className="pointer-events-none absolute inset-x-0 bottom-0 z-10 h-24 bg-linear-to-t from-black/45 to-transparent"
+          className="pointer-events-none absolute inset-x-0 bottom-0 z-10 h-32 bg-linear-to-t from-black/60 to-transparent"
           aria-hidden
         />
+
+        <motion.p
+          key={activeSlide.caption}
+          initial={{ opacity: 0, y: 10 }}
+          animate={{ opacity: 1, y: 0 }}
+          exit={{ opacity: 0, y: -10 }}
+          transition={{ duration: 0.5, ease: "easeOut" }}
+          className="pointer-events-none absolute inset-x-0 bottom-12 z-20 px-4 text-center text-sm font-medium tracking-wide text-white drop-shadow-md sm:text-base md:bottom-14 md:text-lg"
+        >
+          {activeSlide.caption}
+        </motion.p>
 
         <div
           role="tablist"
