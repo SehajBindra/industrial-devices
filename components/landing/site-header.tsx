@@ -1,5 +1,6 @@
 "use client";
 
+import Image from "next/image";
 import Link from "next/link";
 import { ArrowRight } from "lucide-react";
 import { useState } from "react";
@@ -133,6 +134,23 @@ function ProductMenuSections({
   );
 }
 
+function SiteBrand() {
+  return (
+    <>
+      <Image
+        src="/product/IDI LOGO.JPG"
+        alt="Industrial Devices (India) logo"
+        width={32}
+        height={32}
+        className="size-12 shrink-0 object-contain sm:size-12"
+      />
+      <span className="truncate  font-semibold tracking-tight text-primary text-base">
+        Industrial Devices
+      </span>
+    </>
+  );
+}
+
 function ProductsMegaMenu() {
   return (
     <div className="w-[min(54rem,calc(100vw-2rem))] max-w-[calc(100vw-2rem)] bg-white px-5 py-6 sm:px-8 sm:py-8">
@@ -163,11 +181,9 @@ export function SiteHeader() {
       >
         <Link
           href="/"
-          className="relative z-20 flex shrink-0 items-center rounded-full px-1 py-0.5 outline-none transition-colors hover:text-neutral-600 focus-visible:ring-2 focus-visible:ring-neutral-950/25"
+          className="relative z-20 flex shrink-0 items-center gap-2 rounded-full px-1 py-0.5 outline-none transition-colors hover:text-neutral-600 focus-visible:ring-2 focus-visible:ring-neutral-950/25"
         >
-          <span className="text-[13px] font-semibold tracking-tight text-primary">
-            Industrial Devices
-          </span>
+          <SiteBrand />
         </Link>
 
         <NavigationMenu
@@ -225,20 +241,20 @@ export function SiteHeader() {
           headerShellClass,
         )}
       >
-        <MobileNavHeader>
+        <MobileNavHeader className="min-h-10 gap-2">
           <Link
             href="/"
-            className="relative z-20 flex shrink-0 items-center rounded-full px-1 py-0.5 outline-none transition-colors hover:text-neutral-600 focus-visible:ring-2 focus-visible:ring-neutral-950/25"
+            className="relative z-20 flex min-w-0 flex-1 items-center gap-1.5 rounded-full px-1 py-0.5 outline-none transition-colors hover:text-neutral-600 focus-visible:ring-2 focus-visible:ring-neutral-950/25"
             onClick={() => setMobileOpen(false)}
           >
-            <span className="text-[13px] font-semibold tracking-tight text-primary">
-              Industrial Devices
-            </span>
+            <SiteBrand />
           </Link>
-          <MobileNavToggle
-            isOpen={mobileOpen}
-            onClick={() => setMobileOpen((open) => !open)}
-          />
+          <div className="shrink-0">
+            <MobileNavToggle
+              isOpen={mobileOpen}
+              onClick={() => setMobileOpen((open) => !open)}
+            />
+          </div>
         </MobileNavHeader>
 
         <MobileNavMenu
