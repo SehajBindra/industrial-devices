@@ -108,8 +108,8 @@ export function HeroSafariCarousel() {
               className={cn(
                 "pointer-events-auto size-2 rounded-full transition-all duration-300",
                 index === activeIndex
-                  ? "scale-110 bg-white"
-                  : "bg-white/45 hover:bg-white/70",
+                  ? "scale-110 bg-sky-300"
+                  : "bg-sky-300/60 hover:bg-sky-300/80",
               )}
             />
           ))}

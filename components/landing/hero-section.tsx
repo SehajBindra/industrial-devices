@@ -1,7 +1,6 @@
 import Link from "next/link";
 
 import { HeroSafariCarousel } from "@/components/landing/hero-safari-carousel";
-import { HeroClientGrid } from "@/components/landing/hero-client-grid";
 import { BlurFade } from "@/components/ui/blur-fade";
 import { Button } from "@/components/ui/button";
 import { DottedGlowBackground } from "@/components/ui/dotted-glow-background";
@@ -10,18 +9,20 @@ export function HeroSection() {
   return (
     <section className="relative max-w-6xl mx-auto overflow-hidden border-b border-neutral-200 px-4 bg-white pt-40 pb-16 sm:pt-32 sm:pb-20">
       <div
-        className="pointer-events-none absolute inset-y-0 right-0 z-[2] hidden min-h-0 w-[min(50%,30rem)] md:block lg:w-[min(44%,34rem)]"
+        className="pointer-events-none absolute inset-y-0 right-0 z-[2] hidden min-h-0 w-[min(62%,38rem)] md:block lg:w-[min(56%,42rem)]"
         aria-hidden
       >
         <DottedGlowBackground
-          className="mask-[radial-gradient(ellipse_110%_100%_at_78%_38%,white_0%,white_42%,transparent_78%)]"
-          opacity={4.4}
+          className="[mask-image:linear-gradient(to_right,transparent_0%,rgba(255,255,255,0.12)_18%,rgba(255,255,255,0.55)_48%,white_72%),radial-gradient(ellipse_110%_100%_at_78%_38%,white_0%,white_42%,transparent_78%)] [-webkit-mask-image:linear-gradient(to_right,transparent_0%,rgba(255,255,255,0.12)_18%,rgba(255,255,255,0.55)_48%,white_72%),radial-gradient(ellipse_110%_100%_at_78%_38%,white_0%,white_42%,transparent_78%)] [mask-composite:intersect] [-webkit-mask-composite:source-in]"
+          colorLightVar="--color-sky-300"
+          glowColorLightVar="--color-sky-500"
+          colorDarkVar="--color-sky-300"
+          glowColorDarkVar="--color-sky-400"
+          color="rgb(125 211 252)"
+          glowColor="rgb(14 165 233)"
+          opacity={2.4}
           gap={8}
           radius={1.7}
-          color="rgba(15,23,42,0.82)"
-          glowColor="rgba(0,119,182,0.45)"
-          darkColor="rgba(203,213,225,0.55)"
-          darkGlowColor="rgba(0,150,199,0.45)"
           backgroundOpacity={0.07}
           speedMin={0.35}
           speedMax={1.45}

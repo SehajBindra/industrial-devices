@@ -21,8 +21,8 @@ type ServiceBentoCardShellProps = ServiceBentoCardProps & {
 const ease = [0.22, 1, 0.36, 1] as const;
 
 const PRODUCT_IMAGES = {
-  gasChlorinator: "/product/gas-chlorinators-bg-white.png",
-  chlorineVaporizer: "/product/vacuum-chlorinator-bg-white.png",
+  gasChlorinator: "/product/vacuum-chlorinator-bg-white.png",
+  chlorineVaporizer: "/product/gas-chlorinators-bg-white.png",
   leakDetectionSafety: "/product/leak-detection-safety-bg-white.png",
   vacuumRegulators: "/product/chlorination-system-accessories-spares-bg-white.png",
   chlorineDioxide: "/client-list/chlorine-dioxide-generator.jpg",
