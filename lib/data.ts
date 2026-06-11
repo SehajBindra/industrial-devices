@@ -82,6 +82,12 @@ export const siteConfig = {
   },
   socialLinks: [
     {
+      id: "whatsapp",
+      title: "WhatsApp",
+      url: "https://wa.me/919810079856",
+      image: "/social/whatsapp.svg",
+    },
+    {
       id: "x",
       title: "X",
       url: "https://www.industrialdevices.in/",

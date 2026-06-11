@@ -28,7 +28,12 @@ export function FooterSection() {
           </p>
           <div className="flex items-center mt-4 gap-3">
             {siteConfig.socialLinks.map((social) => (
-              <Link target="_blank" key={social.id} href={social.url}>
+              <Link
+                target="_blank"
+                rel="noopener noreferrer"
+                key={social.id}
+                href={social.url}
+              >
                 <Image
                   src={social.image}
                   alt={social.title}
