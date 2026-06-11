@@ -149,6 +149,11 @@ export const siteConfig = {
           title: "Electro chlorination",
           url: "/#products",
         },
+        {
+          id: "chemical-dosing",
+          title: "Chemical Dosing System",
+          url: "/#products",
+        },
       ],
     },
   ],

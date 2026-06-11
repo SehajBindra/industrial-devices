@@ -69,7 +69,7 @@ export function FooterSection() {
             className="h-full w-full md:hidden"
             squareSize={2}
             gridGap={3}
-            color="#6B7280"
+            color="#0ea5e9"
             maxOpacity={0.3}
             flickerChance={0.1}
           />
@@ -79,7 +79,7 @@ export function FooterSection() {
             className="hidden h-full w-full md:block"
             squareSize={2}
             gridGap={3}
-            color="#6B7280"
+            color="#0ea5e9"
             maxOpacity={0.3}
             flickerChance={0.1}
           />
