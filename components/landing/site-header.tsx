@@ -228,7 +228,7 @@ export function SiteHeader() {
           size="sm"
           className="relative z-20 hidden h-9 shrink-0 rounded-full bg-primary px-4 text-[13px] font-medium text-primary-foreground shadow-none hover:bg-primary/90 sm:inline-flex"
         >
-          <Link href="/#contact" className="gap-1.5">
+          <Link href="/request-quote" className="gap-1.5">
             Request Quote
             <ArrowRight aria-hidden className="size-[15px]" strokeWidth={2} />
           </Link>
@@ -298,6 +298,7 @@ export function SiteHeader() {
             [
               ["/#applications", "Applications"],
               ["/#clients", "Customer Testimonials"],
+              ["/downloads", "Downloads"],
               ["/#contact", "Contact"],
             ] as const
           ).map(([href, label]) => (
@@ -311,7 +312,7 @@ export function SiteHeader() {
             </Link>
           ))}
           <Link
-            href="/#contact"
+            href="/request-quote"
             onClick={() => setMobileOpen(false)}
             className="mt-2 flex items-center justify-center gap-2 rounded-full bg-primary px-4 py-3 text-sm font-medium text-primary-foreground shadow-sm hover:bg-primary/90"
           >

@@ -52,8 +52,8 @@ export default function CTASection() {
               asChild
               className="inline-flex items-center gap-2 rounded-full bg-primary px-5 py-2 text-sm font-semibold text-primary-foreground transition hover:bg-primary/90"
             >
-              <Link href="https://www.industrialdevices.in/" target="_blank" rel="noopener noreferrer">
-                Contact Industrial Devices <ArrowRight className="h-4 w-4" />
+              <Link href="/request-quote">
+                Request a quote <ArrowRight className="h-4 w-4" />
               </Link>
             </Button>
           </BlurFade>

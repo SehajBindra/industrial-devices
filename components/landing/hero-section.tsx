@@ -71,7 +71,7 @@ export function HeroSection() {
               asChild
               className="h-11 rounded-full bg-primary px-7 text-sm font-medium text-primary-foreground shadow-none transition-transform hover:bg-primary/90 active:scale-[0.98]"
             >
-              <Link href="#contact">Request a quote</Link>
+              <Link href="/request-quote">Request a quote</Link>
             </Button>
             <Button
               asChild

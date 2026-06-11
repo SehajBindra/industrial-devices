@@ -73,6 +73,25 @@ export const testimonials: SiteTestimonial[] = [
   },
 ];
 
+export type SiteDownload = {
+  id: string;
+  title: string;
+  description: string;
+  file: string;
+  fileName: string;
+};
+
+export const downloads: SiteDownload[] = [
+  {
+    id: "company-catalogue",
+    title: "Company Profile Catalogue",
+    description:
+      "Overview of Industrial Devices (India), our chlorination systems, manufacturing capabilities, and project experience.",
+    file: "/product/company-catalogue.pdf",
+    fileName: "IDI Company Profile Catalogue.pdf",
+  },
+];
+
 export const siteConfig = {
   hero: {
     title: "Industrial Devices (India) Pvt. Ltd.",
@@ -115,6 +134,8 @@ export const siteConfig = {
         { id: "applications", title: "Applications", url: "/#applications" },
         { id: "clientele", title: "Customer Testimonial", url: "/#clients" },
         { id: "contact", title: "Contact", url: "/#contact" },
+        { id: "downloads", title: "Downloads", url: "/downloads" },
+        { id: "request-quote", title: "Request Quote", url: "/request-quote" },
       ],
     },
     {
