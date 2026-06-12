@@ -217,7 +217,7 @@ export function SiteHeader() {
             </NavigationMenuItem>
             <NavigationMenuItem>
               <NavigationMenuLink asChild className={navLinkClass}>
-                <Link href="/#contact">Contact</Link>
+                <Link href="/contact">Contact</Link>
               </NavigationMenuLink>
             </NavigationMenuItem>
           </NavigationMenuList>
@@ -299,7 +299,7 @@ export function SiteHeader() {
               ["/#applications", "Applications"],
               ["/#clients", "Customer Testimonials"],
               ["/downloads", "Downloads"],
-              ["/#contact", "Contact"],
+              ["/contact", "Contact"],
             ] as const
           ).map(([href, label]) => (
             <Link

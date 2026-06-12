@@ -92,6 +92,16 @@ export const downloads: SiteDownload[] = [
   },
 ];
 
+export const contactInfo = {
+  phone: {
+    display: "+91 11 4161 1916",
+    href: "tel:+911141611916",
+  },
+  whatsapp: {
+    href: "https://wa.me/919810079856",
+  },
+} as const;
+
 export const siteConfig = {
   hero: {
     title: "Industrial Devices (India) Pvt. Ltd.",
@@ -133,7 +143,7 @@ export const siteConfig = {
         { id: "products", title: "Products", url: "/#products" },
         { id: "applications", title: "Applications", url: "/#applications" },
         { id: "clientele", title: "Customer Testimonial", url: "/#clients" },
-        { id: "contact", title: "Contact", url: "/#contact" },
+        { id: "contact", title: "Contact", url: "/contact" },
         { id: "downloads", title: "Downloads", url: "/downloads" },
         { id: "request-quote", title: "Request Quote", url: "/request-quote" },
       ],

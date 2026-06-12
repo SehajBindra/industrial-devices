@@ -43,6 +43,42 @@ export async function submitDownloadLead(
   }
 }
 
+export async function submitContactEnquiry(
+  formData: FormData,
+): Promise<FormActionResult> {
+  const fields = parseLeadContactFields(formData);
+
+  if ("error" in fields) {
+    return { ok: false, error: fields.error };
+  }
+
+  const enquiry = String(formData.get("enquiry") ?? "").trim();
+
+  if (!enquiry) {
+    return { ok: false, error: "Please describe your enquiry." };
+  }
+
+  try {
+    await sendFormEmail({
+      subject: `Contact enquiry from ${fields.company}`,
+      fields: [
+        ...leadFieldsToEmailRows(fields),
+        { label: "Enquiry", value: enquiry },
+      ],
+      replyTo: fields.email,
+    });
+    return { ok: true };
+  } catch (error) {
+    return {
+      ok: false,
+      error:
+        error instanceof Error
+          ? error.message
+          : "Unable to submit your enquiry. Please try again.",
+    };
+  }
+}
+
 export async function submitQuoteRequest(
   formData: FormData,
 ): Promise<FormActionResult> {

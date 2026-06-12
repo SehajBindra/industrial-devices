@@ -2,17 +2,17 @@ import type { Metadata } from "next";
 import Image from "next/image";
 import Link from "next/link";
 
-import { QuoteRequestForm } from "@/components/forms/quote-request-form";
+import { ContactForm } from "@/components/forms/contact-form";
 import { SectionIntro } from "@/components/landing/section-intro";
 import { contactInfo } from "@/lib/data";
 
 export const metadata: Metadata = {
-  title: "Request a Quote | Industrial Devices (India)",
+  title: "Contact Us | Industrial Devices (India)",
   description:
-    "Submit your chlorination or water treatment requirement. Our technical team will respond with product selection and pricing support.",
+    "Questions about chlorination systems, commissioning, or support? Tell us what you need and we will connect you with the right person on our team.",
 };
 
-export default function RequestQuotePage() {
+export default function ContactPage() {
   return (
     <div className="min-h-full bg-neutral-100 bg-[radial-gradient(circle_at_center,rgba(15,23,42,0.055)_1px,transparent_1px)] bg-size-[20px_20px] text-neutral-950">
       <section className="border-b border-neutral-200 bg-white pt-28 pb-16 sm:pt-32 sm:pb-20">
@@ -24,10 +24,10 @@ export default function RequestQuotePage() {
                 align="start"
                 title={
                   <>
-                    Request a <span className="text-primary">quote</span>
+                    Contact <span className="text-primary">us</span>
                   </>
                 }
-                description="Share your project details and our engineering team will respond with product recommendations, scope, and commercial support."
+                description="Questions about chlorination systems, commissioning, or support? Tell us what you need and we will connect you with the right person on our team."
                 descriptionClassName="line-clamp-none"
               />
               <p className="mt-6 max-w-md text-sm leading-relaxed text-neutral-600">
@@ -60,7 +60,7 @@ export default function RequestQuotePage() {
               />
             </div>
 
-            <QuoteRequestForm />
+            <ContactForm />
           </div>
         </div>
       </section>
