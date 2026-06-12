@@ -142,7 +142,7 @@ function SiteBrand() {
         alt="Industrial Devices (India) logo"
         width={32}
         height={32}
-        className="size-12 shrink-0 object-contain sm:size-12"
+        className="size-12 shrink-0 object-contain sm:size-16"
       />
       <span className="truncate  font-semibold tracking-tight text-primary text-base">
         Industrial Devices

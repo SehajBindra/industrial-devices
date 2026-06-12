@@ -17,7 +17,7 @@ export function FooterSection() {
               alt="Industrial Devices (India) logo"
               width={32}
               height={32}
-              className="size-10 shrink-0 object-cover"
+              className="size-10 sm:size-16 shrink-0 object-cover"
             />
             <h3 className="text-base font-semibold text-primary">
               Industrial Devices
@@ -40,7 +40,7 @@ export function FooterSection() {
                   width={32}
                   height={32}
                   unoptimized
-                  className="h-6 w-auto"
+                  className="h-6 sm:h-8 w-auto"
                 />
               </Link>
             ))}
