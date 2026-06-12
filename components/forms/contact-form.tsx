@@ -1,7 +1,8 @@
 "use client";
 
-import { useState, useTransition } from "react";
+import { useTransition } from "react";
 import { Loader2 } from "lucide-react";
+import { toast } from "sonner";
 
 import { LeadContactFields } from "@/components/forms/lead-contact-fields";
 import { Button } from "@/components/ui/button";
@@ -10,8 +11,6 @@ import { Textarea } from "@/components/ui/textarea";
 import { submitContactEnquiry } from "@/lib/actions/submit-forms";
 
 export function ContactForm() {
-  const [error, setError] = useState<string | null>(null);
-  const [submitted, setSubmitted] = useState(false);
   const [isPending, startTransition] = useTransition();
 
   return (
@@ -19,7 +18,6 @@ export function ContactForm() {
       className="space-y-5 rounded-2xl border border-neutral-200 bg-neutral-50 p-6 sm:p-8"
       onSubmit={(event) => {
         event.preventDefault();
-        setError(null);
 
         const form = event.currentTarget;
         const formData = new FormData(form);
@@ -28,25 +26,20 @@ export function ContactForm() {
           const result = await submitContactEnquiry(formData);
 
           if (!result.ok) {
-            setError(result.error);
+            toast.error("Unable to send message", {
+              description: result.error,
+            });
             return;
           }
 
-          setSubmitted(true);
           form.reset();
+          toast.success("Message sent", {
+            description:
+              "Thank you. Our team will be in touch with the right technical contact shortly.",
+          });
         });
       }}
     >
-      {submitted ? (
-        <div
-          role="status"
-          className="rounded-xl border border-emerald-200 bg-emerald-50 px-4 py-3 text-sm text-emerald-900"
-        >
-          Thank you. Your message has been sent to our team. We will be in
-          touch shortly.
-        </div>
-      ) : null}
-
       <LeadContactFields idPrefix="contact" />
 
       <div className="grid gap-2">
@@ -60,12 +53,6 @@ export function ContactForm() {
           className="min-h-32 rounded-xl bg-white"
         />
       </div>
-
-      {error ? (
-        <p role="alert" className="text-sm text-red-600">
-          {error}
-        </p>
-      ) : null}
 
       <Button
         type="submit"
