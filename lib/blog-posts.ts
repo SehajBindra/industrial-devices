@@ -209,3 +209,8 @@ export const blogPosts: BlogPost[] = [
 
 export const featuredPosts = blogPosts.filter((post) => post.featured);
 export const morePosts = blogPosts.filter((post) => !post.featured);
+export const blogSlugs = blogPosts.map((post) => post.slug);
+
+export function getBlogPost(slug: string): BlogPost | undefined {
+  return blogPosts.find((post) => post.slug === slug);
+}
