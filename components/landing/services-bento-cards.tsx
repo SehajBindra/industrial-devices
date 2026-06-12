@@ -4,6 +4,8 @@ import Image from "next/image";
 import Link from "next/link";
 import { motion } from "motion/react";
 
+import { productPath } from "@/lib/products";
+
 export type ServiceBentoCardProps = {
   index: number;
   reduceMotion: boolean;
@@ -24,7 +26,8 @@ const PRODUCT_IMAGES = {
   gasChlorinator: "/product/vacuum-chlorinator-bg-white.png",
   chlorineVaporizer: "/product/gas-chlorinators-bg-white.png",
   leakDetectionSafety: "/product/leak-detection-safety-bg-white.png",
-  vacuumRegulators: "/product/chlorination-system-accessories-spares-bg-white.png",
+  vacuumRegulators:
+    "/product/chlorination-system-accessories-spares-bg-white.png",
   chlorineDioxide: "/client-list/chlorine-dioxide-generator.jpg",
   electroChlorination: "/product/electrochlorinator-bg-white.png",
   chemicalDosingSystem: "/client-list/chemical-dosing-system.jpg",
@@ -117,7 +120,7 @@ export function ConsultingAdvisoryBentoCard(props: ServiceBentoCardProps) {
     <ServiceBentoCardShell
       {...props}
       description="Highly accurate vacuum-operated gas chlorination systems for drinking water, wastewater, cooling water, and industrial treatment."
-      href="/gas-chlorination"
+      href={productPath("gas-chlorination")}
       imageAlt="Gas chlorinator CW skid with evaporator and control panel by Industrial Devices"
       imagePriority
       imageSrc={PRODUCT_IMAGES.gasChlorinator}
@@ -131,7 +134,7 @@ export function IndustrialSafetyBentoCard(props: ServiceBentoCardProps) {
     <ServiceBentoCardShell
       {...props}
       description="Heavy-duty vaporizers that safely convert liquid chlorine into gas for medium and high-capacity chlorination systems."
-      href="/chlorine-vaporizer"
+      href={productPath("chlorine-vaporizer")}
       imageAlt="Vacuum chlorinator units with control panel and flowmeter by Industrial Devices"
       imageSrc={PRODUCT_IMAGES.chlorineVaporizer}
       title="Chlorine vaporizers"
@@ -144,7 +147,7 @@ export function TrainingDevelopmentBentoCard(props: ServiceBentoCardProps) {
     <ServiceBentoCardShell
       {...props}
       description="Leak monitoring, alarms, scrubbers, absorption systems, emergency kits, and operator safety solutions for chlorine handling."
-      href="/safety-system"
+      href={productPath("safety-system")}
       imageAlt="Chlorine heater JB skid with XP chamber safety equipment"
       imageSrc={PRODUCT_IMAGES.leakDetectionSafety}
       title="Leak detection & safety"
@@ -185,7 +188,7 @@ export function ElectroChlorinationBentoCard(props: ServiceBentoCardProps) {
     <ServiceBentoCardShell
       {...props}
       description="On-site chlorine generation for seawater and brine applications, with skid-mounted capacities from 5 g/hr to 500 kg/hr."
-      href="/chlorine-dosing-system"
+      href={productPath("chlorine-dosing-system")}
       imageAlt="Electrochlorination system with dual electrolyzers, rectifier, and process piping"
       imageSrc={PRODUCT_IMAGES.electroChlorination}
       title="Electro chlorination systems"

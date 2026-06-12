@@ -1,3 +1,5 @@
+import { productPath } from "@/lib/products";
+
 export type ClientCell =
   | {
       kind: "copy";
@@ -154,22 +156,22 @@ export const siteConfig = {
         {
           id: "chlorinators",
           title: "Gas & vacuum chlorinators",
-          url: "/gas-chlorination",
+          url: productPath("gas-chlorination"),
         },
         {
           id: "vaporizers",
           title: "Chlorine vaporizers",
-          url: "/chlorine-vaporizer",
+          url: productPath("chlorine-vaporizer"),
         },
         {
           id: "dosing",
           title: "Electro chlorination",
-          url: "/chlorine-dosing-system",
+          url: productPath("chlorine-dosing-system"),
         },
         {
           id: "safety",
           title: "Leak detection & safety",
-          url: "/safety-system",
+          url: productPath("safety-system"),
         },
         {
           id: "accessories",

@@ -90,7 +90,7 @@ const headerShellClass =
 
 const navLinkClass = cn(
   navigationMenuTriggerStyle(),
-  "inline-flex h-8 shrink-0 items-center rounded-full px-2.5 text-sm font-medium text-neutral-800 shadow-none",
+  "inline-flex h-8 shrink-0 items-center whitespace-nowrap rounded-full px-2 text-[13px] font-medium text-neutral-800 shadow-none sm:px-2.5 sm:text-sm",
   "hover:bg-neutral-100 focus:bg-neutral-100 data-open:bg-neutral-100",
 );
 
@@ -142,11 +142,59 @@ function SiteBrand() {
         alt="Industrial Devices (India) logo"
         width={32}
         height={32}
-        className="size-12 shrink-0 object-contain sm:size-16"
+        className={cn(
+          "shrink-0 object-contain transition-[width,height] duration-300",
+          "size-10 sm:size-16",
+        )}
       />
-      <span className="truncate  font-semibold tracking-tight text-primary text-base">
+      <span
+        className={cn(
+          "truncate font-semibold tracking-tight text-primary text-sm sm:text-base transition-all duration-300",
+        )}
+      >
         Industrial Devices
       </span>
+    </>
+  );
+}
+
+function DesktopNavLinks() {
+  return (
+    <>
+      <NavigationMenuItem>
+        <NavigationMenuTrigger
+          className={cn(
+            navLinkClass,
+            "gap-1 [&_svg]:size-3 [&_svg]:opacity-70",
+          )}
+        >
+          Products
+        </NavigationMenuTrigger>
+        <NavigationMenuContent className="bg-white">
+          <ProductsMegaMenu />
+        </NavigationMenuContent>
+      </NavigationMenuItem>
+
+      <NavigationMenuItem>
+        <NavigationMenuLink asChild className={navLinkClass}>
+          <Link href="/#applications">Applications</Link>
+        </NavigationMenuLink>
+      </NavigationMenuItem>
+      <NavigationMenuItem>
+        <NavigationMenuLink asChild className={navLinkClass}>
+          <Link href="/#clients">Testimonials</Link>
+        </NavigationMenuLink>
+      </NavigationMenuItem>
+      <NavigationMenuItem>
+        <NavigationMenuLink asChild className={navLinkClass}>
+          <Link href="/blog">Blog</Link>
+        </NavigationMenuLink>
+      </NavigationMenuItem>
+      <NavigationMenuItem>
+        <NavigationMenuLink asChild className={navLinkClass}>
+          <Link href="/contact">Contact</Link>
+        </NavigationMenuLink>
+      </NavigationMenuItem>
     </>
   );
 }
@@ -175,7 +223,7 @@ export function SiteHeader() {
     <Navbar className="pointer-events-none fixed inset-x-0 top-0 z-50 mx-auto flex max-w-6xl justify-center overflow-visible px-4 sm:px-2">
       <NavBody
         className={cn(
-          "pointer-events-auto h-10 gap-2 overflow-visible px-5 sm:h-16 sm:gap-3 sm:px-6",
+          "pointer-events-auto h-10 gap-1 overflow-visible px-4 sm:h-16 sm:gap-2 sm:px-5",
           headerShellClass,
         )}
       >
@@ -190,43 +238,15 @@ export function SiteHeader() {
           className="static max-w-none min-w-0 flex-1 justify-end md:flex-1 md:justify-center"
           viewportClassName="overflow-hidden rounded-md border border-neutral-200 bg-white text-neutral-950 shadow-[0_24px_70px_-12px_rgba(15,23,42,0.12)] ring-0"
         >
-          <NavigationMenuList className="hidden flex-none flex-wrap justify-center gap-0.5 sm:gap-1 md:flex">
-            <NavigationMenuItem>
-              <NavigationMenuTrigger
-                className={cn(
-                  navLinkClass,
-                  "gap-1 [&_svg]:size-3 [&_svg]:opacity-70",
-                )}
-              >
-                Products
-              </NavigationMenuTrigger>
-              <NavigationMenuContent className="bg-white">
-                <ProductsMegaMenu />
-              </NavigationMenuContent>
-            </NavigationMenuItem>
-
-            <NavigationMenuItem>
-              <NavigationMenuLink asChild className={navLinkClass}>
-                <Link href="/#applications">Applications</Link>
-              </NavigationMenuLink>
-            </NavigationMenuItem>
-            <NavigationMenuItem>
-              <NavigationMenuLink asChild className={navLinkClass}>
-                <Link href="/#clients">Customer Testimonials</Link>
-              </NavigationMenuLink>
-            </NavigationMenuItem>
-            <NavigationMenuItem>
-              <NavigationMenuLink asChild className={navLinkClass}>
-                <Link href="/contact">Contact</Link>
-              </NavigationMenuLink>
-            </NavigationMenuItem>
+          <NavigationMenuList className="hidden flex-none flex-nowrap justify-center gap-0 sm:gap-0.5 md:flex">
+            <DesktopNavLinks />
           </NavigationMenuList>
         </NavigationMenu>
 
         <Button
           asChild
           size="sm"
-          className="relative z-20 hidden h-9 shrink-0 rounded-full bg-primary px-4 text-[13px] font-medium text-primary-foreground shadow-none hover:bg-primary/90 sm:inline-flex"
+          className="relative z-20 hidden h-9 shrink-0 rounded-full bg-primary px-3 text-[13px] font-medium text-primary-foreground shadow-none hover:bg-primary/90 sm:inline-flex"
         >
           <Link href="/request-quote" className="gap-1.5">
             Request Quote
@@ -297,8 +317,9 @@ export function SiteHeader() {
           {(
             [
               ["/#applications", "Applications"],
-              ["/#clients", "Customer Testimonials"],
+              ["/#clients", "Testimonials"],
               ["/downloads", "Downloads"],
+              ["/blog", "Blog"],
               ["/contact", "Contact"],
             ] as const
           ).map(([href, label]) => (

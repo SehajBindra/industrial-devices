@@ -8,7 +8,13 @@ import {
   useMotionValueEvent,
 } from "motion/react";
 
-import React, { useState } from "react";
+import React, { createContext, useContext, useState } from "react";
+
+const NavbarScrollContext = createContext(false);
+
+export function useNavbarScrolled() {
+  return useContext(NavbarScrollContext);
+}
 
 
 interface NavbarProps {
@@ -62,27 +68,29 @@ export const Navbar = ({ children, className }: NavbarProps) => {
   });
 
   return (
-    <motion.div
-      // Pass `fixed inset-x-0 top-0 z-40` (etc.) from the parent for overlay headers.
-      className={cn("inset-x-0 z-40 w-full overflow-visible", className)}
-      animate={{
-        paddingTop: visible ? "1rem" : 0,
-      }}
-      transition={{
-        type: "spring",
-        stiffness: 200,
-        damping: 50,
-      }}
-    >
-      {React.Children.map(children, (child) =>
-        React.isValidElement(child)
-          ? React.cloneElement(
-              child as React.ReactElement<{ visible?: boolean }>,
-              { visible },
-            )
-          : child,
-      )}
-    </motion.div>
+    <NavbarScrollContext.Provider value={visible}>
+      <motion.div
+        // Pass `fixed inset-x-0 top-0 z-40` (etc.) from the parent for overlay headers.
+        className={cn("inset-x-0 z-40 w-full overflow-visible", className)}
+        animate={{
+          paddingTop: visible ? "1rem" : 0,
+        }}
+        transition={{
+          type: "spring",
+          stiffness: 200,
+          damping: 50,
+        }}
+      >
+        {React.Children.map(children, (child) =>
+          React.isValidElement(child)
+            ? React.cloneElement(
+                child as React.ReactElement<{ visible?: boolean }>,
+                { visible },
+              )
+            : child,
+        )}
+      </motion.div>
+    </NavbarScrollContext.Provider>
   );
 };
 

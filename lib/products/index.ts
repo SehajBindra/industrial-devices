@@ -25,7 +25,7 @@ export function getProductPage(slug: string): ProductPage | undefined {
 }
 
 export function productPath(slug: ProductSlug): string {
-  return `/${slug}`;
+  return `/product/${slug}`;
 }
 
 function productAnchor(slug: ProductSlug, anchor: string): string {
@@ -46,10 +46,7 @@ export const productHrefByLabel: Partial<Record<string, string>> = {
     "gas-chlorination",
     "floor-mounted",
   ),
-  "Steam Heated Vaporizer": productAnchor(
-    "chlorine-vaporizer",
-    "steam-heated",
-  ),
+  "Steam Heated Vaporizer": productAnchor("chlorine-vaporizer", "steam-heated"),
   "Electrically Heated Vaporizer": productAnchor(
     "chlorine-vaporizer",
     "electrically-heated",
