@@ -60,8 +60,17 @@ export default function WallOfLoveSection() {
                   cross ? "bg-[#F4F4F4]" : "bg-white",
                 )}
               >
-                <div className="flex min-w-0 items-center">
-                  <span className="text-nowrap text-base font-semibold tracking-tight text-neutral-900 sm:text-lg">
+                <div className="flex min-w-0 items-center gap-3">
+                  <div className="relative shadow-lg size-10 shrink-0 overflow-hidden rounded-lg border border-neutral-200/60 bg-white p-1 sm:size-16">
+                    <Image
+                      src={image}
+                      alt=""
+                      width={40}
+                      height={40}
+                      className="size-full object-contain"
+                    />
+                  </div>
+                  <span className="min-w-0 text-base font-semibold tracking-tight text-neutral-900 sm:text-lg">
                     {wordmarkFromRole(role)}
                   </span>
                 </div>
@@ -83,24 +92,13 @@ export default function WallOfLoveSection() {
                   </blockquote>
                 </div>
 
-                <div className="mt-8 flex items-center gap-3">
-                  <div className="relative size-12 shrink-0 overflow-hidden rounded-xl border border-neutral-200/60 bg-white p-1">
-                    <Image
-                      src={image}
-                      alt=""
-                      width={40}
-                      height={40}
-                      className="size-full object-contain"
-                    />
-                  </div>
-                  <div className="min-w-0">
-                    <p className="text-sm font-bold leading-tight text-neutral-900">
-                      {name}
-                    </p>
-                    <p className="mt-0.5 text-xs leading-snug text-neutral-500">
-                      {role}
-                    </p>
-                  </div>
+                <div className="mt-8 min-w-0">
+                  <p className="text-sm font-bold leading-tight text-neutral-900">
+                    {name}
+                  </p>
+                  <p className="mt-0.5 text-xs leading-snug text-neutral-500">
+                    {role}
+                  </p>
                 </div>
               </article>
             );
