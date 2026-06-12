@@ -44,7 +44,7 @@ export default function RootLayout({
       suppressHydrationWarning
     >
       <body
-        className="min-h-full bg-neutral-100 bg-[radial-gradient(circle_at_center,rgba(15,23,42,0.055)_1px,transparent_1px)] bg-size-[20px_20px] max-w-6xl mx-auto flex flex-col"
+        className="min-h-full bg-neutral-50 bg-[radial-gradient(circle_at_center,rgba(15,23,42,0.055)_1px,transparent_1px)] bg-size-[20px_20px] flex flex-col"
         suppressHydrationWarning
       >
         <ThemeProvider
@@ -52,10 +52,12 @@ export default function RootLayout({
           defaultTheme="light"
           enableSystem={false}
         >
-          <SiteHeader />
-          {children}
-          <CTASection />
-          <FooterSection />
+          <div className="mx-auto flex min-h-full w-full max-w-6xl flex-1 flex-col">
+            <SiteHeader />
+            {children}
+            <CTASection />
+            <FooterSection />
+          </div>
           <Toaster richColors closeButton position="bottom-right" />
         </ThemeProvider>
       </body>

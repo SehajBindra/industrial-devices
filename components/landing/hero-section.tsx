@@ -1,8 +1,6 @@
-import Link from "next/link";
-
+import { HeroCtaButtons } from "@/components/landing/hero-cta-buttons";
 import { HeroSafariCarousel } from "@/components/landing/hero-safari-carousel";
 import { BlurFade } from "@/components/ui/blur-fade";
-import { Button } from "@/components/ui/button";
 import { DottedGlowBackground } from "@/components/ui/dotted-glow-background";
 
 export function HeroSection() {
@@ -67,19 +65,7 @@ export function HeroSection() {
             duration={0.8}
             className="mt-10 flex flex-wrap items-center gap-3"
           >
-            <Button
-              asChild
-              className="h-11 rounded-full bg-primary px-7 text-sm font-medium text-primary-foreground shadow-none transition-transform hover:bg-primary/90 active:scale-[0.98]"
-            >
-              <Link href="/request-quote">Request a quote</Link>
-            </Button>
-            <Button
-              asChild
-              variant="outline"
-              className="h-11 rounded-full border-primary/30 bg-white/80 px-7 text-sm font-medium text-primary shadow-none backdrop-blur-sm transition-transform hover:border-primary/50 hover:bg-primary/5 active:scale-[0.98]"
-            >
-              <Link href="#products">Explore systems</Link>
-            </Button>
+            <HeroCtaButtons />
           </BlurFade>
         </div>
         <BlurFade
