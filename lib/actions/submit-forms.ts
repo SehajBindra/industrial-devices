@@ -3,24 +3,22 @@
 import { sendFormEmail } from "@/lib/email";
 import {
   leadFieldsToEmailRows,
-  parseLeadContactFields,
+  parseContactEnquiry,
+  parseDownloadLead,
+  parseQuoteRequest,
   type FormActionResult,
 } from "@/lib/forms";
 
 export async function submitDownloadLead(
   formData: FormData,
 ): Promise<FormActionResult> {
-  const fields = parseLeadContactFields(formData);
+  const parsed = parseDownloadLead(formData);
 
-  if ("error" in fields) {
-    return { ok: false, error: fields.error };
+  if (!parsed.success) {
+    return { ok: false, error: parsed.error };
   }
 
-  const catalogueTitle = String(formData.get("catalogueTitle") ?? "").trim();
-
-  if (!catalogueTitle) {
-    return { ok: false, error: "Download item is missing." };
-  }
+  const { catalogueTitle, ...fields } = parsed.data;
 
   try {
     await sendFormEmail({
@@ -46,17 +44,13 @@ export async function submitDownloadLead(
 export async function submitContactEnquiry(
   formData: FormData,
 ): Promise<FormActionResult> {
-  const fields = parseLeadContactFields(formData);
+  const parsed = parseContactEnquiry(formData);
 
-  if ("error" in fields) {
-    return { ok: false, error: fields.error };
+  if (!parsed.success) {
+    return { ok: false, error: parsed.error };
   }
 
-  const enquiry = String(formData.get("enquiry") ?? "").trim();
-
-  if (!enquiry) {
-    return { ok: false, error: "Please describe your enquiry." };
-  }
+  const { enquiry, ...fields } = parsed.data;
 
   try {
     await sendFormEmail({
@@ -82,18 +76,13 @@ export async function submitContactEnquiry(
 export async function submitQuoteRequest(
   formData: FormData,
 ): Promise<FormActionResult> {
-  const fields = parseLeadContactFields(formData);
+  const parsed = parseQuoteRequest(formData);
 
-  if ("error" in fields) {
-    return { ok: false, error: fields.error };
+  if (!parsed.success) {
+    return { ok: false, error: parsed.error };
   }
 
-  const productInterest = String(formData.get("productInterest") ?? "").trim();
-  const message = String(formData.get("message") ?? "").trim();
-
-  if (!message) {
-    return { ok: false, error: "Please describe your requirement." };
-  }
+  const { productInterest, message, ...fields } = parsed.data;
 
   try {
     await sendFormEmail({

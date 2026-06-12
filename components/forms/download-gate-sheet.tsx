@@ -1,10 +1,16 @@
 "use client";
 
-import { useEffect, useState, useTransition } from "react";
+import { useEffect, useTransition } from "react";
+import { zodResolver } from "@hookform/resolvers/zod";
 import { Loader2 } from "lucide-react";
+import { useForm } from "react-hook-form";
+import { toast } from "sonner";
 
-import { LeadContactFields } from "@/components/forms/lead-contact-fields";
+import { LeadContactFormFields } from "@/components/forms/lead-contact-form-fields";
 import { Button } from "@/components/ui/button";
+import {
+  Form,
+} from "@/components/ui/form";
 import {
   Sheet,
   SheetContent,
@@ -14,6 +20,10 @@ import {
 } from "@/components/ui/sheet";
 import { submitDownloadLead } from "@/lib/actions/submit-forms";
 import type { SiteDownload } from "@/lib/data";
+import {
+  leadContactSchema,
+  type LeadContactValues,
+} from "@/lib/form-schemas";
 
 type DownloadGateSheetProps = {
   download: SiteDownload | null;
@@ -36,14 +46,22 @@ export function DownloadGateSheet({
   open,
   onOpenChange,
 }: DownloadGateSheetProps) {
-  const [error, setError] = useState<string | null>(null);
   const [isPending, startTransition] = useTransition();
+  const form = useForm<LeadContactValues>({
+    resolver: zodResolver(leadContactSchema),
+    defaultValues: {
+      name: "",
+      company: "",
+      email: "",
+      phone: "",
+    },
+  });
 
   useEffect(() => {
     if (!open) {
-      setError(null);
+      form.reset();
     }
-  }, [open]);
+  }, [open, form]);
 
   return (
     <Sheet open={open} onOpenChange={onOpenChange}>
@@ -56,57 +74,57 @@ export function DownloadGateSheet({
           </SheetDescription>
         </SheetHeader>
 
-        <form
-          className="space-y-5 px-4 pb-6"
-          onSubmit={(event) => {
-            event.preventDefault();
-
-            if (!download) {
-              return;
-            }
-
-            setError(null);
-            const form = event.currentTarget;
-            const formData = new FormData(form);
-            formData.set("catalogueTitle", download.title);
-
-            startTransition(async () => {
-              const result = await submitDownloadLead(formData);
-
-              if (!result.ok) {
-                setError(result.error);
+        <Form {...form}>
+          <form
+            className="space-y-5 px-4 pb-6"
+            onSubmit={form.handleSubmit((values) => {
+              if (!download) {
                 return;
               }
 
-              triggerFileDownload(download);
-              onOpenChange(false);
-              form.reset();
-            });
-          }}
-        >
-          <LeadContactFields idPrefix="download" />
+              startTransition(async () => {
+                const formData = new FormData();
+                Object.entries(values).forEach(([key, value]) => {
+                  formData.set(key, value);
+                });
+                formData.set("catalogueTitle", download.title);
 
-          {error ? (
-            <p role="alert" className="text-sm text-red-600">
-              {error}
-            </p>
-          ) : null}
+                const result = await submitDownloadLead(formData);
 
-          <Button
-            type="submit"
-            disabled={isPending || !download}
-            className="h-11 w-full rounded-full bg-primary text-sm font-medium text-primary-foreground hover:bg-primary/90"
+                if (!result.ok) {
+                  toast.error("Unable to start download", {
+                    description: result.error,
+                  });
+                  return;
+                }
+
+                triggerFileDownload(download);
+                onOpenChange(false);
+                form.reset();
+                toast.success("Download started", {
+                  description: `${download.title} is downloading now.`,
+                });
+              });
+            })}
           >
-            {isPending ? (
-              <>
-                <Loader2 className="size-4 animate-spin" />
-                Preparing download...
-              </>
-            ) : (
-              "Submit & download"
-            )}
-          </Button>
-        </form>
+            <LeadContactFormFields control={form.control} />
+
+            <Button
+              type="submit"
+              disabled={isPending || !download}
+              className="h-11 w-full rounded-full bg-primary text-sm font-medium text-primary-foreground hover:bg-primary/90"
+            >
+              {isPending ? (
+                <>
+                  <Loader2 className="size-4 animate-spin" />
+                  Preparing download...
+                </>
+              ) : (
+                "Submit & download"
+              )}
+            </Button>
+          </form>
+        </Form>
       </SheetContent>
     </Sheet>
   );

@@ -1,31 +1,65 @@
-export type LeadContactFields = {
-  name: string;
-  company: string;
-  email: string;
-  phone: string;
-};
+import { z } from "zod";
+
+import {
+  contactEnquirySchema,
+  downloadLeadSchema,
+  firstZodError,
+  formDataToObject,
+  leadContactSchema,
+  quoteRequestSchema,
+  type LeadContactValues,
+} from "@/lib/form-schemas";
+
+export type LeadContactFields = LeadContactValues;
 
 export type FormActionResult =
   | { ok: true }
   | { ok: false; error: string };
 
+type ParseResult<T> =
+  | { success: true; data: T }
+  | { success: false; error: string };
+
 export function parseLeadContactFields(
   formData: FormData,
 ): LeadContactFields | { error: string } {
-  const name = String(formData.get("name") ?? "").trim();
-  const company = String(formData.get("company") ?? "").trim();
-  const email = String(formData.get("email") ?? "").trim();
-  const phone = String(formData.get("phone") ?? "").trim();
+  const parsed = leadContactSchema.safeParse(formDataToObject(formData));
 
-  if (!name || !company || !email || !phone) {
-    return { error: "Please fill in all required fields." };
+  if (!parsed.success) {
+    return { error: firstZodError(parsed.error) };
   }
 
-  if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) {
-    return { error: "Please enter a valid email address." };
-  }
+  return parsed.data;
+}
 
-  return { name, company, email, phone };
+export function parseContactEnquiry(
+  formData: FormData,
+): ParseResult<z.infer<typeof contactEnquirySchema>> {
+  const parsed = contactEnquirySchema.safeParse(formDataToObject(formData));
+  if (!parsed.success) {
+    return { success: false, error: firstZodError(parsed.error) };
+  }
+  return { success: true, data: parsed.data };
+}
+
+export function parseQuoteRequest(
+  formData: FormData,
+): ParseResult<z.infer<typeof quoteRequestSchema>> {
+  const parsed = quoteRequestSchema.safeParse(formDataToObject(formData));
+  if (!parsed.success) {
+    return { success: false, error: firstZodError(parsed.error) };
+  }
+  return { success: true, data: parsed.data };
+}
+
+export function parseDownloadLead(
+  formData: FormData,
+): ParseResult<z.infer<typeof downloadLeadSchema>> {
+  const parsed = downloadLeadSchema.safeParse(formDataToObject(formData));
+  if (!parsed.success) {
+    return { success: false, error: firstZodError(parsed.error) };
+  }
+  return { success: true, data: parsed.data };
 }
 
 export function leadFieldsToEmailRows(fields: LeadContactFields) {
