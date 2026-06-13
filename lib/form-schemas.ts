@@ -10,8 +10,8 @@ export const leadContactSchema = z.object({
   phone: z
     .string()
     .trim()
-    .min(10, "Please enter a valid WhatsApp number.")
-    .regex(/^[\d\s+\-()]+$/, "Please enter a valid WhatsApp number."),
+    .min(10, "Please enter a valid contact number.")
+    .regex(/^[\d\s+\-()]+$/, "Please enter a valid contact number."),
 });
 
 export const contactEnquirySchema = leadContactSchema.extend({

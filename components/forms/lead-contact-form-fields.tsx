@@ -38,7 +38,7 @@ export function LeadContactFormFields<T extends FieldValues>({
     },
     {
       name: "phone" as FieldPath<T>,
-      label: "WhatsApp Number",
+      label: "Number",
       type: "tel",
       autoComplete: "tel",
     },
