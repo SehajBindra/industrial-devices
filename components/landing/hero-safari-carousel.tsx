@@ -103,7 +103,7 @@ export function HeroSafariCarousel() {
           animate={{ opacity: 1, y: 0 }}
           exit={{ opacity: 0, y: -10 }}
           transition={{ duration: 0.5, ease: "easeOut" }}
-          className="pointer-events-none absolute inset-x-0 bottom-12 z-20 px-6 text-center text-base font-semibold leading-snug tracking-wide text-white drop-shadow-[0_2px_8px_rgba(0,0,0,0.85)] sm:text-lg md:bottom-14 md:text-xl lg:text-3xl"
+          className="pointer-events-none absolute inset-x-0 bottom-12 z-20 px-6 text-center text-4xl font-medium tracking-tighter text-balance text-white drop-shadow-[0_2px_8px_rgba(0,0,0,0.85)] md:bottom-14 md:text-5xl lg:text-6xl"
         >
           {activeSlide.caption}
         </motion.p>
