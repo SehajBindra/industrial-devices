@@ -48,8 +48,8 @@ export const gasChlorinationProduct = {
     },
     {
       id: "floor-mounted",
-      heading: "Floor Mounted Models",
-      imageSrc: productImage("gas-chlorination-system-with-vaporiser.jpg"),
+      heading: "Floor Mounted Vacuum Chlorinator",
+      imageSrc: productImage("floor-mounted-vacuum-chlorinator-bg-white.png"),
       imageAlt: "Floor mounted vacuum chlorinator",
       descriptionPoints: [
         "**High-Performance Chlorination Systems for Demanding Applications**",
@@ -79,7 +79,7 @@ export const gasChlorinationProduct = {
     {
       id: "wall-mounted",
       heading: "Wall Mounted Chlorinators",
-      imageSrc: productImage("wall-mounted-chlorinator.png"),
+      imageSrc: productImage("wall-mounted-chlorinator-bg-white.png"),
       imageAlt: "Wall mounted chlorinator",
       descriptionPoints: [
         "**Compact & Reliable Chlorination Solutions**",
