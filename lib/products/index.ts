@@ -58,7 +58,7 @@ export const productHrefByLabel: Partial<Record<string, string>> = {
   "Chlorination System Accessories & Spares": "/#audits-assessments",
   "Chlorine Dioxide Generators": productAnchor(
     "chlorine-dioxide-generator",
-    "chlorine-dioxide-generator",
+    "pressure-type",
   ),
   Electrochlorinators: productAnchor(
     "chlorine-dosing-system",
