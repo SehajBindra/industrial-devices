@@ -8,7 +8,7 @@ export type ProductSpecLabel =
 
 export type ProductSpec = {
   label: ProductSpecLabel | (string & {});
-  value: string;
+  value: string | readonly string[];
 };
 
 export type ProductModel = {

@@ -62,7 +62,7 @@ export const productHrefByLabel: Partial<Record<string, string>> = {
   ),
   Electrochlorinators: productAnchor(
     "chlorine-dosing-system",
-    "electrochlorinator",
+    "batch-type",
   ),
   "Chemical Dosing Systems": "/#products",
   "Chlorine Leak Detector": productAnchor("safety-system", "leak-detector"),

@@ -28,9 +28,17 @@ function ModelSpecCard({ label, value }: ProductSpec) {
     <li className="flex h-full min-h-0 flex-col items-start justify-start">
       <div className="flex h-full w-full flex-col border-b border-dashed border-neutral-200">
         <p className="text-base font-semibold text-primary">{label}</p>
-        <p className="my-2 max-w-sm flex-1 text-sm leading-snug text-neutral-800">
-          {value}
-        </p>
+        {Array.isArray(value) ? (
+          <ul className="my-2 max-w-sm flex-1 list-disc space-y-1 pl-5 text-sm leading-snug text-neutral-800">
+            {value.map((item) => (
+              <li key={item}>{renderDescriptionPoint(item)}</li>
+            ))}
+          </ul>
+        ) : (
+          <p className="my-2 max-w-sm flex-1 text-sm leading-snug text-neutral-800">
+            {value}
+          </p>
+        )}
       </div>
     </li>
   );
@@ -131,7 +139,7 @@ export function ProductPageContent({ product }: ProductPageContentProps) {
                     <ul className="mt-10 grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-1">
                       {specs.map((spec) => (
                         <ModelSpecCard
-                          key={`${spec.label}-${spec.value}`}
+                          key={`${spec.label}-${Array.isArray(spec.value) ? spec.value.join("|") : spec.value}`}
                           {...spec}
                         />
                       ))}
