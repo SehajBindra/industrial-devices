@@ -48,7 +48,7 @@ const productMenuColumns: readonly ProductMenuColumn[] = [
         ],
       },
       {
-        title: "Chlorine Vaporizer",
+        title: "Chlorine Vaporizer/ Evaporator",
         items: [
           "Steam Heated Vaporizer",
           "Electrically Heated Vaporizer",
