@@ -34,7 +34,7 @@ function productAnchor(slug: ProductSlug, anchor: string): string {
 
 /** Maps mega-menu / bento labels to product detail routes. */
 export const productHrefByLabel: Partial<Record<string, string>> = {
-  "Cylinder Mounted Chlorinators": productAnchor(
+  "Cylinder/ Tonner Mounted Chlorinators": productAnchor(
     "gas-chlorination",
     "cylinder-tonner",
   ),
@@ -42,7 +42,7 @@ export const productHrefByLabel: Partial<Record<string, string>> = {
     "gas-chlorination",
     "wall-mounted",
   ),
-  "Floor Mounted Chlorinators": productAnchor(
+  "Floor Mounted Vacuum Chlorinator": productAnchor(
     "gas-chlorination",
     "floor-mounted",
   ),
@@ -55,7 +55,7 @@ export const productHrefByLabel: Partial<Record<string, string>> = {
     "chlorine-vaporizer",
     "hot-water-heated",
   ),
-  "Chlorination System Accessories & Spares": "/#products",
+  "Chlorination System Accessories & Spares": "/#audits-assessments",
   "Chlorine Dioxide Generators": productAnchor(
     "chlorine-dioxide-generator",
     "chlorine-dioxide-generator",

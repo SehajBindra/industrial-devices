@@ -1,8 +1,11 @@
 "use client";
 
 import { useEffect } from "react";
+import { usePathname } from "next/navigation";
 
 export function HashScrollHandler() {
+  const pathname = usePathname();
+
   useEffect(() => {
     const handleHashScroll = () => {
       const hash = window.location.hash;
@@ -20,16 +23,17 @@ export function HashScrollHandler() {
       }
     };
 
-    if (window.location.hash) {
+    const frame = requestAnimationFrame(() => {
       setTimeout(handleHashScroll, 100);
-    }
+    });
 
     window.addEventListener("hashchange", handleHashScroll);
 
     return () => {
+      cancelAnimationFrame(frame);
       window.removeEventListener("hashchange", handleHashScroll);
     };
-  }, []);
+  }, [pathname]);
 
   return null;
 }

@@ -18,14 +18,15 @@ export const gasChlorinationProduct = {
     { level: 6, text: "Chlorination System Manufacturers" },
   ],
   sectionHeadingId: "gas-chlorinator-models",
-  sectionTitle: "Gas chlorinator",
-  sectionTitleHighlight: "models",
+  sectionTitle: "Gas",
+  sectionTitleHighlight: "Chlorinators",
+  intro: "Vacuum Operated, Safe and Accurate",
   models: [
     {
       id: "cylinder-tonner",
-      heading: "Cylinder Mounted Models",
-      imageSrc: productImage("cylinder-mounted-chlorinator.jpg"),
-      imageAlt: "Cylinder mounted chlorinator",
+      heading: "Cylinder/ Tonner Mounted Chlorinators",
+      imageSrc: productImage("cylinder-mounted-chlorinator-bg-white.png"),
+      imageAlt: "Cylinder and tonner mounted chlorinator",
       descriptionPoints: [
         "**Reliable & Efficient Chlorination Solutions**",
         "INDEVICE Cylinder Mounted Chlorinators deliver versatile, cost-effective chlorine dosing. These vacuum-operated systems ensure safe, reliable chlorine feed across water treatment applications.",

@@ -49,7 +49,13 @@ export function ServicesSection() {
 
         <div className="mt-12 grid grid-cols-1 gap-4 sm:mt-14 md:grid-cols-3 md:gap-5">
           {SERVICE_BENTO_SECTIONS.map(({ id, Component }, index) => (
-            <Component index={index} key={id} reduceMotion={reduceMotion} />
+            <div
+              id={id}
+              key={id}
+              className="scroll-mt-28 sm:scroll-mt-32"
+            >
+              <Component index={index} reduceMotion={reduceMotion} />
+            </div>
           ))}
         </div>
       </div>

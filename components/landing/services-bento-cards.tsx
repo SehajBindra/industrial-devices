@@ -164,6 +164,7 @@ Beams, Weighing Systems, etc. Spares for the system
 
 that include precision-engineered ejectors, vacuum regulators
 other chlorination accessories"
+      href="/#audits-assessments"
       imageAlt="Dual-stream vacuum regulator and gas metering skid"
       imageSrc={PRODUCT_IMAGES.vacuumRegulators}
       title="Chlorination System Accessories &amp; Spares"
@@ -176,6 +177,7 @@ export function SoftwareItBentoCard(props: ServiceBentoCardProps) {
     <ServiceBentoCardShell
       {...props}
       description="Advanced ClO2 generators for superior disinfection, odour control, biofilm removal, and organic contamination treatment."
+      href={productPath("chlorine-dioxide-generator")}
       imageAlt="Chlorine dioxide generator with NaClO2 and HCl storage tanks, reactor, and control panel"
       imageSrc={PRODUCT_IMAGES.chlorineDioxide}
       title="Chlorine dioxide generators"

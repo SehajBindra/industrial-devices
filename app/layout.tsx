@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
+import { HashScrollHandler } from "@/components/hash-scroll-handler";
 import { SiteHeader } from "@/components/landing/site-header";
 import { FooterSection } from "@/components/landing/footer-section";
 import { ThemeProvider } from "@/components/theme-provider";
@@ -53,6 +54,7 @@ export default function RootLayout({
           enableSystem={false}
         >
           <div className="mx-auto flex min-h-full w-full max-w-6xl flex-1 flex-col">
+            <HashScrollHandler />
             <SiteHeader />
             {children}
             <CTASection />

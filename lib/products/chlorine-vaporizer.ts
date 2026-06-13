@@ -18,8 +18,8 @@ export const chlorineVaporizerProduct = {
     { level: 6, text: "Leak Absorption" },
   ],
   sectionHeadingId: "chlorine-vaporizer-models",
-  sectionTitle: "Chlorine vaporizer",
-  sectionTitleHighlight: "models",
+  sectionTitle: "Chlorine Vaporizer/ ",
+  sectionTitleHighlight: "Evaporator",
   models: [
     {
       id: "electrically-heated",

@@ -176,12 +176,12 @@ export const siteConfig = {
         {
           id: "accessories",
           title: "Chlorination System Accessories",
-          url: "/#products",
+          url: "/#audits-assessments",
         },
         {
           id: "dioxide",
           title: "Chlorine dioxide",
-          url: "/#products",
+          url: productPath("chlorine-dioxide-generator"),
         },
         {
           id: "electro",

@@ -42,9 +42,9 @@ const productMenuColumns: readonly ProductMenuColumn[] = [
       {
         title: "Gas Chlorinators",
         items: [
-          "Cylinder Mounted Chlorinators",
+          "Cylinder/ Tonner Mounted Chlorinators",
           "Wall Mounted Chlorinators",
-          "Floor Mounted Chlorinators",
+          "Floor Mounted Vacuum Chlorinator",
         ],
       },
       {
