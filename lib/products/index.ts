@@ -1,3 +1,4 @@
+import { chlorinationAccessoriesProduct } from "@/lib/products/chlorination-accessories";
 import { chlorineDioxideGeneratorProduct } from "@/lib/products/chlorine-dioxide-generator";
 import { chlorineDosingSystemProduct } from "@/lib/products/chlorine-dosing-system";
 import { chlorineVaporizerProduct } from "@/lib/products/chlorine-vaporizer";
@@ -11,6 +12,7 @@ export const productPages = {
   "chlorine-dioxide-generator": chlorineDioxideGeneratorProduct,
   "chlorine-dosing-system": chlorineDosingSystemProduct,
   "safety-system": safetySystemProduct,
+  "chlorination-accessories": chlorinationAccessoriesProduct,
 } as const satisfies Record<string, ProductPage>;
 
 export type ProductSlug = keyof typeof productPages;
@@ -55,7 +57,9 @@ export const productHrefByLabel: Partial<Record<string, string>> = {
     "chlorine-vaporizer",
     "hot-water-heated",
   ),
-  "Chlorination System Accessories & Spares": "/#audits-assessments",
+  "Chlorination System Accessories & Spares": productPath(
+    "chlorination-accessories",
+  ),
   "Chlorine Dioxide Generators": productAnchor(
     "chlorine-dioxide-generator",
     "pressure-type",

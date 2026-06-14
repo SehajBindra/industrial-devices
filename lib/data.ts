@@ -217,7 +217,7 @@ export const siteConfig = {
         {
           id: "accessories",
           title: "Chlorination System Accessories",
-          url: "/#audits-assessments",
+          url: productPath("chlorination-accessories"),
         },
         {
           id: "dioxide",
