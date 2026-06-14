@@ -215,10 +215,9 @@
 
 @keyframes hero-glass-water-yellow {
   0%,
-  18% {
+  22% {
     opacity: 1;
   }
-  55%,
   100% {
     opacity: 0;
   }
@@ -226,10 +225,9 @@
 
 @keyframes hero-glass-water-blue {
   0%,
-  18% {
+  22% {
     opacity: 0;
   }
-  55%,
   100% {
     opacity: 1;
   }
@@ -237,10 +235,9 @@
 
 @keyframes hero-glass-impurities-fade {
   0%,
-  18% {
+  22% {
     opacity: 1;
   }
-  55%,
   100% {
     opacity: 0;
   }
@@ -270,41 +267,47 @@
     animation: hero-glass-shimmer 5s cubic-bezier(0.23, 1, 0.32, 1) infinite;
   }
 
-  .animate-hero-glass-water-yellow {
-    animation: hero-glass-water-yellow 10s ease-in-out infinite;
-  }
-
-  .animate-hero-glass-water-blue {
-    animation: hero-glass-water-blue 10s ease-in-out infinite;
-  }
-
-  .animate-hero-glass-impurities-fade {
-    animation: hero-glass-impurities-fade 10s ease-in-out infinite;
-  }
-
   @media (prefers-reduced-motion: reduce) {
     .animate-marquee-l,
     .animate-marquee-r,
     .animate-hero-glass-glow,
     .animate-hero-glass-impurity,
     .animate-hero-glass-bubble,
-    .animate-hero-glass-shimmer,
-    .animate-hero-glass-water-yellow,
-    .animate-hero-glass-water-blue,
-    .animate-hero-glass-impurities-fade {
+    .animate-hero-glass-shimmer {
       animation: none;
     }
+  }
+}
 
-    .animate-hero-glass-water-yellow {
-      opacity: 0;
-    }
+/* Water purification — kept outside @layer so Tailwind v4 doesn't purge them */
+.animate-hero-glass-water-yellow {
+  opacity: 1;
+  animation: hero-glass-water-yellow 8s ease-in-out 0.6s both;
+}
 
-    .animate-hero-glass-water-blue {
-      opacity: 1;
-    }
+.animate-hero-glass-water-blue {
+  opacity: 0;
+  animation: hero-glass-water-blue 8s ease-in-out 0.6s both;
+}
 
-    .animate-hero-glass-impurities-fade {
-      opacity: 0;
-    }
+.animate-hero-glass-impurities-fade {
+  opacity: 1;
+  animation: hero-glass-impurities-fade 8s ease-in-out 0.6s both;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .animate-hero-glass-water-yellow,
+  .animate-hero-glass-water-blue,
+  .animate-hero-glass-impurities-fade {
+    animation: none;
+  }
+
+  .animate-hero-glass-water-yellow,
+  .animate-hero-glass-impurities-fade {
+    opacity: 0;
+  }
+
+  .animate-hero-glass-water-blue {
+    opacity: 1;
   }
 }
