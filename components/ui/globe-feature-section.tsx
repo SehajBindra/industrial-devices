@@ -1,15 +1,31 @@
 "use client";
 
+import dynamic from "next/dynamic";
 import Link from "next/link";
 import { ArrowRight } from "lucide-react";
 
 import { BlurFade } from "@/components/ui/blur-fade";
 import { Button } from "@/components/ui/button";
-import { Globe } from "@/components/ui/globe";
+
+const CtaGlobeVisual = dynamic(
+  () =>
+    import("@/components/landing/cta-globe-visual").then(
+      (module) => module.CtaGlobeVisual,
+    ),
+  {
+    loading: () => (
+      <div className="relative h-[180px] w-full max-w-xl animate-pulse rounded-lg bg-neutral-100" />
+    ),
+    ssr: false,
+  },
+);
 
 export default function CTASection() {
   return (
-    <section id="contact" className="relative w-full mx-auto overflow-hidden border border-gray-100 p-4 bg-white py-20">
+    <section
+      id="contact"
+      className="relative mx-auto w-full overflow-hidden border border-gray-100 bg-white p-4 py-20"
+    >
       <div className="flex flex-col-reverse items-center justify-between gap-10 md:flex-row">
         <div className="z-10 max-w-xl text-left">
           <BlurFade
@@ -21,8 +37,8 @@ export default function CTASection() {
             className="w-full"
           >
             <h2 className="text-3xl font-normal text-gray-900 dark:text-white">
-              World-Class Chlorination & Disinfection Systems – Crafted in
-              India for Global Applications
+              World-Class Chlorination & Disinfection Systems – Crafted in India
+              for Global Applications
             </h2>
           </BlurFade>
           <BlurFade
@@ -58,9 +74,7 @@ export default function CTASection() {
             </Button>
           </BlurFade>
         </div>
-        <div className="relative h-[180px] w-full max-w-xl">
-          <Globe className="absolute -bottom-20 -right-40 scale-150" />
-        </div>
+        <CtaGlobeVisual />
       </div>
     </section>
   );

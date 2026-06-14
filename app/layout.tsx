@@ -1,12 +1,21 @@
 import type { Metadata } from "next";
+import dynamic from "next/dynamic";
 import { Geist, Geist_Mono } from "next/font/google";
-import "./globals.css";
+
 import { HashScrollHandler } from "@/components/hash-scroll-handler";
-import { SiteHeader } from "@/components/landing/site-header";
 import { FooterSection } from "@/components/landing/footer-section";
+import { SiteHeader } from "@/components/landing/site-header";
 import { ThemeProvider } from "@/components/theme-provider";
 import { Toaster } from "@/components/ui/sonner";
-import CTASection from "@/components/ui/globe-feature-section";
+import { rootMetadata } from "@/lib/site-metadata";
+
+import "./globals.css";
+
+const CTASection = dynamic(() => import("@/components/ui/globe-feature-section"), {
+  loading: () => (
+    <div className="mx-auto h-64 w-full max-w-6xl animate-pulse bg-neutral-100" />
+  ),
+});
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -18,20 +27,7 @@ const geistMono = Geist_Mono({
   subsets: ["latin"],
 });
 
-export const metadata: Metadata = {
-  title: "Industrial Devices (India): Gas Chlorination & Water Treatment",
-  description:
-    "Manufacturer and supplier of gas chlorination systems, chlorine dosing equipment, safety systems, chlorine dioxide generators, and water treatment solutions.",
-  icons: {
-    icon: "/product/IDI LOGO.JPG",
-    apple: "/product/IDI LOGO.JPG",
-  },
-  openGraph: {
-    title: "Industrial Devices (India) Pvt. Ltd.",
-    description:
-      "Gas chlorination systems and water treatment equipment for municipal, industrial, and process applications.",
-  },
-};
+export const metadata: Metadata = rootMetadata;
 
 export default function RootLayout({
   children,
@@ -46,7 +42,7 @@ export default function RootLayout({
       suppressHydrationWarning
     >
       <body
-        className="min-h-full bg-neutral-50 bg-[radial-gradient(circle_at_center,rgba(15,23,42,0.055)_1px,transparent_1px)] bg-size-[20px_20px] flex flex-col"
+        className="flex min-h-full flex-col bg-neutral-50 bg-[radial-gradient(circle_at_center,rgba(15,23,42,0.055)_1px,transparent_1px)] bg-size-[20px_20px]"
         suppressHydrationWarning
       >
         <ThemeProvider

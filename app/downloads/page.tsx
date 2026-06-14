@@ -1,12 +1,15 @@
 import type { Metadata } from "next";
 
 import { DownloadsSection } from "@/components/landing/downloads-section";
+import { createPageMetadata } from "@/lib/site-metadata";
 
-export const metadata: Metadata = {
+export const metadata: Metadata = createPageMetadata({
   title: "Downloads | Industrial Devices (India)",
   description:
     "Download the Industrial Devices company profile catalogue and other technical resources.",
-};
+  path: "/downloads",
+  ogImage: "/product/idi-logo.png",
+});
 
 export default function DownloadsPage() {
   return (

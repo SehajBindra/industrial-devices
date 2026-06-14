@@ -1,7 +1,9 @@
 import type { Metadata } from "next";
 import { notFound } from "next/navigation";
+
 import { ProductPageContent } from "@/components/landing/product-page-content";
 import { getProductPage, productSlugs } from "@/lib/products";
+import { createPageMetadata, siteUrl } from "@/lib/site-metadata";
 
 type PageProps = {
   params: Promise<{ slug: string }>;
@@ -21,10 +23,21 @@ export async function generateMetadata({
     return {};
   }
 
-  return {
+  const path = `/product/${slug}`;
+  const ogImage =
+    product.models[0]?.imageSrc ??
+    "/hero-carousel/drinking-water-fountain-application.jpg";
+
+  return createPageMetadata({
     title: product.metadata.title,
     description: product.metadata.description,
-  };
+    path,
+    ogImage,
+    openGraph: {
+      type: "website",
+      url: new URL(path, siteUrl).toString(),
+    },
+  });
 }
 
 export default async function ProductSlugPage({ params }: PageProps) {

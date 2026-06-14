@@ -1,4 +1,6 @@
+import Image from "next/image";
 import Link from "next/link";
+
 import type { BlogPost } from "@/lib/blog-posts";
 
 type FeaturedPostsGridProps = {
@@ -17,11 +19,13 @@ export function FeaturedPostsGrid({ posts }: FeaturedPostsGridProps) {
             href={`/blog/${post.slug}`}
             className="block overflow-hidden rounded-3xl bg-white shadow-sm ring-1 shadow-black/5 ring-black/5 dark:bg-neutral-950 dark:ring-white/10"
           >
-            <div className="aspect-6/4 w-full">
-              <img
+            <div className="relative aspect-6/4 w-full">
+              <Image
                 alt={post.title}
-                className="h-full w-full rounded-3xl object-cover shadow-sm ring-1 shadow-black/5 ring-black/5"
                 src={post.image}
+                fill
+                sizes="(max-width: 768px) 100vw, 33vw"
+                className="rounded-3xl object-cover shadow-sm ring-1 shadow-black/5 ring-black/5"
               />
             </div>
             <div className="p-4">
@@ -39,10 +43,12 @@ export function FeaturedPostsGrid({ posts }: FeaturedPostsGridProps) {
           <div className="flex items-center justify-between gap-2 p-4">
             <div className="flex flex-col gap-2">
               <div className="flex items-center gap-2">
-                <img
+                <Image
                   alt={post.authors[0].name}
-                  className="size-5 rounded-full object-cover"
                   src={post.authors[0].avatar}
+                  width={20}
+                  height={20}
+                  className="size-5 rounded-full object-cover"
                 />
                 <p className="text-sm font-normal text-neutral-600 dark:text-neutral-400">
                   {post.authors[0].name}

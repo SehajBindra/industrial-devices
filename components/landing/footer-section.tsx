@@ -1,10 +1,19 @@
-"use client";
-
+import dynamic from "next/dynamic";
 import { ChevronRightIcon, ClockIcon } from "lucide-react";
 import Image from "next/image";
 import Link from "next/link";
-import { FlickeringGrid } from "@/components/ui/flickering-grid";
+
 import { contactInfo, siteConfig } from "@/lib/data";
+
+const FooterFlickeringGrid = dynamic(
+  () =>
+    import("@/components/landing/footer-flickering-grid").then(
+      (module) => module.FooterFlickeringGrid,
+    ),
+  {
+    loading: () => <div className="h-40 w-full md:h-64" aria-hidden />,
+  },
+);
 
 function FooterLinkRow({
   href,
@@ -34,8 +43,8 @@ function FooterLinkRow({
 
 export function FooterSection() {
   return (
-    <footer id="footer" className="w-full p-3 bg-white">
-      <div className="flex flex-col gap-10 p-0 mt-10 md:flex-row md:items-start md:justify-between md:gap-12">
+    <footer id="footer" className="w-full bg-white p-3">
+      <div className="mt-10 flex flex-col gap-10 p-0 md:flex-row md:items-start md:justify-between md:gap-12">
         <div className="mx-0 flex max-w-sm flex-col items-start justify-start">
           <div className="flex items-center gap-3">
             <Image
@@ -43,7 +52,7 @@ export function FooterSection() {
               alt="Industrial Devices (India) logo"
               width={32}
               height={32}
-              className="size-10 sm:size-16 shrink-0 object-cover"
+              className="size-10 shrink-0 object-cover sm:size-16"
             />
             <div className="flex flex-col justify-center gap-1">
               <h3 className="text-base font-semibold text-primary">
@@ -79,7 +88,7 @@ export function FooterSection() {
             ))}
           </div>
         </div>
-        <div className="w-full pt-2 md:flex-1 md:min-w-0">
+        <div className="w-full pt-2 md:min-w-0 md:flex-1">
           <div className="grid min-w-0 grid-cols-1 gap-8 sm:grid-cols-2 lg:gap-10 lg:pl-6">
             {siteConfig.footerLinks.map((column, columnIndex) => (
               <ul key={columnIndex} className="flex min-w-0 flex-col gap-y-2">
@@ -98,31 +107,7 @@ export function FooterSection() {
           </div>
         </div>
       </div>
-      <div className="w-full h-40 md:h-64 relative  z-0">
-        <div className="absolute inset-0 bg-gradient-to-t from-transparent to-background z-10 from-40%" />
-        <div className="absolute inset-0 ">
-          <FlickeringGrid
-            text="Industrial Devices"
-            fontSize={56}
-            className="h-full w-full md:hidden"
-            squareSize={2}
-            gridGap={3}
-            color="#0ea5e9"
-            maxOpacity={0.3}
-            flickerChance={0.1}
-          />
-          <FlickeringGrid
-            text="Industrial Devices"
-            fontSize={90}
-            className="hidden h-full w-full md:block"
-            squareSize={2}
-            gridGap={3}
-            color="#0ea5e9"
-            maxOpacity={0.3}
-            flickerChance={0.1}
-          />
-        </div>
-      </div>
+      <FooterFlickeringGrid />
     </footer>
   );
 }

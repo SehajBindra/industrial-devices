@@ -1,4 +1,5 @@
-/* eslint-disable @next/next/no-img-element */
+import Image from "next/image";
+
 import { type Author } from "@/lib/authors";
 import { cn } from "@/lib/utils";
 
@@ -10,13 +11,15 @@ interface AuthorCardProps {
 export function AuthorCard({ author, className }: AuthorCardProps) {
   return (
     <div className={cn("flex items-start gap-2", className)}>
-      <img
+      <Image
         src={author.avatar}
         alt={author.name}
-        className="rounded-full w-8 h-8 border border-border object-cover"
+        width={32}
+        height={32}
+        className="h-8 w-8 rounded-full border border-border object-cover"
       />
       <div className="flex-1">
-        <h3 className="text-sm tracking-tight text-balance font-semibold">
+        <h3 className="text-sm font-semibold tracking-tight text-balance">
           {author.name}
         </h3>
         <p className="text-xs text-muted-foreground text-balance">

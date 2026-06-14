@@ -1,4 +1,6 @@
+import Image from "next/image";
 import Link from "next/link";
+
 import type { BlogPost } from "@/lib/blog-posts";
 
 type MorePostsGridProps = {
@@ -19,11 +21,13 @@ export function MorePostsGrid({ posts }: MorePostsGridProps) {
             className="group overflow-hidden rounded-2xl bg-neutral-50 ring-1 ring-black/5 transition hover:bg-neutral-100 hover:ring-black/10 dark:bg-neutral-900/80 dark:ring-white/10 dark:hover:bg-neutral-900 dark:hover:ring-white/15"
           >
             <article>
-              <div className="aspect-video w-full">
-                <img
+              <div className="relative aspect-video w-full">
+                <Image
                   alt={post.title}
-                  className="h-full w-full rounded-2xl object-cover shadow-sm ring-1 shadow-black/5 ring-black/5 transition duration-300 group-hover:scale-[1.02]"
                   src={post.image}
+                  fill
+                  sizes="(max-width: 640px) 50vw, 25vw"
+                  className="rounded-2xl object-cover shadow-sm ring-1 shadow-black/5 ring-black/5 transition duration-300 group-hover:scale-[1.02]"
                 />
               </div>
               <div className="p-3">

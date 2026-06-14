@@ -7,6 +7,7 @@ import {
   m,
   useReducedMotion,
 } from "motion/react";
+import Image from "next/image";
 import { useEffect, useState } from "react";
 import { ClientCell, clientCells } from "@/lib/data";
 import { cn } from "@/lib/utils";
@@ -115,16 +116,14 @@ function ClientLogo({ cell }: { cell: RotatingCell }) {
   const imgAlt = imageAccessibleName || "Client logo";
 
   const logoImage = (
-    // Client logos vary in format (JPG / PNG); a plain `img` works consistently.
-    // eslint-disable-next-line @next/next/no-img-element
-    <img
+    <Image
       src={cell.src}
       alt={imgAlt}
-      decoding="async"
+      width={160}
+      height={48}
       draggable={false}
-      loading="lazy"
       className={cn(
-        "w-auto shrink-0 select-none object-contain",
+        "h-auto w-auto max-h-12 shrink-0 select-none object-contain",
         !cell.preserveColor && "grayscale brightness-0 contrast-125",
         cell.className,
       )}

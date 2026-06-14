@@ -5,12 +5,15 @@ import Link from "next/link";
 import { QuoteRequestForm } from "@/components/forms/quote-request-form";
 import { SectionIntro } from "@/components/landing/section-intro";
 import { contactInfo } from "@/lib/data";
+import { createPageMetadata } from "@/lib/site-metadata";
 
-export const metadata: Metadata = {
+export const metadata: Metadata = createPageMetadata({
   title: "Request a Quote | Industrial Devices (India)",
   description:
     "Submit your chlorination or water treatment requirement. Our technical team will respond with product selection and pricing support.",
-};
+  path: "/request-quote",
+  ogImage: "/quote/industrial-water-treatment-support.png",
+});
 
 export default function RequestQuotePage() {
   return (
@@ -54,7 +57,7 @@ export default function RequestQuotePage() {
                 alt="Engineer reviewing industrial water treatment equipment during project planning"
                 width={1536}
                 height={1024}
-                loading="eager"
+                priority
                 sizes="(max-width: 1024px) 100vw, 50vw"
                 className="mt-8 h-auto w-full max-w-xl rounded-md object-cover shadow-[0_20px_70px_rgba(15,23,42,0.12)]"
               />

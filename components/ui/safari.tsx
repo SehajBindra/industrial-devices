@@ -1,4 +1,5 @@
 import type { HTMLAttributes, ReactNode } from "react"
+import Image from "next/image"
 
 const SAFARI_WIDTH = 1203
 const SAFARI_HEIGHT = 753
@@ -73,16 +74,17 @@ export function Safari({
 
       {!hasVideo && hasImage && (
         <div
-          className="pointer-events-none absolute z-0 overflow-hidden"
+          className="pointer-events-none absolute z-0 overflow-hidden relative"
           style={{
             ...screenStyle,
             borderRadius: "0 0 11px 11px",
           }}
         >
-          <img
+          <Image
             src={imageSrc}
             alt=""
-            className="block size-full object-cover object-top"
+            fill
+            className="block object-cover object-top"
           />
         </div>
       )}

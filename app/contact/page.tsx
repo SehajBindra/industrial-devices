@@ -5,12 +5,15 @@ import Link from "next/link";
 import { ContactForm } from "@/components/forms/contact-form";
 import { SectionIntro } from "@/components/landing/section-intro";
 import { contactInfo } from "@/lib/data";
+import { createPageMetadata } from "@/lib/site-metadata";
 
-export const metadata: Metadata = {
+export const metadata: Metadata = createPageMetadata({
   title: "Contact Us | Industrial Devices (India)",
   description:
     "Questions about chlorination systems, commissioning, or support? Tell us what you need and we will connect you with the right person on our team.",
-};
+  path: "/contact",
+  ogImage: "/quote/industrial-water-treatment-support.png",
+});
 
 export default function ContactPage() {
   return (
@@ -54,7 +57,7 @@ export default function ContactPage() {
                 alt="Engineer reviewing industrial water treatment equipment during project planning"
                 width={1536}
                 height={1024}
-                loading="eager"
+                priority
                 sizes="(max-width: 1024px) 100vw, 50vw"
                 className="mt-8 h-auto w-full max-w-xl rounded-md object-cover shadow-[0_20px_70px_rgba(15,23,42,0.12)]"
               />

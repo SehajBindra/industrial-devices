@@ -10,9 +10,9 @@ import { AuthorCard } from "@/components/author-card";
 import { ReadMoreSection } from "@/components/read-more-section";
 import { PromoContent } from "@/components/promo-content";
 import { FlickeringGrid } from "@/components/magicui/flickering-grid";
-import { HashScrollHandler } from "@/components/hash-scroll-handler";
 import type { Heading } from "@/components/table-of-contents";
 import { blogSlugs, getBlogPost } from "@/lib/blog-posts";
+import { createPageMetadata, siteUrl } from "@/lib/site-metadata";
 import type { Author } from "@/lib/authors";
 
 type PageProps = {
@@ -66,9 +66,13 @@ export async function generateMetadata({
     return {};
   }
 
-  return {
+  const path = `/blog/${slug}`;
+
+  return createPageMetadata({
     title: post.title,
     description: post.description,
+    path,
+    ogImage: post.image,
     keywords: [
       post.title,
       post.category,
@@ -98,16 +102,12 @@ export async function generateMetadata({
       title: post.title,
       description: post.description,
       type: "article",
+      url: new URL(path, siteUrl).toString(),
       publishedTime: post.date,
       authors: post.authors.map((author) => author.name),
       tags: [post.category],
     },
-    twitter: {
-      card: "summary_large_image",
-      title: post.title,
-      description: post.description,
-    },
-  };
+  });
 }
 
 export default async function BlogPost({ params }: PageProps) {
@@ -142,7 +142,6 @@ export default async function BlogPost({ params }: PageProps) {
       className="relative left-1/2 min-h-screen w-screen -translate-x-1/2 max-w-6xl mx-auto bg-white pt-14 sm:pt-16"
       style={magicBlogTheme}
     >
-      <HashScrollHandler />
       <div className="absolute top-0 left-0 z-0 w-full h-[200px] [mask-image:linear-gradient(to_top,transparent_25%,black_95%)]">
         <FlickeringGrid
           className="absolute top-0 left-0 size-full"

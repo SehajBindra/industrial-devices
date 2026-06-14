@@ -1,7 +1,9 @@
-/* eslint-disable @next/next/no-img-element */
+"use client";
+
+import Image from "next/image";
+import Link from "next/link";
 
 import { cn } from "@/lib/utils";
-import Link from "next/link";
 
 interface PromoContentProps {
   variant?: "desktop" | "mobile";
@@ -16,26 +18,28 @@ export function PromoContent({
     return (
       <div className={cn("border-t border-border bg-muted/20 p-3", className)}>
         <div className="flex items-center gap-3">
-          <img
+          <Image
             src="/product/IDI LOGO.JPG"
             alt="Industrial Devices (India) logo"
-            className="w-8 h-8 rounded object-cover flex-shrink-0"
+            width={32}
+            height={32}
+            className="h-8 w-8 shrink-0 rounded object-cover"
           />
-          <div className="flex-1 min-w-0">
-            <p className="text-xs font-medium text-foreground/90 truncate">
+          <div className="min-w-0 flex-1">
+            <p className="truncate text-xs font-medium text-foreground/90">
               Industrial Devices
             </p>
-            <p className="text-xs text-muted-foreground truncate">
+            <p className="truncate text-xs text-muted-foreground">
               Gas chlorination systems & water treatment equipment.
             </p>
           </div>
-          <a
-            href="#"
-            className="text-xs text-primary hover:text-primary/80 font-medium"
+          <Link
+            href="/request-quote"
+            className="text-xs font-medium text-primary hover:text-primary/80"
             onClick={(event) => event.stopPropagation()}
           >
             Learn more
-          </a>
+          </Link>
         </div>
       </div>
     );
@@ -43,13 +47,15 @@ export function PromoContent({
 
   return (
     <div
-      className={cn("border border-border rounded-lg p-4 bg-card", className)}
+      className={cn("rounded-lg border border-border bg-card p-4", className)}
     >
       <div className="flex flex-col gap-4">
-        <img
+        <Image
           src="/product/IDI LOGO.JPG"
           alt="Industrial Devices (India) logo"
-          className="w-full h-40 rounded-md object-cover"
+          width={320}
+          height={160}
+          className="h-40 w-full rounded-md object-cover"
         />
         <div className="flex flex-col gap-1">
           <h3 className="text-lg font-semibold tracking-tighter">
@@ -60,7 +66,7 @@ export function PromoContent({
           </p>
           <Link
             href="/request-quote"
-            className="text-xs text-primary hover:text-primary/80 font-medium"
+            className="text-xs font-medium text-primary hover:text-primary/80"
           >
             Learn more
           </Link>
