@@ -24,9 +24,9 @@ export default function CTASection() {
   return (
     <section
       id="contact"
-      className="relative mx-auto w-full overflow-hidden border border-gray-100 bg-white p-4 py-20"
+      className="relative w-full overflow-hidden border border-gray-100 bg-white px-4 py-20 sm:px-6"
     >
-      <div className="flex flex-col-reverse items-center justify-between gap-10 md:flex-row">
+      <div className="mx-auto flex max-w-6xl flex-col-reverse items-center justify-between gap-10 md:flex-row">
         <div className="z-10 max-w-xl text-left">
           <BlurFade
             delay={0.25}

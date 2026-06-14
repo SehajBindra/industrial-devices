@@ -220,7 +220,7 @@ export function SiteHeader() {
   const [mobileOpen, setMobileOpen] = useState(false);
 
   return (
-    <Navbar className="pointer-events-none fixed inset-x-0 top-0 z-50 mx-auto flex max-w-6xl justify-center overflow-visible px-4 sm:px-2">
+    <Navbar className="pointer-events-none fixed inset-x-0 top-0 z-50 mx-auto flex max-w-7xl justify-center overflow-visible px-4 sm:px-10">
       <NavBody
         className={cn(
           "pointer-events-auto h-10 gap-1 overflow-visible px-4 sm:h-16 sm:gap-2 sm:px-5",
