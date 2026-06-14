@@ -164,7 +164,7 @@ Beams, Weighing Systems, etc. Spares for the system
 
 that include precision-engineered ejectors, vacuum regulators
 other chlorination accessories"
-      href="/#audits-assessments"
+      href={productPath("chlorination-accessories")}
       imageAlt="Dual-stream vacuum regulator and gas metering skid"
       imageSrc={PRODUCT_IMAGES.vacuumRegulators}
       title="Chlorination System Accessories &amp; Spares"

@@ -16,7 +16,7 @@ const SERVICE_BENTO_SECTIONS = [
   { id: "consulting-advisory", Component: ConsultingAdvisoryBentoCard },
   { id: "industrial-safety", Component: IndustrialSafetyBentoCard },
   { id: "training-development", Component: TrainingDevelopmentBentoCard },
-  { id: "audits-assessments", Component: AuditsAssessmentsBentoCard },
+  { id: "chlorination-accessories", Component: AuditsAssessmentsBentoCard },
   { id: "software-it", Component: SoftwareItBentoCard },
   { id: "electro-chlorination", Component: ElectroChlorinationBentoCard },
   { id: "chemical-dosing-system", Component: ChemicalDosingSystemBentoCard },

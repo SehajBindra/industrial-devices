@@ -38,7 +38,7 @@ export function HeroSection() {
             duration={0.8}
             className="w-full"
           >
-            <h1 className="text-balance text-5xl tracking-tight text-neutral-950 sm:text-6xl sm:leading-[1.08] lg:text-7xl lg:leading-[1.05]">
+            <h1 className="text-balance text-5xl tracking-tight text-neutral-800 sm:text-6xl sm:leading-[1.08] lg:text-7xl lg:leading-[1.05]">
               Gas chlorination systems &{" "}
               <span className="text-primary">water </span>
               <span className="inline-flex items-baseline">

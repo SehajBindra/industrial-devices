@@ -94,6 +94,36 @@ export const downloads: SiteDownload[] = [
   },
 ];
 
+export type SiteCertification = {
+  id: string;
+  title: string;
+  category: string;
+  description: string;
+  file: string;
+  fileName: string;
+};
+
+export const certifications: SiteCertification[] = [
+  {
+    id: "iso-9001",
+    title: "ISO 9001:2015",
+    category: "Quality management",
+    description:
+      "Certified quality management system covering design, manufacture, and supply of chlorination and water treatment equipment.",
+    file: "/product/ISO-9001%20.pdf",
+    fileName: "ISO-9001.pdf",
+  },
+  {
+    id: "iso-ohsas",
+    title: "OHSAS 18001 / ISO 45001",
+    category: "Occupational health & safety",
+    description:
+      "Certified occupational health and safety management system for manufacturing, commissioning, and project site operations.",
+    file: "/product/ISO-OHSAS-Latest.pdf",
+    fileName: "ISO-OHSAS.pdf",
+  },
+];
+
 export const contactInfo = {
   phone: {
     display: "+91 11 46013019",
@@ -153,6 +183,11 @@ export const siteConfig = {
         { id: "clientele", title: "Customer Testimonial", url: "/#clients" },
         { id: "contact", title: "Contact", url: "/contact" },
         { id: "downloads", title: "Downloads", url: "/downloads" },
+        {
+          id: "certification",
+          title: "Certification",
+          url: "/certification",
+        },
         { id: "request-quote", title: "Request Quote", url: "/request-quote" },
       ],
     },
@@ -182,7 +217,7 @@ export const siteConfig = {
         {
           id: "accessories",
           title: "Chlorination System Accessories",
-          url: "/#audits-assessments",
+          url: productPath("chlorination-accessories"),
         },
         {
           id: "dioxide",
