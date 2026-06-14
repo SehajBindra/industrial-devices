@@ -1,0 +1,23 @@
+{
+  "version": 1,
+  "skills": {
+    "emil-design-eng": {
+      "source": "emilkowalski/skill",
+      "sourceType": "github",
+      "skillPath": "skills/emil-design-eng/SKILL.md",
+      "computedHash": "8bdf9e4e6de7a4969147bf4828a4ad2c5aacd9fba4b690b250a85e0467ca387d"
+    },
+    "fixing-motion-performance": {
+      "source": "ibelick/ui-skills",
+      "sourceType": "github",
+      "skillPath": "skills/fixing-motion-performance/SKILL.md",
+      "computedHash": "426dcf33f23419643f2aab71e2253e1a5b5684a808fabb8a4ad135e489ed7a0f"
+    },
+    "nextjs-best-practices": {
+      "source": "sickn33/antigravity-awesome-skills",
+      "sourceType": "github",
+      "skillPath": "skills/nextjs-best-practices/SKILL.md",
+      "computedHash": "5344522f15f544513456e77b858377368f24e680732af5efeb5a67bbab021bc1"
+    }
+  }
+}

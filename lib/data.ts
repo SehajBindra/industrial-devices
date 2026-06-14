@@ -96,12 +96,18 @@ export const downloads: SiteDownload[] = [
 
 export const contactInfo = {
   phone: {
-    display: "+91 11 4161 1916",
-    href: "tel:+911141611916",
+    display: "+91 11 46013019",
+    href: "tel:+911146013019",
+  },
+  mobile: {
+    display: "9810079856",
+    href: "tel:+919810079856",
   },
   whatsapp: {
+    display: "9810079856",
     href: "https://wa.me/919810079856",
   },
+  hours: "IST 9 AM to 6 PM",
 } as const;
 
 export const siteConfig = {

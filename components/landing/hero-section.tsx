@@ -1,4 +1,5 @@
 import { HeroCtaButtons } from "@/components/landing/hero-cta-buttons";
+import { HeroDisinfectionGlass } from "@/components/landing/hero-disinfection-glass";
 import { HeroSafariCarousel } from "@/components/landing/hero-safari-carousel";
 import { BlurFade } from "@/components/ui/blur-fade";
 import { DottedGlowBackground } from "@/components/ui/dotted-glow-background";
@@ -39,7 +40,12 @@ export function HeroSection() {
           >
             <h1 className="text-balance text-5xl tracking-tight text-neutral-950 sm:text-6xl sm:leading-[1.08] lg:text-7xl lg:leading-[1.05]">
               Gas chlorination systems &{" "}
-              <span className="text-primary">water treatment</span> equipment.
+              <span className="text-primary">water </span>
+              <span className="inline-flex items-baseline">
+                <span className="text-primary">treatment</span>
+                <HeroDisinfectionGlass />
+              </span>{" "}
+              equipment.
             </h1>
           </BlurFade>
           <BlurFade
