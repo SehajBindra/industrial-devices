@@ -81,8 +81,7 @@ export function FooterSection() {
                   width={32}
                   height={32}
                   unoptimized
-                  className="h-6 sm:h-8"
-                  style={{ width: "auto" }}
+                  className="size-6 sm:size-8"
                 />
               </Link>
             ))}
