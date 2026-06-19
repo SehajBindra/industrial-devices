@@ -27,7 +27,7 @@ const PRODUCT_IMAGES = {
   chlorineVaporizer: "/product/gas-chlorinators-bg-white.png",
   leakDetectionSafety: "/product/chlorine-leak-detector.png",
   vacuumRegulators: "/product/auxiliary-container-valve.png",
-  chlorineDioxide: "/product/chlorine-dioxide-generator.jpg",
+  chlorineDioxide: "/product/chlorine-dioxside-generator.png",
   electroChlorination: "/product/electrochlorinator-bg-white.png",
   chemicalDosingSystem: "/product/chemical-dosing-system.jpg",
 } as const;

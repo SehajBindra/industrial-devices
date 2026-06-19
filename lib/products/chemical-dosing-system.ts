@@ -1,3 +1,4 @@
+import { productImage } from "@/lib/products/site-images";
 import type { ProductPage } from "@/lib/products/types";
 
 export const chemicalDosingSystemProduct = {
@@ -23,7 +24,7 @@ export const chemicalDosingSystemProduct = {
     {
       id: "chemical-dosing-system",
       heading: "Precision Dosing Solutions for Efficient Process",
-      imageSrc: "/chemical-dosing-system.jpg",
+      imageSrc: productImage("chemical-dosing-system.jpg"),
       imageAlt:
         "INDEVICE chemical dosing system with storage tanks, metering pumps, and control panel",
       descriptionPoints: [

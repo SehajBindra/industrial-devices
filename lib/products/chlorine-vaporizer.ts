@@ -69,8 +69,10 @@ export const chlorineVaporizerProduct = {
     {
       id: "hot-water-heated",
       heading: "Hot Water Heated Vaporizer",
-      imageSrc: "/product/chlorine-heater-jb-skid.webp",
-      imageAlt: "Hot water heated chlorine vaporizer",
+      imageSrc: productImage("vaporizer-drawing.png"),
+      imageAlt: "Hot water heated chlorine vaporizer drawing",
+      imageWidth: 1750,
+      imageHeight: 2480,
       descriptionPoints: [
         "**Efficient & Controlled Chlorine Vaporization for High-Demand Applications**",
         "INDEVICE Hot Water Heated Vaporizers convert liquid chlorine into dry gas using hot water as the heating medium. Uniform heat transfer ensures stable vaporization with enhanced safety.",

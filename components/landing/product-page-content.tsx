@@ -98,7 +98,16 @@ export function ProductPageContent({ product }: ProductPageContentProps) {
         <div className="mt-10 flex flex-col gap-12">
           {models.map(
             (
-              { id, heading, imageSrc, imageAlt, descriptionPoints, specs },
+              {
+                id,
+                heading,
+                imageSrc,
+                imageAlt,
+                imageWidth = 1200,
+                imageHeight = 900,
+                descriptionPoints,
+                specs,
+              },
               index,
             ) => (
               <article
@@ -111,8 +120,8 @@ export function ProductPageContent({ product }: ProductPageContentProps) {
                     <Image
                       src={imageSrc}
                       alt={imageAlt}
-                      width={1200}
-                      height={900}
+                      width={imageWidth}
+                      height={imageHeight}
                       quality={90}
                       priority={index === 0}
                       loading={index === 0 ? "eager" : "lazy"}
