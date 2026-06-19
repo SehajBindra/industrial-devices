@@ -69,7 +69,7 @@ export const chlorineVaporizerProduct = {
     {
       id: "hot-water-heated",
       heading: "Hot Water Heated Vaporizer",
-      imageSrc: "/client-list/chlorine-heater-jb-skid.webp",
+      imageSrc: "/product/chlorine-heater-jb-skid.webp",
       imageAlt: "Hot water heated chlorine vaporizer",
       descriptionPoints: [
         "**Efficient & Controlled Chlorine Vaporization for High-Demand Applications**",

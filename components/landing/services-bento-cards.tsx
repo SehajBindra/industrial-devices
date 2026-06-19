@@ -25,12 +25,11 @@ const ease = [0.22, 1, 0.36, 1] as const;
 const PRODUCT_IMAGES = {
   gasChlorinator: "/product/vacuum-chlorinator-bg-white.png",
   chlorineVaporizer: "/product/gas-chlorinators-bg-white.png",
-  leakDetectionSafety: "/product/leak-detection-safety-bg-white.png",
-  vacuumRegulators:
-    "/product/chlorination-system-accessories-spares-bg-white.png",
-  chlorineDioxide: "/client-list/chlorine-dioxide-generator.jpg",
+  leakDetectionSafety: "/product/chlorine-leak-detector.png",
+  vacuumRegulators: "/product/auxiliary-container-valve.png",
+  chlorineDioxide: "/product/chlorine-dioxide-generator.jpg",
   electroChlorination: "/product/electrochlorinator-bg-white.png",
-  chemicalDosingSystem: "/chemical-dosing-system.jpg",
+  chemicalDosingSystem: "/product/chemical-dosing-system.jpg",
 } as const;
 
 function ProductBentoImage({

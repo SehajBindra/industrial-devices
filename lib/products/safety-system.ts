@@ -51,7 +51,7 @@ export const safetySystemProduct = {
     {
       id: "emergency-repair-kit",
       heading: "Emergency Repair Kit",
-      imageSrc: "/client-list/chlorine-heater-jb-skid.webp",
+      imageSrc: "/product/chlorine-heater-jb-skid.webp",
       imageAlt: "Chlorine emergency repair kit",
       descriptionPoints: [
         "Devices to stop leakage at the valve and from the wall of the chlorine container.",
