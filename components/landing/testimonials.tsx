@@ -31,7 +31,7 @@ export default function WallOfLoveSection() {
   return (
     <section
       id="clients"
-      className="w-full scroll-mt-28 sm:max-w-6xl py-20 bg-white sm:scroll-mt-32"
+      className="w-full scroll-mt-28 py-20 bg-white sm:scroll-mt-32"
       aria-labelledby={`${baseId}-heading`}
     >
       <SectionIntro
@@ -46,7 +46,7 @@ export default function WallOfLoveSection() {
           </>
         }
       />
-      <div className=" max-w-6xl overflow-hidden   bg-white p-4">
+      <div className="mx-auto max-w-6xl overflow-hidden bg-white p-4 sm:px-6">
         <div className="grid grid-cols-1 gap-3 sm:gap-px md:grid-cols-2 md:gap-2 lg:grid-cols-3">
           {testimonials.map(({ id, name, role, text, image }, index) => {
             const cross = isCrossArm(index);

@@ -43,8 +43,8 @@ function FooterLinkRow({
 
 export function FooterSection() {
   return (
-    <footer id="footer" className="w-full bg-white p-3">
-      <div className="mt-10 flex flex-col gap-10 p-0 md:flex-row md:items-start md:justify-between md:gap-12">
+    <footer id="footer" className="w-full bg-white px-4 py-3 sm:px-6">
+      <div className="mx-auto mt-10 flex max-w-6xl flex-col gap-10 p-0 md:flex-row md:items-start md:justify-between md:gap-12">
         <div className="mx-0 flex max-w-sm flex-col items-start justify-start">
           <div className="flex items-center gap-3">
             <Image

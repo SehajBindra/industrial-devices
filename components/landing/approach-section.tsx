@@ -85,41 +85,39 @@ export function ApproachSection() {
           </>
         }
       />
-      <div className="mx-auto max-w-7xl px-4 mt-4 sm:px-6">
+      <div className="mx-auto max-w-6xl px-4 mt-4 sm:px-6">
         <div className="grid grid-cols-1 gap-6 md:grid-cols-2 lg:grid-cols-4">
-          {CORE_VALUES.map(
-            ({ title, description, imageSrc, imageAlt }) => (
-              <div
-                key={title}
-                className="group flex h-full flex-col overflow-hidden rounded-md border border-dashed border-neutral-200 bg-neutral-50 text-left shadow-[0_18px_60px_rgba(15,23,42,0.04)] transition duration-300 hover:-translate-y-1 hover:border-neutral-300 hover:bg-white hover:shadow-[0_24px_80px_rgba(15,23,42,0.075)]"
-              >
-                <div className="relative aspect-[16/9] overflow-hidden">
-                  <Image
-                    src={imageSrc}
-                    alt={imageAlt}
-                    fill
-                    sizes="(max-width: 768px) 100vw, (max-width: 1024px) 50vw, 25vw"
-                    className="object-cover transition duration-500 group-hover:scale-[1.035]"
-                  />
-                  <div className="absolute inset-0 bg-linear-to-t from-black/20 via-black/0 to-white/10" />
-                </div>
-
-                <div className="flex flex-1 flex-col p-6">
-                  <div className="mb-3 flex flex-col gap-y-3">
-                    <h2 className="text-foreground font-uncutBold text-xl">
-                      {title}
-                    </h2>
-                  </div>
-                  <p
-                    className="text-muted-foreground text-sm leading-normal"
-                    title={description}
-                  >
-                    {description}
-                  </p>
-                </div>
+          {CORE_VALUES.map(({ title, description, imageSrc, imageAlt }) => (
+            <div
+              key={title}
+              className="group flex h-full flex-col overflow-hidden rounded-md border border-dashed border-neutral-200 bg-neutral-50 text-left shadow-[0_18px_60px_rgba(15,23,42,0.04)] transition duration-300 hover:-translate-y-1 hover:border-neutral-300 hover:bg-white hover:shadow-[0_24px_80px_rgba(15,23,42,0.075)]"
+            >
+              <div className="relative aspect-[16/9] overflow-hidden">
+                <Image
+                  src={imageSrc}
+                  alt={imageAlt}
+                  fill
+                  sizes="(max-width: 768px) 100vw, (max-width: 1024px) 50vw, 25vw"
+                  className="object-cover transition duration-500 group-hover:scale-[1.035]"
+                />
+                <div className="absolute inset-0 bg-linear-to-t from-black/20 via-black/0 to-white/10" />
               </div>
-            ),
-          )}
+
+              <div className="flex flex-1 flex-col p-6">
+                <div className="mb-3 flex flex-col gap-y-3">
+                  <h2 className="text-foreground font-uncutBold text-xl">
+                    {title}
+                  </h2>
+                </div>
+                <p
+                  className="text-muted-foreground text-sm leading-normal"
+                  title={description}
+                >
+                  {description}
+                </p>
+              </div>
+            </div>
+          ))}
         </div>
       </div>
     </section>

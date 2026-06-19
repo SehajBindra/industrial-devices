@@ -11,11 +11,14 @@ import { rootMetadata } from "@/lib/site-metadata";
 
 import "./globals.css";
 
-const CTASection = dynamic(() => import("@/components/ui/globe-feature-section"), {
-  loading: () => (
-    <div className="mx-auto h-64 w-full max-w-6xl animate-pulse bg-neutral-100" />
-  ),
-});
+const CTASection = dynamic(
+  () => import("@/components/ui/globe-feature-section"),
+  {
+    loading: () => (
+      <div className="mx-auto h-64 w-full animate-pulse bg-neutral-100" />
+    ),
+  },
+);
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -50,7 +53,7 @@ export default function RootLayout({
           defaultTheme="light"
           enableSystem={false}
         >
-          <div className="mx-auto flex min-h-full w-full max-w-6xl flex-1 flex-col">
+          <div className="flex min-h-full w-full mx-auto flex-1 flex-col">
             <HashScrollHandler />
             <SiteHeader />
             {children}

@@ -47,7 +47,7 @@ export function SectionIntro({
     <motion.div
       {...motionProps}
       className={cn(
-        "flex flex-col p-4",
+        "mx-auto flex w-full max-w-6xl flex-col p-4",
         isStart ? "items-start" : "items-center justify-center",
         className,
       )}

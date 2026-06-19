@@ -6,7 +6,7 @@ import { DottedGlowBackground } from "@/components/ui/dotted-glow-background";
 
 export function HeroSection() {
   return (
-    <section className="relative max-w-6xl mx-auto overflow-hidden border-b border-neutral-200 px-4 bg-white pt-40 pb-16 sm:pt-32 sm:pb-20">
+    <section className="relative w-full overflow-hidden border-b border-neutral-200 bg-white px-4 pt-40 pb-16 sm:pt-32 sm:pb-20">
       <div
         className="pointer-events-none absolute inset-y-0 right-0 z-[2] hidden min-h-0 w-[min(62%,38rem)] md:block lg:w-[min(56%,42rem)]"
         aria-hidden
@@ -28,7 +28,7 @@ export function HeroSection() {
           speedScale={1}
         />
       </div>
-      <div className="relative z-10 flex flex-col">
+      <div className="relative z-10 mx-auto flex w-full max-w-6xl flex-col">
         <div className="max-w-5xl">
           <BlurFade
             delay={0.25}
