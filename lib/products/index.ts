@@ -1,4 +1,5 @@
 import { chlorinationAccessoriesProduct } from "@/lib/products/chlorination-accessories";
+import { chemicalDosingSystemProduct } from "@/lib/products/chemical-dosing-system";
 import { chlorineDioxideGeneratorProduct } from "@/lib/products/chlorine-dioxide-generator";
 import { chlorineDosingSystemProduct } from "@/lib/products/chlorine-dosing-system";
 import { chlorineVaporizerProduct } from "@/lib/products/chlorine-vaporizer";
@@ -11,6 +12,7 @@ export const productPages = {
   "chlorine-vaporizer": chlorineVaporizerProduct,
   "chlorine-dioxide-generator": chlorineDioxideGeneratorProduct,
   "chlorine-dosing-system": chlorineDosingSystemProduct,
+  "chemical-dosing-system": chemicalDosingSystemProduct,
   "safety-system": safetySystemProduct,
   "chlorination-accessories": chlorinationAccessoriesProduct,
 } as const satisfies Record<string, ProductPage>;
@@ -68,7 +70,7 @@ export const productHrefByLabel: Partial<Record<string, string>> = {
     "chlorine-dosing-system",
     "batch-type",
   ),
-  "Chemical Dosing Systems": "/#products",
+  "Chemical Dosing Systems": productPath("chemical-dosing-system"),
   "Chlorine Leak Detector": productAnchor("safety-system", "leak-detector"),
   "Emergency Repair Kits": productAnchor(
     "safety-system",

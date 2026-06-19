@@ -30,7 +30,7 @@ const PRODUCT_IMAGES = {
     "/product/chlorination-system-accessories-spares-bg-white.png",
   chlorineDioxide: "/client-list/chlorine-dioxide-generator.jpg",
   electroChlorination: "/product/electrochlorinator-bg-white.png",
-  chemicalDosingSystem: "/client-list/chemical-dosing-system.jpg",
+  chemicalDosingSystem: "/chemical-dosing-system.jpg",
 } as const;
 
 function ProductBentoImage({
@@ -203,6 +203,7 @@ export function ChemicalDosingSystemBentoCard(props: ServiceBentoCardProps) {
     <ServiceBentoCardShell
       {...props}
       description="Automated setup designed to precisely measure, mix, and dose measured quantities of chemicals into a process stream. It eliminates manual handling, preventing overdosing and underdosing, equipment damage, and reduced processing efficiency."
+      href={productPath("chemical-dosing-system")}
       imageAlt="Chemical dosing system with storage tanks, pumps, and automated metering skid"
       imageSrc={PRODUCT_IMAGES.chemicalDosingSystem}
       title="Chemical dosing systems"

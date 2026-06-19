@@ -39,7 +39,8 @@ export const chlorinationAccessoriesProduct = {
       id: "trunnion-roller-support",
       heading: "Trunnion Roller Support",
       imageSrc: productImage("trunnion-roller-support.jpg"),
-      imageAlt: "Trunnion roller support for chlorine ton container positioning",
+      imageAlt:
+        "Trunnion roller support for chlorine ton container positioning",
       descriptionPoints: [
         "Helps in the proper placement of tonners and allows easy rotation of the ton container for positioning the gas valve.",
         "Tonners are placed so both valves are in vertical alignment.",
@@ -50,7 +51,7 @@ export const chlorinationAccessoriesProduct = {
     {
       id: "auxiliary-container-valve",
       heading: "Auxiliary Container Valve",
-      imageSrc: productImage("auxiliary-container-valve.jpg"),
+      imageSrc: productImage("auxiliary-container-valve.png"),
       imageAlt: "Auxiliary container valve assembly for chlorine tonners",
       descriptionPoints: [
         "An additional valve assembly mounted with a yoke on the container valve to keep the container valve damage free.",
@@ -108,7 +109,7 @@ export const chlorinationAccessoriesProduct = {
     {
       id: "pressure-gauge",
       heading: "Pressure Gauge",
-      imageSrc: productImage("pressure-gauge.jpg"),
+      imageSrc: productImage("pressure-gauge.png"),
       imageAlt: "Pressure gauge designed for chlorine service",
       descriptionPoints: [
         "Specially designed for chlorine service.",
@@ -144,7 +145,9 @@ export const chlorinationAccessoriesProduct = {
     {
       id: "pressure-reducing-valve",
       heading: "Pressure Reducing Valve",
-      imageSrc: productImage("chlorination-system-accessories-spares-bg-white.png"),
+      imageSrc: productImage(
+        "chlorination-system-accessories-spares-bg-white.png",
+      ),
       imageAlt: "Pressure reducing valve for chlorine gas systems",
       descriptionPoints: [
         "Container pressure of chlorine varies between 8–10 Kg/Cm², which is too high to meter or dose accurately.",
@@ -156,7 +159,9 @@ export const chlorinationAccessoriesProduct = {
     {
       id: "vacuum-regulator",
       heading: "Vacuum Regulator",
-      imageSrc: productImage("chlorination-system-accessories-spares-bg-white.png"),
+      imageSrc: productImage(
+        "chlorination-system-accessories-spares-bg-white.png",
+      ),
       imageAlt: "Vacuum regulator for vacuum operated chlorinator",
       descriptionPoints: [
         "Critical component in a vacuum-operated chlorinator; normally closed and opens only under vacuum created at the ejector.",

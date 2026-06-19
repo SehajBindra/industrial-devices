@@ -39,7 +39,7 @@ export const safetySystemProduct = {
     {
       id: "leak-detector",
       heading: "Chlorine Leak Detector (Single and Double Sensor)",
-      imageSrc: productImage("auxiliary-container-valve.jpg"),
+      imageSrc: productImage("auxiliary-container-valve.png"),
       imageAlt: "Chlorine leak detector panel",
       descriptionPoints: [
         "The system consists of a control unit and a remotely mounted sensor that detects gas in the room.",
