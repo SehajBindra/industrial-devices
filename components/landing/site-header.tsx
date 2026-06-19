@@ -198,7 +198,7 @@ function DesktopNavLinks() {
         >
           Products
         </NavigationMenuTrigger>
-        <NavigationMenuContent className="bg-white">
+        <NavigationMenuContent className="overflow-hidden rounded-xl bg-white p-0">
           <ProductsMegaMenu />
         </NavigationMenuContent>
       </NavigationMenuItem>
@@ -229,7 +229,7 @@ function DesktopNavLinks() {
 
 function ProductsMegaMenu() {
   return (
-    <div className="w-[min(60rem,calc(100vw-2rem))] max-w-[calc(100vw-2rem)] bg-white px-5 py-6 sm:px-8 sm:py-7">
+    <div className="w-[min(60rem,calc(100vw-2rem))] max-w-[calc(100vw-2rem)] overflow-hidden rounded-xl bg-white px-5 py-6 sm:px-8 sm:py-7">
       <div className="max-h-[min(70dvh,34rem)] overflow-y-auto overscroll-contain">
         <div className="grid grid-cols-1 gap-8 sm:grid-cols-2 lg:grid-cols-3 lg:gap-0 lg:divide-x lg:divide-neutral-200">
           {productMenuColumns.map((column, columnIndex) => (
@@ -266,7 +266,7 @@ export function SiteHeader() {
 
         <NavigationMenu
           className="static max-w-none min-w-0 flex-1 justify-end md:flex-1 md:justify-center"
-          viewportClassName="overflow-visible rounded-xl border border-neutral-200 bg-white text-neutral-950 shadow-[0_24px_70px_-12px_rgba(15,23,42,0.12)] ring-0"
+          viewportClassName="overflow-hidden rounded-xl border border-neutral-200 bg-white text-neutral-950 shadow-[0_24px_70px_-12px_rgba(15,23,42,0.12)] ring-0"
         >
           <NavigationMenuList className="hidden flex-none flex-nowrap justify-center gap-0 sm:gap-0.5 md:flex">
             <DesktopNavLinks />
