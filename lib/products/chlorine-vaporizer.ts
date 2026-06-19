@@ -24,7 +24,7 @@ export const chlorineVaporizerProduct = {
     {
       id: "electrically-heated",
       heading: "Electrically Heated Vaporizer",
-      imageSrc: productImage("gas-chlorination-system-with-vaporiser.jpg"),
+      imageSrc: productImage("evaporator-vaporizer-bg-white.png"),
       imageAlt: "Electrically heated chlorine vaporizer",
       descriptionPoints: [
         "**High-Capacity Chlorine Vaporization for Reliable & Safe Operations**",
@@ -48,7 +48,7 @@ export const chlorineVaporizerProduct = {
     {
       id: "steam-heated",
       heading: "Steam Heated Vaporizer",
-      imageSrc: productImage("filter.jpg"),
+      imageSrc: productImage("steam-heated-vaporizer.jpg"),
       imageAlt: "Steam heated chlorine vaporizer",
       descriptionPoints: [
         "**Efficient & Reliable Chlorine Vaporization for High-Capacity Applications**",
@@ -69,8 +69,10 @@ export const chlorineVaporizerProduct = {
     {
       id: "hot-water-heated",
       heading: "Hot Water Heated Vaporizer",
-      imageSrc: "/client-list/chlorine-heater-jb-skid.webp",
-      imageAlt: "Hot water heated chlorine vaporizer",
+      imageSrc: productImage("vaporizer-drawing.png"),
+      imageAlt: "Hot water heated chlorine vaporizer drawing",
+      imageWidth: 1750,
+      imageHeight: 2480,
       descriptionPoints: [
         "**Efficient & Controlled Chlorine Vaporization for High-Demand Applications**",
         "INDEVICE Hot Water Heated Vaporizers convert liquid chlorine into dry gas using hot water as the heating medium. Uniform heat transfer ensures stable vaporization with enhanced safety.",

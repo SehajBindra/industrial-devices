@@ -26,7 +26,7 @@ export const chlorineDosingSystemProduct = {
     {
       id: "batch-type",
       heading: "Batch Type Electrochlorinators",
-      imageSrc: productImage("electrochlorinator-bg-white.png"),
+      imageSrc: productImage("batch-type-electrochlorinator.jpg"),
       imageAlt: "Batch type electrochlorinator system",
       descriptionPoints: [
         "These are simple to operate manual systems and the most economical.",
@@ -52,7 +52,7 @@ export const chlorineDosingSystemProduct = {
     {
       id: "continuous-type",
       heading: "Continuous Type Electrochlorinators",
-      imageSrc: productImage("electrochlorinator.JPG"),
+      imageSrc: productImage("electrochlorinator-bg-white.png"),
       imageAlt: "Continuous type electrochlorinator system",
       descriptionPoints: [
         "The system operates automatically, and requires least human intervention.",

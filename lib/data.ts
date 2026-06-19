@@ -232,7 +232,7 @@ export const siteConfig = {
         {
           id: "chemical-dosing",
           title: "Chemical Dosing System",
-          url: "/#products",
+          url: productPath("chemical-dosing-system"),
         },
       ],
     },

@@ -1,4 +1,5 @@
 import { chlorinationAccessoriesProduct } from "@/lib/products/chlorination-accessories";
+import { chemicalDosingSystemProduct } from "@/lib/products/chemical-dosing-system";
 import { chlorineDioxideGeneratorProduct } from "@/lib/products/chlorine-dioxide-generator";
 import { chlorineDosingSystemProduct } from "@/lib/products/chlorine-dosing-system";
 import { chlorineVaporizerProduct } from "@/lib/products/chlorine-vaporizer";
@@ -11,6 +12,7 @@ export const productPages = {
   "chlorine-vaporizer": chlorineVaporizerProduct,
   "chlorine-dioxide-generator": chlorineDioxideGeneratorProduct,
   "chlorine-dosing-system": chlorineDosingSystemProduct,
+  "chemical-dosing-system": chemicalDosingSystemProduct,
   "safety-system": safetySystemProduct,
   "chlorination-accessories": chlorinationAccessoriesProduct,
 } as const satisfies Record<string, ProductPage>;
@@ -68,20 +70,75 @@ export const productHrefByLabel: Partial<Record<string, string>> = {
     "chlorine-dosing-system",
     "batch-type",
   ),
-  "Chemical Dosing Systems": "/#products",
+  "Chemical Dosing Systems": productPath("chemical-dosing-system"),
+  "Leak Absorption System": productAnchor("safety-system", "leak-absorption"),
+  "Full Tonner Hood": productAnchor("safety-system", "full-tonner-hood"),
+  "Frontal Tonner Hood": productAnchor("safety-system", "frontal-tonner-hood"),
   "Chlorine Leak Detector": productAnchor("safety-system", "leak-detector"),
-  "Emergency Repair Kits": productAnchor(
+  "Emergency Repair Kit for Tonners": productAnchor(
     "safety-system",
-    "emergency-repair-kit",
+    "emergency-repair-kit-tonners",
   ),
-  "Chlorine Leak Absorption Systems": productAnchor(
+  "Emergency Repair Kit for Cylinders": productAnchor(
     "safety-system",
-    "leak-absorption",
+    "emergency-repair-kit-cylinders",
   ),
-  "Protective Clothing": productAnchor("safety-system", "protective-clothing"),
-  "Gas Mask & Air Breathing Apparatus": productAnchor(
+  "Self-Contained Breathing Apparatus (SCBA)": productAnchor(
+    "safety-system",
+    "breathing-apparatus",
+  ),
+  "Emergency Eye Wash & Safety Shower": productAnchor(
+    "safety-system",
+    "eyewash-shower",
+  ),
+  "Instant Resuscitator": productAnchor(
+    "safety-system",
+    "instant-resuscitator",
+  ),
+  "Canister Type Gas Mask": productAnchor(
     "safety-system",
     "canister-gas-mask",
+  ),
+  "Protective Clothing": productAnchor("safety-system", "protective-clothing"),
+  "Tonner Handling System": productAnchor(
+    "chlorination-accessories",
+    "tonner-handling-system",
+  ),
+  "Trunnion Roller Support": productAnchor(
+    "chlorination-accessories",
+    "trunnion-roller-support",
+  ),
+  "Auxiliary Container Valve": productAnchor(
+    "chlorination-accessories",
+    "auxiliary-container-valve",
+  ),
+  "Flexible Copper Connector": productAnchor(
+    "chlorination-accessories",
+    "flexible-copper-connector",
+  ),
+  "Chlorine Gas Manifold": productAnchor(
+    "chlorination-accessories",
+    "chlorine-gas-manifold",
+  ),
+  "Chlorine Gas Filter": productAnchor(
+    "chlorination-accessories",
+    "chlorine-gas-filter",
+  ),
+  "Chlorine Ball Valve": productAnchor(
+    "chlorination-accessories",
+    "chlorine-ball-valve",
+  ),
+  "Motorized Ball Valve": productAnchor(
+    "chlorination-accessories",
+    "motorized-ball-valve",
+  ),
+  "Pressure Gauge": productAnchor(
+    "chlorination-accessories",
+    "pressure-gauge",
+  ),
+  "Pressure Reducing Valve": productAnchor(
+    "chlorination-accessories",
+    "pressure-reducing-valve",
   ),
 };
 

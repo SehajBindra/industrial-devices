@@ -30,6 +30,7 @@ import { cn } from "@/lib/utils";
 type ProductMenuSection = {
   title: string;
   items: readonly string[];
+  columns?: 1 | 2;
 };
 
 type ProductMenuColumn = {
@@ -55,10 +56,6 @@ const productMenuColumns: readonly ProductMenuColumn[] = [
           "Hot Water Heated Vaporizer",
         ],
       },
-    ],
-  },
-  {
-    sections: [
       {
         title: "Disinfection Systems",
         items: ["Chlorine Dioxide Generators", "Electrochlorinators"],
@@ -74,11 +71,36 @@ const productMenuColumns: readonly ProductMenuColumn[] = [
       {
         title: "Safety Systems",
         items: [
+          "Leak Absorption System",
+          "Full Tonner Hood",
+          "Frontal Tonner Hood",
           "Chlorine Leak Detector",
-          "Emergency Repair Kits",
-          "Chlorine Leak Absorption Systems",
+          "Emergency Repair Kit for Tonners",
+          "Emergency Repair Kit for Cylinders",
+          "Self-Contained Breathing Apparatus (SCBA)",
+          "Emergency Eye Wash & Safety Shower",
+          "Instant Resuscitator",
+          "Canister Type Gas Mask",
           "Protective Clothing",
-          "Gas Mask & Air Breathing Apparatus",
+        ],
+      },
+    ],
+  },
+  {
+    sections: [
+      {
+        title: "Chlorination Accessories",
+        items: [
+          "Tonner Handling System",
+          "Trunnion Roller Support",
+          "Auxiliary Container Valve",
+          "Flexible Copper Connector",
+          "Chlorine Gas Manifold",
+          "Chlorine Gas Filter",
+          "Chlorine Ball Valve",
+          "Motorized Ball Valve",
+          "Pressure Gauge",
+          "Pressure Reducing Valve",
         ],
       },
     ],
@@ -113,7 +135,13 @@ function ProductMenuSections({
           <p className="mb-3 text-[13px] font-semibold leading-snug tracking-tight text-neutral-900">
             {section.title}
           </p>
-          <ul className="flex flex-col gap-0.5">
+          <ul
+            className={cn(
+              section.columns === 2
+                ? "columns-2 gap-x-6 space-y-0.5 [&>li]:break-inside-avoid"
+                : "flex flex-col gap-0.5",
+            )}
+          >
             {section.items.map((label) => (
               <li key={`${section.title}-${label}`}>
                 <NavigationMenuLink asChild>
@@ -170,7 +198,7 @@ function DesktopNavLinks() {
         >
           Products
         </NavigationMenuTrigger>
-        <NavigationMenuContent className="bg-white">
+        <NavigationMenuContent className="overflow-hidden rounded-xl bg-white p-0">
           <ProductsMegaMenu />
         </NavigationMenuContent>
       </NavigationMenuItem>
@@ -201,16 +229,18 @@ function DesktopNavLinks() {
 
 function ProductsMegaMenu() {
   return (
-    <div className="w-[min(54rem,calc(100vw-2rem))] max-w-[calc(100vw-2rem)] bg-white px-5 py-6 sm:px-8 sm:py-8">
-      <div className="grid grid-cols-1 gap-8 sm:grid-cols-2 lg:grid-cols-3 xl:gap-6 2xl:gap-10">
-        {productMenuColumns.map((column, columnIndex) => (
-          <div
-            key={columnIndex}
-            className="min-w-0 pb-8 last:pb-0 sm:pb-0 xl:border-e xl:border-neutral-200 xl:pe-6 xl:last:border-e-0 2xl:pe-10"
-          >
-            <ProductMenuSections sections={column.sections} />
-          </div>
-        ))}
+    <div className="w-[min(60rem,calc(100vw-2rem))] max-w-[calc(100vw-2rem)] overflow-hidden rounded-xl bg-white px-5 py-6 sm:px-8 sm:py-7">
+      <div className="max-h-[min(70dvh,34rem)] overflow-y-auto overscroll-contain">
+        <div className="grid grid-cols-1 gap-8 sm:grid-cols-2 lg:grid-cols-3 lg:gap-0 lg:divide-x lg:divide-neutral-200">
+          {productMenuColumns.map((column, columnIndex) => (
+            <div
+              key={columnIndex}
+              className="min-w-0 pb-8 last:pb-0 sm:pb-0 lg:px-6 lg:first:pl-0 lg:last:pr-0"
+            >
+              <ProductMenuSections sections={column.sections} />
+            </div>
+          ))}
+        </div>
       </div>
     </div>
   );
@@ -236,7 +266,7 @@ export function SiteHeader() {
 
         <NavigationMenu
           className="static max-w-none min-w-0 flex-1 justify-end md:flex-1 md:justify-center"
-          viewportClassName="overflow-hidden rounded-md border border-neutral-200 bg-white text-neutral-950 shadow-[0_24px_70px_-12px_rgba(15,23,42,0.12)] ring-0"
+          viewportClassName="overflow-hidden rounded-xl border border-neutral-200 bg-white text-neutral-950 shadow-[0_24px_70px_-12px_rgba(15,23,42,0.12)] ring-0"
         >
           <NavigationMenuList className="hidden flex-none flex-nowrap justify-center gap-0 sm:gap-0.5 md:flex">
             <DesktopNavLinks />

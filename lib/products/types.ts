@@ -16,8 +16,13 @@ export type ProductModel = {
   heading: string;
   imageSrc: string;
   imageAlt: string;
+  imageWidth?: number;
+  imageHeight?: number;
   descriptionPoints: string[];
   specs: ProductSpec[];
+  sectionHeadingId?: string;
+  sectionTitle?: string;
+  sectionTitleHighlight?: string;
 };
 
 export type ProductSeoHeading = {

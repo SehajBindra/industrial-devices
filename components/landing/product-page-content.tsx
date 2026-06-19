@@ -98,21 +98,50 @@ export function ProductPageContent({ product }: ProductPageContentProps) {
         <div className="mt-10 flex flex-col gap-12">
           {models.map(
             (
-              { id, heading, imageSrc, imageAlt, descriptionPoints, specs },
+              {
+                id,
+                heading,
+                imageSrc,
+                imageAlt,
+                imageWidth = 1200,
+                imageHeight = 900,
+                descriptionPoints,
+                specs,
+                sectionHeadingId: modelSectionHeadingId,
+                sectionTitle: modelSectionTitle,
+                sectionTitleHighlight: modelSectionTitleHighlight,
+              },
               index,
             ) => (
-              <article
-                key={id}
-                id={id}
-                className="scroll-mt-28 grid grid-cols-1 items-start gap-8 rounded-sm sm:scroll-mt-32 lg:grid-cols-2 lg:gap-"
-              >
+              <div key={id} className="flex flex-col gap-12">
+                {modelSectionHeadingId &&
+                modelSectionTitle &&
+                modelSectionTitleHighlight ? (
+                  <SectionIntro
+                    className="border-t border-neutral-200 p-0 pt-12"
+                    align="start"
+                    headingId={modelSectionHeadingId}
+                    title={
+                      <>
+                        {modelSectionTitle}{" "}
+                        <span className="text-primary">
+                          {modelSectionTitleHighlight}
+                        </span>
+                      </>
+                    }
+                  />
+                ) : null}
+                <article
+                  id={id}
+                  className="scroll-mt-28 grid grid-cols-1 items-start gap-8 rounded-sm sm:scroll-mt-32 lg:grid-cols-2 lg:gap-"
+                >
                 <div className={index % 2 === 1 ? "lg:order-2" : undefined}>
                   <div className="overflow-hidden rounded-md border border-dashed border-neutral-300 bg-white p-2 shadow-2xl">
                     <Image
                       src={imageSrc}
                       alt={imageAlt}
-                      width={1200}
-                      height={900}
+                      width={imageWidth}
+                      height={imageHeight}
                       quality={90}
                       priority={index === 0}
                       loading={index === 0 ? "eager" : "lazy"}
@@ -146,7 +175,8 @@ export function ProductPageContent({ product }: ProductPageContentProps) {
                     </ul>
                   ) : null}
                 </div>
-              </article>
+                </article>
+              </div>
             ),
           )}
         </div>
