@@ -48,7 +48,7 @@ export const chlorineVaporizerProduct = {
     {
       id: "steam-heated",
       heading: "Steam Heated Vaporizer",
-      imageSrc: productImage("filter.jpg"),
+      imageSrc: productImage("steam-heated-vaporizer.jpg"),
       imageAlt: "Steam heated chlorine vaporizer",
       descriptionPoints: [
         "**Efficient & Reliable Chlorine Vaporization for High-Capacity Applications**",
