@@ -1,120 +1,137 @@
 import { productImage } from "@/lib/products/site-images";
-import type { ProductPage } from "@/lib/products/types";
+import type { ProductModel, ProductPage } from "@/lib/products/types";
+
+const safetyModels = [
+  {
+    id: "leak-absorption",
+    heading: "Leak Absorption System",
+    imageSrc: productImage("leak-absorption-system.jpg"),
+    imageAlt: "Chlorine leak absorption system",
+    descriptionPoints: [
+      "The INDEVICE Leak Absorption System is designed to safely neutralize chlorine gas released during accidental leaks. The system effectively absorbs and scrubs chlorine gas before it is discharged into the atmosphere, ensuring personnel safety, environmental protection, and compliance with safety standards.",
+    ],
+    specs: [],
+  },
+  {
+    id: "full-tonner-hood",
+    heading: "Full Tonner Hood",
+    imageSrc: productImage("tonner-full-hood.jpg"),
+    imageAlt: "Full tonner hood for chlorine container leak containment",
+    descriptionPoints: [
+      "The Full Tonner Hood provides complete enclosure of a one-ton chlorine container during emergency leak situations. Connected to a leak absorption system, it safely contains and directs escaping chlorine gas for neutralization, minimizing risk to personnel and surrounding areas.",
+    ],
+    specs: [],
+  },
+  {
+    id: "frontal-tonner-hood",
+    heading: "Frontal Tonner Hood",
+    imageSrc: productImage("tonner-full-hood.jpg"),
+    imageAlt: "Frontal tonner hood covering chlorine container valve assembly",
+    descriptionPoints: [
+      "The Frontal Tonner Hood is designed to cover the valve and header assembly of chlorine ton containers, where most leaks typically occur. It provides a quick and effective solution for containing leaks while allowing easy installation during emergency situations.",
+    ],
+    specs: [],
+  },
+  {
+    id: "leak-detector",
+    heading: "Chlorine Leak Detector",
+    imageSrc: productImage("chlorine-leak-detector.png"),
+    imageAlt: "Chlorine leak detector with audible and visual alarms",
+    descriptionPoints: [
+      "The INDEVICE Chlorine Leak Detector continuously monitors ambient air for the presence of chlorine gas, providing early warning through audible and visual alarms. Designed for high sensitivity and reliability, it enhances plant safety by enabling rapid response to chlorine leaks.",
+    ],
+    specs: [],
+  },
+  {
+    id: "emergency-repair-kit-tonners",
+    heading: "Emergency Repair Kit for Tonners",
+    imageSrc: productImage("emergency-tonner-repair-kit.jpg"),
+    imageAlt: "Emergency repair kit for one-ton chlorine containers",
+    descriptionPoints: [
+      "The Emergency Repair Kit for Tonners is designed to temporarily seal leaks from one-ton chlorine containers. Manufactured in accordance with industry standards, the kit includes specialized tools and sealing devices for quick and safe emergency leak control.",
+    ],
+    specs: [],
+  },
+  {
+    id: "emergency-repair-kit-cylinders",
+    heading: "Emergency Repair Kit for Cylinders",
+    imageSrc: productImage("emergency-tonner-repair-kit.jpg"),
+    imageAlt: "Emergency repair kit for standard chlorine cylinders",
+    descriptionPoints: [
+      "The Emergency Repair Kit for Cylinders enables rapid containment of leaks from standard chlorine cylinders. The kit includes purpose-built clamps, gaskets, and accessories to safely control valve and container leaks until permanent repairs can be carried out.",
+    ],
+    specs: [],
+  },
+  {
+    id: "breathing-apparatus",
+    heading: "Self-Contained Breathing Apparatus (SCBA)",
+    imageSrc: productImage("self-contained-air-breathing-apperatus.png"),
+    imageAlt: "Self-contained breathing apparatus for chlorine-contaminated areas",
+    descriptionPoints: [
+      "The Self-Contained Breathing Apparatus (SCBA) provides a continuous supply of breathable air, enabling personnel to safely enter chlorine-contaminated areas during maintenance and emergency response. Lightweight, durable, and ergonomically designed, it offers maximum protection in hazardous environments.",
+    ],
+    specs: [],
+  },
+  {
+    id: "eyewash-shower",
+    heading: "Emergency Eye Wash & Safety Shower",
+    imageSrc: productImage("leak-detection-safety-bg-white.png"),
+    imageAlt: "Emergency eye wash and safety shower unit",
+    descriptionPoints: [
+      "The Emergency Eye Wash and Safety Shower provides immediate decontamination following accidental exposure to chlorine or hazardous chemicals. Designed for rapid activation, it delivers a continuous flow of clean water to minimize injury and ensure workplace safety.",
+    ],
+    specs: [],
+  },
+  {
+    id: "instant-resuscitator",
+    heading: "Instant Resuscitator",
+    imageSrc: productImage("resus.png"),
+    imageAlt: "Instant resuscitator for emergency oxygen delivery",
+    descriptionPoints: [
+      "The Instant Resuscitator is an emergency oxygen delivery system designed to provide immediate respiratory support to personnel affected by chlorine gas exposure. Compact and easy to operate, it is an essential component of any chlorine safety program.",
+    ],
+    specs: [],
+  },
+  {
+    id: "canister-gas-mask",
+    heading: "Canister Type Gas Mask",
+    imageSrc: productImage("gas-mask.png"),
+    imageAlt: "Canister type gas mask for chlorine vapour protection",
+    descriptionPoints: [
+      "The Canister Type Gas Mask offers reliable respiratory protection against low concentrations of chlorine gas and other hazardous vapours. Equipped with a replaceable chemical canister, it is ideal for inspection, maintenance, and emergency preparedness applications.",
+    ],
+    specs: [],
+  },
+  {
+    id: "protective-clothing",
+    heading: "Protective Clothing",
+    imageSrc: productImage("protective-clothing.png"),
+    imageAlt: "Chemical protective clothing for chlorine handling",
+    descriptionPoints: [
+      "Our Chemical Protective Clothing is specially designed to safeguard personnel handling chlorine and other hazardous chemicals. Manufactured from chemical-resistant materials, the protective suits provide excellent resistance to chemical splashes while ensuring comfort, flexibility, and durability during operation.",
+    ],
+    specs: [],
+  },
+] as const satisfies readonly ProductModel[];
 
 export const safetySystemProduct = {
   slug: "safety-system",
   metadata: {
     title:
-      "Chlorine Leak Detector | Emergency Repair Kit | Pressure Reducing Valve",
+      "Chlorine Safety Systems | Leak Absorption | Leak Detectors | SCBA",
     description:
-      "Chlorine safety systems including leak absorption, leak detectors, emergency repair kits, breathing apparatus, eyewash stations, and protective equipment for gas chlorination plants.",
+      "INDEVICE chlorine safety systems including leak absorption, tonner hoods, leak detectors, emergency repair kits, SCBA, and protective equipment.",
   },
   seoHeadings: [
-    { level: 1, text: "Chlorinator Manufacturers in India" },
-    { level: 2, text: "Chlorine Dosing System" },
-    { level: 3, text: "Chlorine Vaporizer" },
-    { level: 4, text: "Gas Chlorinator India" },
-    { level: 5, text: "Chlorination System Manufacturers" },
-    { level: 6, text: "Water Chlorination Systems Manufacturers" },
+    { level: 1, text: "Chlorine Safety Systems Manufacturers in India" },
+    { level: 2, text: "Leak Absorption System" },
+    { level: 3, text: "Chlorine Leak Detector" },
+    { level: 4, text: "Emergency Repair Kits" },
+    { level: 5, text: "Self-Contained Breathing Apparatus" },
+    { level: 6, text: "Protective Clothing" },
   ],
   sectionHeadingId: "safety-system-equipment",
-  sectionTitle: "Chlorine safety",
-  sectionTitleHighlight: "equipment",
-  intro:
-    "Gas chlorination has been the acceptable, economical and effective large scale water disinfection method since the 1920s and has been the industry standard since. In the last few years, the safety concerns regarding the handling of chlorine gas have been highlighted. As a result the chlorination industry has gone through many changes and improvements to ensure the highest safety standards and adherence to accepted safety standards.",
-  models: [
-    {
-      id: "leak-absorption",
-      heading: "Leak Absorption System",
-      imageSrc: productImage("leak-absorption-system.jpg"),
-      imageAlt: "Chlorine leak absorption system",
-      descriptionPoints: [
-        "The blower sucks leaked chlorine gas with air and delivers it to the absorption tower.",
-        "The pump circulates 20% caustic solution to the top of the tower. Caustic flows down through Pall Ring packing.",
-        "Chlorine gas flows up and meets caustic counter-currently in the packing area, where it is absorbed.",
-        "Purified air vents from the tower top. The caustic tank includes a level indicator and dissolving basket.",
-      ],
-      specs: [],
-    },
-    {
-      id: "leak-detector",
-      heading: "Chlorine Leak Detector (Single and Double Sensor)",
-      imageSrc: productImage("auxiliary-container-valve.png"),
-      imageAlt: "Chlorine leak detector panel",
-      descriptionPoints: [
-        "The system consists of a control unit and a remotely mounted sensor that detects gas in the room.",
-        "Gas concentration is indicated on the panel with audio-visual alarm.",
-        "A potential-free contact triggers remote alarms or actuates the exhaust fan.",
-      ],
-      specs: [],
-    },
-    {
-      id: "emergency-repair-kit",
-      heading: "Emergency Repair Kit",
-      imageSrc: "/product/chlorine-heater-jb-skid.webp",
-      imageAlt: "Chlorine emergency repair kit",
-      descriptionPoints: [
-        "Devices to stop leakage at the valve and from the wall of the chlorine container.",
-        "Includes a canister-type gas mask, protective clothing, tools, gaskets, and a step-by-step instruction booklet.",
-      ],
-      specs: [],
-    },
-    {
-      id: "breathing-apparatus",
-      heading: "Self Contained Compressed Air Breathing Apparatus",
-      imageSrc: productImage("tonner-full-hood.jpg"),
-      imageAlt: "Self contained compressed air breathing apparatus",
-      descriptionPoints: [
-        "Essential for heavy toxic leaks. Manufactured as per IS: 10245, Part-II.",
-        "Available in 30-minute or 45-minute duration with all test certificates.",
-      ],
-      specs: [],
-    },
-    {
-      id: "eyewash-shower",
-      heading: "Emergency Eye Wash and Shower",
-      imageSrc: productImage("filter.jpg"),
-      imageAlt: "Emergency eye wash and shower unit",
-      descriptionPoints: [
-        "Hand-operated or pedal-operated combination units protect eyes, face, and skin from chlorine contact.",
-        "Deluge of water dilutes and washes away harmful material, preventing vision loss and burn injuries.",
-        "ISI marked and conforms to IS: 10592 and ANSI Z 358.1-2009.",
-      ],
-      specs: [],
-    },
-    {
-      id: "canister-gas-mask",
-      heading: "Canister Gas Mask",
-      imageSrc: productImage("tonner-full-hood.jpg"),
-      imageAlt: "Canister gas mask for chlorine leaks",
-      descriptionPoints: [
-        "Enables the wearer to breathe fresh air in a contaminated atmosphere. Applicable for small leaks only.",
-        "Exclusive design conforming to IS: 8523 : 1977. Includes airtight face piece, breathing tube, and colour-coded canister.",
-        "Must never be used in atmospheres containing less than 16% oxygen.",
-      ],
-      specs: [],
-    },
-    {
-      id: "air-resuscitator",
-      heading: "Instant Air Resuscitator",
-      imageSrc: productImage("filter.jpg"),
-      imageAlt: "Instant air resuscitator",
-      descriptionPoints: [
-        "Required when toxic fume inhalation, electric shock, cardiac arrest, or excessive bleeding affects the central nervous system.",
-        "An intermittent positive pressure respirator provides emergency relief. Portable and easy to use.",
-        "Manufactured as per IS: 13366 : 1992 specifications.",
-      ],
-      specs: [],
-    },
-    {
-      id: "protective-clothing",
-      heading: "Protective Clothing",
-      imageSrc: productImage("tonner-full-hood.jpg"),
-      imageAlt: "Chlorine protective clothing set",
-      descriptionPoints: [
-        "Includes full face masks, PVC suit, PVC gloves, gum boots, safety helmet, and goggles.",
-      ],
-      specs: [],
-    },
-  ],
+  sectionTitle: "Safety",
+  sectionTitleHighlight: "systems",
+  models: safetyModels,
 } satisfies ProductPage;

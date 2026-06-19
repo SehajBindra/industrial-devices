@@ -145,9 +145,9 @@ export function TrainingDevelopmentBentoCard(props: ServiceBentoCardProps) {
   return (
     <ServiceBentoCardShell
       {...props}
-      description="Leak monitoring, alarms, scrubbers, absorption systems, emergency kits, and operator safety solutions for chlorine handling."
+      description="Leak absorption systems, tonner hoods, leak detectors, emergency repair kits, SCBA, gas masks, and protective clothing for safe chlorine handling."
       href={productPath("safety-system")}
-      imageAlt="Chlorine heater JB skid with XP chamber safety equipment"
+      imageAlt="Chlorine leak detector with alarm panel by Industrial Devices"
       imageSrc={PRODUCT_IMAGES.leakDetectionSafety}
       title="Leak detection & safety"
     />
@@ -158,15 +158,11 @@ export function AuditsAssessmentsBentoCard(props: ServiceBentoCardProps) {
   return (
     <ServiceBentoCardShell
       {...props}
-      description="Chlorination system accessories like Gas Chlorination System , these include Tonner Lifting
-Beams, Weighing Systems, etc. Spares for the system
-
-that include precision-engineered ejectors, vacuum regulators
-other chlorination accessories"
+      description="Tonner handling systems, trunnion supports, manifolds, ball valves, motorized valves, pressure gauges, and pressure reducing valves for chlorination systems."
       href={productPath("chlorination-accessories")}
-      imageAlt="Dual-stream vacuum regulator and gas metering skid"
+      imageAlt="Auxiliary container valve and chlorination accessory by Industrial Devices"
       imageSrc={PRODUCT_IMAGES.vacuumRegulators}
-      title="Chlorination System Accessories &amp; Spares"
+      title="Chlorination accessories"
     />
   );
 }

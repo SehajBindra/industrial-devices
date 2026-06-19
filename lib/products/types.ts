@@ -20,6 +20,9 @@ export type ProductModel = {
   imageHeight?: number;
   descriptionPoints: string[];
   specs: ProductSpec[];
+  sectionHeadingId?: string;
+  sectionTitle?: string;
+  sectionTitleHighlight?: string;
 };
 
 export type ProductSeoHeading = {
