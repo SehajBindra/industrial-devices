@@ -24,7 +24,7 @@ export const chlorineVaporizerProduct = {
     {
       id: "electrically-heated",
       heading: "Electrically Heated Vaporizer",
-      imageSrc: productImage("gas-chlorination-system-with-vaporiser.jpg"),
+      imageSrc: productImage("evaporator-vaporizer-bg-white.png"),
       imageAlt: "Electrically heated chlorine vaporizer",
       descriptionPoints: [
         "**High-Capacity Chlorine Vaporization for Reliable & Safe Operations**",
