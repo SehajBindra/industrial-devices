@@ -52,7 +52,7 @@ function ProductBentoImage({
       priority={priority}
       quality={90}
       sizes={sizes}
-      className="h-auto w-full max-h-52 rounded-md object-contain object-center transition-transform duration-500 group-hover:scale-[1.02] sm:max-h-56"
+      className="h-auto w-full max-h-52 rounded-md bg-white object-contain object-center transition-transform duration-500 group-hover:scale-[1.02] sm:max-h-56"
     />
   );
 }
@@ -77,7 +77,7 @@ function ServiceBentoCardShell({
       className="group relative flex h-full flex-col rounded-md border border-neutral-200 bg-white p-5 shadow-[0_22px_70px_rgba(0,0,0,0.045)] transition-colors duration-300 hover:border-neutral-300 sm:p-6"
     >
       <div className="relative z-10 flex w-full flex-col">
-        <div className="overflow-hidden rounded-md">
+        <div className="overflow-hidden rounded-md bg-white">
           <ProductBentoImage
             alt={imageAlt}
             priority={imagePriority}

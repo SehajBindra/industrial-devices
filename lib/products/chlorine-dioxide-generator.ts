@@ -39,7 +39,9 @@ export const chlorineDioxideGeneratorProduct = {
     {
       id: "vacuum-type",
       heading: "Chlorine Dioxide Generator- Vacuum Type",
-      imageSrc: productImage("chlorine-dioxide-generator-vacuum-type.jpg"),
+      imageSrc: productImage(
+        "chlorine-dioxide-generator-vacuum-type-bg-white.png",
+      ),
       imageAlt: "Chlorine dioxide generator vacuum type",
       descriptionPoints: [
         "**Advanced Disinfection for Superior Water Treatment**",

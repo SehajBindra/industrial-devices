@@ -146,7 +146,7 @@ export function ProductPageContent({ product }: ProductPageContentProps) {
                       priority={index === 0}
                       loading={index === 0 ? "eager" : "lazy"}
                       sizes="(max-width: 1024px) 100vw, 50vw"
-                      className="h-auto w-full rounded-md object-cover"
+                      className="h-auto w-full rounded-md bg-white object-cover"
                     />
                   </div>
                 </div>
