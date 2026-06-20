@@ -35,10 +35,10 @@ export function HeroDisinfectionGlass() {
   return (
     <span
       aria-hidden="true"
-      className="relative hidden h-[0.94em] w-[0.66em] shrink-0 translate-y-[0.07em] items-end justify-center align-baseline md:ml-[0.16em] md:inline-flex"
+      className="relative hidden h-[1.08em] w-[0.76em] shrink-0 translate-y-[0.09em] items-end justify-center align-baseline md:ml-[0.18em] md:inline-flex"
     >
       {/* Glass body */}
-      <span className="absolute inset-x-[0.03em] bottom-0 h-[0.9em]">
+      <span className="absolute inset-x-[0.03em] bottom-0 h-[1.04em]">
         <span
           className="absolute inset-0 overflow-hidden bg-white/6 shadow-[inset_0_0.08em_0.14em_rgba(255,255,255,0.85),inset_-0.03em_0_0.1em_rgba(255,255,255,0.35),inset_0.03em_0_0.08em_rgba(0,0,0,0.05),0_0.08em_0.18em_rgba(0,0,0,0.07)] backdrop-blur-[0.015em]"
           style={{ clipPath: `url(#${GLASS_CLIP_ID})` }}
@@ -135,7 +135,7 @@ export function HeroDisinfectionGlass() {
       </span>
 
       {/* Ground shadow */}
-      <span className="absolute bottom-[-0.04em] h-[0.05em] w-[0.36em] rounded-full bg-neutral-900/10 blur-[0.012em]" />
+      <span className="absolute bottom-[-0.05em] h-[0.06em] w-[0.44em] rounded-full bg-neutral-900/10 blur-[0.012em]" />
     </span>
   );
 }
