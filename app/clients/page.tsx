@@ -3,21 +3,20 @@ import Image from "next/image";
 import Link from "next/link";
 import { ArrowRight } from "lucide-react";
 
+import { ClientListCatalogSection } from "@/components/landing/client-list-table";
 import { SectionIntro } from "@/components/landing/section-intro";
-import { clientAreas, importantClients } from "@/lib/data";
+import { clientListCatalogs } from "@/lib/clients-list";
+import { importantClients } from "@/lib/data";
 import { createPageMetadata } from "@/lib/site-metadata";
+import { cn } from "@/lib/utils";
 
 export const metadata: Metadata = createPageMetadata({
   title: "Clients | Industrial Devices (India)",
   description:
-    "Important Industrial Devices clients across drinking water, sewage treatment, thermal power, refinery water, cooling water, and process water applications.",
+    "Client references for WTP, STP, and thermal power chlorination systems supplied by Industrial Devices (India).",
   path: "/clients",
   ogImage: "/testimonials/customer-testimonial-reference.png",
 });
-
-function clientsForArea(areaId: string) {
-  return importantClients.filter((client) => client.areaIds.includes(areaId));
-}
 
 export default function ClientsPage() {
   return (
@@ -29,10 +28,10 @@ export default function ClientsPage() {
             align="start"
             title={
               <>
-                Important <span className="text-primary">clients</span>.
+                Project <span className="text-primary">clientele</span>.
               </>
             }
-            description="Selected client references across municipal water, sewage treatment, power, refinery, cooling water, and process water applications."
+            description="Selected reference logos and full commissioning registers for water treatment, sewage treatment, and thermal power chlorination systems."
             descriptionClassName="line-clamp-none"
           />
 
@@ -57,72 +56,61 @@ export default function ClientsPage() {
           </div>
 
           <div className="mt-14 border-t border-neutral-200 pt-10">
-            <h2 className="text-2xl font-medium tracking-tight text-primary sm:text-3xl">
-              Client application areas
-            </h2>
-            <div className="mt-6 grid grid-cols-1 gap-3 sm:grid-cols-2 lg:grid-cols-3">
-              {clientAreas.map((area) => (
-                <Link
-                  key={area.id}
-                  href={`#${area.id}`}
-                  className="group flex h-full items-start justify-between gap-4 rounded-md border border-neutral-200 bg-neutral-50 p-5 transition-colors hover:border-neutral-300 hover:bg-white"
-                >
-                  <div>
-                    <h3 className="font-semibold text-neutral-950">
-                      {area.title}
-                    </h3>
-                    <p className="mt-2 text-sm leading-relaxed text-neutral-600">
-                      {area.description}
-                    </p>
-                  </div>
-                  <ArrowRight
-                    aria-hidden
-                    className="mt-1 size-4 shrink-0 text-primary transition-transform group-hover:translate-x-0.5"
-                  />
-                </Link>
-              ))}
+            <div className="flex flex-col gap-4 sm:flex-row sm:items-end sm:justify-between">
+              <div>
+                <h2 className="text-2xl font-medium tracking-tight text-primary sm:text-3xl">
+                  Client registers
+                </h2>
+                <p className="mt-2 max-w-2xl text-sm leading-relaxed text-neutral-600">
+                  Browse commissioning records by application area. Each register
+                  matches the official PDF lists published by Industrial Devices.
+                </p>
+              </div>
+            </div>
+
+            <div className="mt-6 grid grid-cols-1 gap-3 sm:grid-cols-2">
+              {clientListCatalogs.map((catalog) => {
+                const projectCount = catalog.sections.reduce(
+                  (count, section) => count + section.entries.length,
+                  0,
+                );
+
+                return (
+                  <Link
+                    key={catalog.id}
+                    href={`#${catalog.id}`}
+                    className="group flex h-full items-start justify-between gap-4 rounded-md border border-neutral-200 bg-neutral-50 p-5 transition-colors hover:border-neutral-300 hover:bg-white"
+                  >
+                    <div>
+                      <p className="text-xs font-semibold uppercase tracking-[0.16em] text-primary">
+                        {projectCount} projects
+                      </p>
+                      <h3 className="mt-2 font-semibold text-neutral-950">
+                        {catalog.title}
+                      </h3>
+                      <p className="mt-2 text-sm leading-relaxed text-neutral-600">
+                        {catalog.description}
+                      </p>
+                    </div>
+                    <ArrowRight
+                      aria-hidden
+                      className="mt-1 size-4 shrink-0 text-primary transition-transform group-hover:translate-x-0.5"
+                    />
+                  </Link>
+                );
+              })}
             </div>
           </div>
 
-          <div className="mt-14 space-y-5">
-            {clientAreas.map((area) => {
-              const areaClients = clientsForArea(area.id);
-
-              return (
-                <section
-                  key={area.id}
-                  id={area.id}
-                  className="scroll-mt-28 rounded-md border border-neutral-200 bg-white p-6 sm:scroll-mt-32 sm:p-7"
-                >
-                  <div className="grid gap-6 lg:grid-cols-[minmax(0,0.9fr)_minmax(0,1.1fr)] lg:items-center">
-                    <div>
-                      <h2 className="text-xl font-medium tracking-tight text-neutral-950">
-                        {area.title}
-                      </h2>
-                      <p className="mt-2 text-sm leading-relaxed text-neutral-600">
-                        {area.description}
-                      </p>
-                    </div>
-                    <div className="grid grid-cols-2 gap-3 sm:grid-cols-3">
-                      {areaClients.map((client) => (
-                        <div
-                          key={`${area.id}-${client.id}`}
-                          className="flex min-h-24 items-center justify-center rounded-md border border-neutral-200 bg-neutral-50 p-4"
-                        >
-                          <Image
-                            src={client.logo}
-                            alt={`${client.name} logo`}
-                            width={150}
-                            height={72}
-                            className="h-auto max-h-12 w-auto max-w-full object-contain"
-                          />
-                        </div>
-                      ))}
-                    </div>
-                  </div>
-                </section>
-              );
-            })}
+          <div className="mt-14 space-y-8">
+            {clientListCatalogs.map((catalog, index) => (
+              <div
+                key={catalog.id}
+                className={cn(index > 0 && "pt-2")}
+              >
+                <ClientListCatalogSection catalog={catalog} />
+              </div>
+            ))}
           </div>
         </div>
       </section>
