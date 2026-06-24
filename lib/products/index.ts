@@ -132,6 +132,10 @@ export const productHrefByLabel: Partial<Record<string, string>> = {
     "chlorination-accessories",
     "motorized-ball-valve",
   ),
+  "Online Residual Chlorine Analyzer": productAnchor(
+    "chlorination-accessories",
+    "online-residual-chlorine-analyzer",
+  ),
   "Pressure Gauge": productAnchor(
     "chlorination-accessories",
     "pressure-gauge",

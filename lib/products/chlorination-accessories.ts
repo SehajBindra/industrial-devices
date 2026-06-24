@@ -28,6 +28,9 @@ export const chlorinationAccessoriesProduct = {
       imageAlt: "Tonner handling system for one-ton chlorine containers",
       descriptionPoints: [
         "The INDEVICE Tonner Handling System is designed for the safe, efficient, and convenient handling of one-ton chlorine containers. Engineered for smooth movement and secure positioning, the system enhances operational safety while minimizing manual handling and reducing the risk of container damage.",
+        "The Lifting Beam is Designed for lifting a filled Ton Container.",
+        "The Lifting Beam is made of ISMB 125, and is tested for 3 tons.",
+        "The Lifting Beam can be provided with Electronic Digital Weight Indicator.",
       ],
       specs: [],
     },
@@ -98,6 +101,16 @@ export const chlorinationAccessoriesProduct = {
       imageAlt: "Motorized ball valve for automated chlorine line control",
       descriptionPoints: [
         "The Motorized Ball Valve offers automated control of chlorine gas and liquid lines, enabling remote operation and seamless integration with PLC and SCADA systems. Designed for fast response and reliable shut-off, it enhances both process automation and plant safety.",
+      ],
+      specs: [],
+    },
+    {
+      id: "online-residual-chlorine-analyzer",
+      heading: "Online Residual Chlorine Analyzer",
+      imageSrc: productImage("online-residual-chlorine-analyzer.jpeg"),
+      imageAlt: "Online residual chlorine analyzer with LCD display",
+      descriptionPoints: [
+        "The Online Residual Chlorine Analyzer is ideal for monitoring residual chlorine. This instrument is used for measuring the Residual Chlorine or Total Chlorine. The Analyzer provides a continuous 4-20mA output locally with a LCD display or can be repeat indicated in a PLC. Analyzer can also be used to automatically modulate dosing rate as per requirement.",
       ],
       specs: [],
     },

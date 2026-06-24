@@ -29,6 +29,91 @@ export const clientCells: ClientCell[] = [
   { kind: "copy", text: "Chemical Industries" },
 ];
 
+export type ImportantClient = {
+  id: string;
+  name: string;
+  logo: string;
+  areaIds: readonly string[];
+};
+
+export const importantClients: ImportantClient[] = [
+  {
+    id: "doosan-power-systems",
+    name: "Doosan Power Systems India Pvt. Ltd.",
+    logo: "/testimonials/doosan.png",
+    areaIds: ["thermal-power", "process-water"],
+  },
+  {
+    id: "offshore-infrastructure",
+    name: "Offshore Infrastructure Ltd.",
+    logo: "/testimonials/offshore-infrastructure.jpg",
+    areaIds: ["drinking-water", "sewage-treatment"],
+  },
+  {
+    id: "ilfs-paradip-refinery-water",
+    name: "IL&FS Paradip Refinery Water Ltd.",
+    logo: "/testimonials/ilfs.jpg",
+    areaIds: ["drinking-water", "refinery-water"],
+  },
+  {
+    id: "ncc-limited",
+    name: "NCC Limited",
+    logo: "/testimonials/ncc.jpg",
+    areaIds: ["drinking-water", "sewage-treatment"],
+  },
+  {
+    id: "tangedco",
+    name: "TANGEDCO",
+    logo: "/testimonials/tangedco.png",
+    areaIds: ["thermal-power", "cooling-water"],
+  },
+];
+
+export type ClientArea = {
+  id: string;
+  title: string;
+  description: string;
+};
+
+export const clientAreas: ClientArea[] = [
+  {
+    id: "drinking-water",
+    title: "Drinking Water",
+    description:
+      "Municipal and utility water treatment projects requiring dependable disinfection and residual control.",
+  },
+  {
+    id: "sewage-treatment",
+    title: "Sewage Treatment",
+    description:
+      "STP, ETP, and treated water reuse applications where stable chlorination supports discharge and reuse targets.",
+  },
+  {
+    id: "thermal-power",
+    title: "Thermal Power",
+    description:
+      "Cooling water, CW chlorination, and plant utility systems for large power-generation facilities.",
+  },
+  {
+    id: "refinery-water",
+    title: "Refinery Water",
+    description:
+      "Process and potable water treatment systems for refinery and heavy industrial infrastructure.",
+  },
+  {
+    id: "cooling-water",
+    title: "Cooling Water",
+    description:
+      "Biofouling and microbial control for cooling towers, circulating water systems, and industrial loops.",
+  },
+  {
+    id: "process-water",
+    title: "Process Water",
+    description:
+      "Disinfection packages for industrial process water, utilities, and plant-wide water treatment duties.",
+  },
+];
+
 export type SiteTestimonial = {
   id: string;
   name: string;
@@ -180,6 +265,7 @@ export const siteConfig = {
         { id: "home", title: "Home", url: "/" },
         { id: "products", title: "Products", url: "/#products" },
         { id: "applications", title: "Applications", url: "/#applications" },
+        { id: "clients", title: "Clients", url: "/clients" },
         { id: "clientele", title: "Customer Testimonial", url: "/#clients" },
         { id: "contact", title: "Contact", url: "/contact" },
         { id: "downloads", title: "Downloads", url: "/downloads" },
@@ -188,7 +274,6 @@ export const siteConfig = {
           title: "Certification",
           url: "/certification",
         },
-        { id: "request-quote", title: "Request Quote", url: "/request-quote" },
       ],
     },
     {
@@ -225,14 +310,14 @@ export const siteConfig = {
           url: productPath("chlorine-dioxide-generator"),
         },
         {
-          id: "electro",
-          title: "Electro chlorination",
-          url: "/#products",
-        },
-        {
           id: "chemical-dosing",
           title: "Chemical Dosing System",
           url: productPath("chemical-dosing-system"),
+        },
+        {
+          id: "chlorine-analyzer",
+          title: "Residual chlorine analyzer",
+          url: "/product/chlorination-accessories#online-residual-chlorine-analyzer",
         },
       ],
     },

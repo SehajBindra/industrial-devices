@@ -29,7 +29,7 @@ const PRODUCT_IMAGES = {
   vacuumRegulators: "/product/auxiliary-container-valve.png",
   chlorineDioxide: "/product/chlorine-dioxside-generator.png",
   electroChlorination: "/product/electrochlorinator-bg-white.png",
-  chemicalDosingSystem: "/product/chemical-dosing-system.jpg",
+  chemicalDosingSystem: "/product/dosing-system.jpg",
 } as const;
 
 function ProductBentoImage({

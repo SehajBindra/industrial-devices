@@ -24,6 +24,7 @@ import {
   MobileNavMenu,
   MobileNavToggle,
 } from "@/components/ui/resizable-navbar";
+import { siteConfig } from "@/lib/data";
 import { hrefForProductLabel } from "@/lib/products";
 import { cn } from "@/lib/utils";
 
@@ -99,6 +100,7 @@ const productMenuColumns: readonly ProductMenuColumn[] = [
           "Chlorine Gas Filter",
           "Chlorine Ball Valve",
           "Motorized Ball Valve",
+          "Online Residual Chlorine Analyzer",
           "Pressure Gauge",
           "Pressure Reducing Valve",
         ],
@@ -120,6 +122,12 @@ const menuLinkClass = cn(
   "block rounded-md px-2 py-1.5 text-[13px] leading-snug font-normal whitespace-normal text-neutral-700",
   "hover:bg-neutral-100 hover:text-neutral-950 focus:bg-neutral-100 focus-visible:ring-1 focus-visible:ring-neutral-300",
 );
+
+const exploreMenuLinks =
+  siteConfig.footerLinks
+    .find((column) => column.title === "Explore")
+    ?.links.filter((link) => link.id !== "home" && link.id !== "products") ??
+  [];
 
 function ProductMenuSections({
   sections,
@@ -168,16 +176,16 @@ function SiteBrand() {
       <Image
         src="/product/IDI LOGO.JPG"
         alt="Industrial Devices (India) logo"
-        width={32}
-        height={32}
+        width={72}
+        height={72}
         className={cn(
           "shrink-0 object-contain transition-[width,height] duration-300",
-          "size-10 sm:size-16",
+          "size-11 sm:size-[4.5rem]",
         )}
       />
       <span
         className={cn(
-          "truncate font-semibold tracking-tight text-primary text-sm sm:text-base transition-all duration-300",
+          "truncate font-semibold tracking-tight text-primary text-sm transition-all duration-300 sm:text-lg",
         )}
       >
         Industrial Devices
@@ -204,26 +212,43 @@ function DesktopNavLinks() {
       </NavigationMenuItem>
 
       <NavigationMenuItem>
-        <NavigationMenuLink asChild className={navLinkClass}>
-          <Link href="/#applications">Applications</Link>
-        </NavigationMenuLink>
+        <NavigationMenuTrigger
+          className={cn(
+            navLinkClass,
+            "gap-1 [&_svg]:size-3 [&_svg]:opacity-70",
+          )}
+        >
+          Explore
+        </NavigationMenuTrigger>
+        <NavigationMenuContent className="overflow-hidden rounded-xl bg-white p-0">
+          <ExploreMegaMenu />
+        </NavigationMenuContent>
       </NavigationMenuItem>
-      <NavigationMenuItem>
-        <NavigationMenuLink asChild className={navLinkClass}>
-          <Link href="/#clients">Testimonials</Link>
-        </NavigationMenuLink>
-      </NavigationMenuItem>
+
       <NavigationMenuItem>
         <NavigationMenuLink asChild className={navLinkClass}>
           <Link href="/blog">Blog</Link>
         </NavigationMenuLink>
       </NavigationMenuItem>
-      <NavigationMenuItem>
-        <NavigationMenuLink asChild className={navLinkClass}>
-          <Link href="/contact">Contact</Link>
-        </NavigationMenuLink>
-      </NavigationMenuItem>
     </>
+  );
+}
+
+function ExploreMegaMenu() {
+  return (
+    <div className="w-[min(18rem,calc(100vw-2rem))] max-w-[calc(100vw-2rem)] overflow-hidden rounded-xl bg-white p-3">
+      <ul className="grid gap-1">
+        {exploreMenuLinks.map((link) => (
+          <li key={link.id}>
+            <NavigationMenuLink asChild>
+              <Link href={link.url} className={cn(menuLinkClass, "px-3 py-2")}>
+                {link.title}
+              </Link>
+            </NavigationMenuLink>
+          </li>
+        ))}
+      </ul>
+    </div>
   );
 }
 
@@ -253,7 +278,7 @@ export function SiteHeader() {
     <Navbar className="pointer-events-none fixed inset-x-0 top-0 z-50 mx-auto flex max-w-7xl justify-center overflow-visible px-4 sm:px-10">
       <NavBody
         className={cn(
-          "pointer-events-auto h-10 gap-1 overflow-visible px-4 sm:h-16 sm:gap-2 sm:px-5",
+          "pointer-events-auto h-12 gap-1 overflow-visible px-4 sm:h-20 sm:gap-2 sm:px-5",
           headerShellClass,
         )}
       >
@@ -291,7 +316,7 @@ export function SiteHeader() {
           headerShellClass,
         )}
       >
-        <MobileNavHeader className="min-h-10 gap-2">
+        <MobileNavHeader className="min-h-12 gap-2">
           <Link
             href="/"
             className="relative z-20 flex min-w-0 flex-1 items-center gap-1.5 rounded-full px-1 py-0.5 outline-none transition-colors hover:text-neutral-600 focus-visible:ring-2 focus-visible:ring-neutral-950/25"
@@ -344,22 +369,17 @@ export function SiteHeader() {
             </div>
           </div>
           <Separator />
-          {(
-            [
-              ["/#applications", "Applications"],
-              ["/#clients", "Testimonials"],
-              ["/downloads", "Downloads"],
-              ["/blog", "Blog"],
-              ["/contact", "Contact"],
-            ] as const
-          ).map(([href, label]) => (
+          {[
+            ...exploreMenuLinks,
+            { id: "blog", url: "/blog", title: "Blog" },
+          ].map((link) => (
             <Link
-              key={href}
-              href={href}
+              key={link.id}
+              href={link.url}
               onClick={() => setMobileOpen(false)}
               className="rounded-lg px-1 py-2.5 text-base font-medium text-neutral-800 transition-colors hover:bg-neutral-100"
             >
-              {label}
+              {link.title}
             </Link>
           ))}
           <Link

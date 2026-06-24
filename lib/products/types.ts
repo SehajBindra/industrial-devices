@@ -11,6 +11,13 @@ export type ProductSpec = {
   value: string | readonly string[];
 };
 
+export type ProductImage = {
+  src: string;
+  alt: string;
+  width?: number;
+  height?: number;
+};
+
 export type ProductModel = {
   id: string;
   heading: string;
@@ -18,6 +25,7 @@ export type ProductModel = {
   imageAlt: string;
   imageWidth?: number;
   imageHeight?: number;
+  images?: readonly ProductImage[];
   descriptionPoints: string[];
   specs: ProductSpec[];
   sectionHeadingId?: string;

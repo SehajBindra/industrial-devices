@@ -24,7 +24,7 @@ export const chemicalDosingSystemProduct = {
     {
       id: "chemical-dosing-system",
       heading: "Precision Dosing Solutions for Efficient Process",
-      imageSrc: productImage("chemical-dosing-system.jpg"),
+      imageSrc: productImage("dosing-system.jpg"),
       imageAlt:
         "INDEVICE chemical dosing system with storage tanks, metering pumps, and control panel",
       descriptionPoints: [

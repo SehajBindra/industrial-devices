@@ -50,9 +50,9 @@ export function FooterSection() {
             <Image
               src="/product/IDI LOGO.JPG"
               alt="Industrial Devices (India) logo"
-              width={32}
-              height={32}
-              className="size-10 shrink-0 object-cover sm:size-16"
+              width={80}
+              height={80}
+              className="size-12 shrink-0 object-contain sm:size-20"
             />
             <div className="flex flex-col justify-center gap-1">
               <h3 className="text-base font-semibold text-primary">

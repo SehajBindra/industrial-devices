@@ -25,7 +25,7 @@ const safetyModels = [
   {
     id: "frontal-tonner-hood",
     heading: "Frontal Tonner Hood",
-    imageSrc: productImage("tonner-full-hood.jpg"),
+    imageSrc: productImage("frontal-hood.jpeg"),
     imageAlt: "Frontal tonner hood covering chlorine container valve assembly",
     descriptionPoints: [
       "The Frontal Tonner Hood is designed to cover the valve and header assembly of chlorine ton containers, where most leaks typically occur. It provides a quick and effective solution for containing leaks while allowing easy installation during emergency situations.",
@@ -55,7 +55,7 @@ const safetyModels = [
   {
     id: "emergency-repair-kit-cylinders",
     heading: "Emergency Repair Kit for Cylinders",
-    imageSrc: productImage("emergency-tonner-repair-kit.jpg"),
+    imageSrc: productImage("emergency-repair-kit-for-cylinders.jpg"),
     imageAlt: "Emergency repair kit for standard chlorine cylinders",
     descriptionPoints: [
       "The Emergency Repair Kit for Cylinders enables rapid containment of leaks from standard chlorine cylinders. The kit includes purpose-built clamps, gaskets, and accessories to safely control valve and container leaks until permanent repairs can be carried out.",
@@ -75,7 +75,7 @@ const safetyModels = [
   {
     id: "eyewash-shower",
     heading: "Emergency Eye Wash & Safety Shower",
-    imageSrc: productImage("leak-detection-safety-bg-white.png"),
+    imageSrc: productImage("eye-wash-and-safety-shower.webp"),
     imageAlt: "Emergency eye wash and safety shower unit",
     descriptionPoints: [
       "The Emergency Eye Wash and Safety Shower provides immediate decontamination following accidental exposure to chlorine or hazardous chemicals. Designed for rapid activation, it delivers a continuous flow of clean water to minimize injury and ensure workplace safety.",

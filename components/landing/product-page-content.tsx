@@ -90,7 +90,7 @@ export function ProductPageContent({ product }: ProductPageContentProps) {
         />
 
         {intro ? (
-          <p className=" max-w-2xl text-sm  leading-relaxed text-neutral-600 sm:text-base">
+          <p className="max-w-2xl text-sm leading-relaxed text-neutral-600 sm:text-base">
             {intro}
           </p>
         ) : null}
@@ -105,6 +105,7 @@ export function ProductPageContent({ product }: ProductPageContentProps) {
                 imageAlt,
                 imageWidth = 1200,
                 imageHeight = 900,
+                images = [],
                 descriptionPoints,
                 specs,
                 sectionHeadingId: modelSectionHeadingId,
@@ -112,72 +113,106 @@ export function ProductPageContent({ product }: ProductPageContentProps) {
                 sectionTitleHighlight: modelSectionTitleHighlight,
               },
               index,
-            ) => (
-              <div key={id} className="flex flex-col gap-12">
-                {modelSectionHeadingId &&
-                modelSectionTitle &&
-                modelSectionTitleHighlight ? (
-                  <SectionIntro
-                    className="border-t border-neutral-200 p-0 pt-12"
-                    align="start"
-                    headingId={modelSectionHeadingId}
-                    title={
-                      <>
-                        {modelSectionTitle}{" "}
-                        <span className="text-primary">
-                          {modelSectionTitleHighlight}
-                        </span>
-                      </>
-                    }
-                  />
-                ) : null}
-                <article
-                  id={id}
-                  className="scroll-mt-28 grid grid-cols-1 items-start gap-8 rounded-sm sm:scroll-mt-32 lg:grid-cols-2 lg:gap-"
-                >
-                <div className={index % 2 === 1 ? "lg:order-2" : undefined}>
-                  <div className="overflow-hidden rounded-md border border-dashed border-neutral-300 bg-white p-2 shadow-2xl">
-                    <Image
-                      src={imageSrc}
-                      alt={imageAlt}
-                      width={imageWidth}
-                      height={imageHeight}
-                      quality={90}
-                      priority={index === 0}
-                      loading={index === 0 ? "eager" : "lazy"}
-                      sizes="(max-width: 1024px) 100vw, 50vw"
-                      className="h-auto w-full rounded-md bg-white object-cover"
-                    />
-                  </div>
-                </div>
+            ) => {
+              const modelImages = [
+                {
+                  src: imageSrc,
+                  alt: imageAlt,
+                  width: imageWidth,
+                  height: imageHeight,
+                },
+                ...images.map(
+                  ({ src, alt, width = 1200, height = 900 }) => ({
+                    src,
+                    alt,
+                    width,
+                    height,
+                  }),
+                ),
+              ];
 
-                <div className={index % 2 === 1 ? "lg:order-1" : undefined}>
-                  <h2 className="text-2xl font-medium tracking-tight text-primary sm:text-3xl">
-                    {heading}
-                  </h2>
-                  <ul className="mt-4 list-disc space-y-2 pl-5 text-sm leading-relaxed text-neutral-600 sm:text-base">
-                    {splitDescriptionPoints(descriptionPoints).map(
-                      (point, pointIndex) => (
-                        <li key={`${id}-${pointIndex}`}>
-                          {renderDescriptionPoint(point)}
-                        </li>
-                      ),
-                    )}
-                  </ul>
-                  {specs.length > 0 ? (
-                    <ul className="mt-10 grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-1">
-                      {specs.map((spec) => (
-                        <ModelSpecCard
-                          key={`${spec.label}-${Array.isArray(spec.value) ? spec.value.join("|") : spec.value}`}
-                          {...spec}
-                        />
-                      ))}
-                    </ul>
+              return (
+                <div key={id} className="flex flex-col gap-12">
+                  {modelSectionHeadingId &&
+                  modelSectionTitle &&
+                  modelSectionTitleHighlight ? (
+                    <SectionIntro
+                      className="border-t border-neutral-200 p-0 pt-12"
+                      align="start"
+                      headingId={modelSectionHeadingId}
+                      title={
+                        <>
+                          {modelSectionTitle}{" "}
+                          <span className="text-primary">
+                            {modelSectionTitleHighlight}
+                          </span>
+                        </>
+                      }
+                    />
                   ) : null}
+                  <article
+                    id={id}
+                    className="scroll-mt-28 grid grid-cols-1 items-start gap-8 rounded-sm sm:scroll-mt-32 lg:grid-cols-2 lg:gap-10"
+                  >
+                    <div
+                      className={index % 2 === 1 ? "lg:order-2" : undefined}
+                    >
+                      <div className="grid gap-3">
+                        {modelImages.map((image, imageIndex) => (
+                          <div
+                            key={`${id}-${image.src}`}
+                            className="overflow-hidden rounded-md border border-dashed border-neutral-300 bg-white p-2 shadow-2xl"
+                          >
+                            <Image
+                              src={image.src}
+                              alt={image.alt}
+                              width={image.width}
+                              height={image.height}
+                              quality={90}
+                              priority={index === 0 && imageIndex === 0}
+                              loading={
+                                index === 0 && imageIndex === 0
+                                  ? "eager"
+                                  : "lazy"
+                              }
+                              sizes="(max-width: 1024px) 100vw, 50vw"
+                              className="h-auto w-full rounded-md bg-white object-contain"
+                            />
+                          </div>
+                        ))}
+                      </div>
+                    </div>
+
+                    <div
+                      className={index % 2 === 1 ? "lg:order-1" : undefined}
+                    >
+                      <h2 className="text-2xl font-medium tracking-tight text-primary sm:text-3xl">
+                        {heading}
+                      </h2>
+                      <ul className="mt-4 list-disc space-y-2 pl-5 text-sm leading-relaxed text-neutral-600 sm:text-base">
+                        {splitDescriptionPoints(descriptionPoints).map(
+                          (point, pointIndex) => (
+                            <li key={`${id}-${pointIndex}`}>
+                              {renderDescriptionPoint(point)}
+                            </li>
+                          ),
+                        )}
+                      </ul>
+                      {specs.length > 0 ? (
+                        <ul className="mt-10 grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-1">
+                          {specs.map((spec) => (
+                            <ModelSpecCard
+                              key={`${spec.label}-${Array.isArray(spec.value) ? spec.value.join("|") : spec.value}`}
+                              {...spec}
+                            />
+                          ))}
+                        </ul>
+                      ) : null}
+                    </div>
+                  </article>
                 </div>
-                </article>
-              </div>
-            ),
+              );
+            },
           )}
         </div>
       </div>

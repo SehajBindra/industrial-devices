@@ -2,7 +2,7 @@
 
 import dynamic from "next/dynamic";
 import Link from "next/link";
-import { ArrowRight } from "lucide-react";
+import { Phone } from "lucide-react";
 
 import { BlurFade } from "@/components/ui/blur-fade";
 import { Button } from "@/components/ui/button";
@@ -68,8 +68,8 @@ export default function CTASection() {
               asChild
               className="inline-flex items-center gap-2 rounded-full bg-primary px-5 py-2 text-sm font-semibold text-primary-foreground transition hover:bg-primary/90"
             >
-              <Link href="/request-quote">
-                Request a quote <ArrowRight className="h-4 w-4" />
+              <Link href="/contact">
+                Contact us <Phone className="h-4 w-4" />
               </Link>
             </Button>
           </BlurFade>

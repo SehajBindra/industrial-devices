@@ -2,7 +2,6 @@
 
 import { Download } from "lucide-react";
 import { useState } from "react";
-import Link from "next/link";
 
 import { DownloadGateSheet } from "@/components/forms/download-gate-sheet";
 import { Button } from "@/components/ui/button";
@@ -17,12 +16,6 @@ export function HeroCtaButtons() {
 
   return (
     <>
-      <Button
-        asChild
-        className="h-11 rounded-full bg-primary px-7 text-sm font-medium text-primary-foreground shadow-none transition-transform hover:bg-primary/90 active:scale-[0.98]"
-      >
-        <Link href="/request-quote">Request a quote</Link>
-      </Button>
       <Button
         type="button"
         variant="outline"
