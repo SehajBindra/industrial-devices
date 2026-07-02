@@ -26,8 +26,10 @@ export const chlorineDosingSystemProduct = {
     {
       id: "batch-type",
       heading: "Batch Type Electrochlorinators",
-      imageSrc: productImage("batch-type-electrochlorinator.jpg"),
+      imageSrc: productImage("batch-type-electrochlorinator-no-pristine.png"),
       imageAlt: "Batch type electrochlorinator system",
+      imageWidth: 1188,
+      imageHeight: 1324,
       descriptionPoints: [
         "These are simple to operate manual systems and the most economical.",
         "Just add the required Salt (NaCl) and water and switch on. Within the given batch time it produces Sodium Hypochlorite with the right concentration.",

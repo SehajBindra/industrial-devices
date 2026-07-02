@@ -107,8 +107,10 @@ export const chlorinationAccessoriesProduct = {
     {
       id: "online-residual-chlorine-analyzer",
       heading: "Online Residual Chlorine Analyzer",
-      imageSrc: productImage("online-residual-chlorine-analyzer.jpeg"),
+      imageSrc: productImage("online-residual-chlorine-analyzer-bg-white.png"),
       imageAlt: "Online residual chlorine analyzer with LCD display",
+      imageWidth: 1619,
+      imageHeight: 971,
       descriptionPoints: [
         "The Online Residual Chlorine Analyzer is ideal for monitoring residual chlorine. This instrument is used for measuring the Residual Chlorine or Total Chlorine. The Analyzer provides a continuous 4-20mA output locally with a LCD display or can be repeat indicated in a PLC. Analyzer can also be used to automatically modulate dosing rate as per requirement.",
       ],

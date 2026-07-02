@@ -25,8 +25,10 @@ const safetyModels = [
   {
     id: "frontal-tonner-hood",
     heading: "Frontal Tonner Hood",
-    imageSrc: productImage("frontal-hood.jpeg"),
+    imageSrc: productImage("frontal-hood-new.png"),
     imageAlt: "Frontal tonner hood covering chlorine container valve assembly",
+    imageWidth: 576,
+    imageHeight: 406,
     descriptionPoints: [
       "The Frontal Tonner Hood is designed to cover the valve and header assembly of chlorine ton containers, where most leaks typically occur. It provides a quick and effective solution for containing leaks while allowing easy installation during emergency situations.",
     ],
@@ -55,8 +57,10 @@ const safetyModels = [
   {
     id: "emergency-repair-kit-cylinders",
     heading: "Emergency Repair Kit for Cylinders",
-    imageSrc: productImage("emergency-repair-kit-for-cylinders.jpg"),
+    imageSrc: productImage("emergency-repair-kit-for-cylinders-bg-white.png"),
     imageAlt: "Emergency repair kit for standard chlorine cylinders",
+    imageWidth: 1086,
+    imageHeight: 1448,
     descriptionPoints: [
       "The Emergency Repair Kit for Cylinders enables rapid containment of leaks from standard chlorine cylinders. The kit includes purpose-built clamps, gaskets, and accessories to safely control valve and container leaks until permanent repairs can be carried out.",
     ],

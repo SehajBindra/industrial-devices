@@ -129,6 +129,11 @@ const exploreMenuLinks =
     ?.links.filter((link) => link.id !== "home" && link.id !== "products") ??
   [];
 
+const desktopExploreMenuLinks = exploreMenuLinks.map((link) => ({
+  ...link,
+  title: link.id === "clientele" ? "Testimonials" : link.title,
+}));
+
 function ProductMenuSections({
   sections,
   onNavigate,
@@ -178,6 +183,7 @@ function SiteBrand() {
         alt="Industrial Devices (India) logo"
         width={72}
         height={72}
+        priority
         className={cn(
           "shrink-0 object-contain transition-[width,height] duration-300",
           "size-11 sm:size-[4.5rem]",
@@ -211,19 +217,13 @@ function DesktopNavLinks() {
         </NavigationMenuContent>
       </NavigationMenuItem>
 
-      <NavigationMenuItem>
-        <NavigationMenuTrigger
-          className={cn(
-            navLinkClass,
-            "gap-1 [&_svg]:size-3 [&_svg]:opacity-70",
-          )}
-        >
-          Explore
-        </NavigationMenuTrigger>
-        <NavigationMenuContent className="overflow-hidden rounded-xl bg-white p-0">
-          <ExploreMegaMenu />
-        </NavigationMenuContent>
-      </NavigationMenuItem>
+      {desktopExploreMenuLinks.map((link) => (
+        <NavigationMenuItem key={link.id}>
+          <NavigationMenuLink asChild className={navLinkClass}>
+            <Link href={link.url}>{link.title}</Link>
+          </NavigationMenuLink>
+        </NavigationMenuItem>
+      ))}
 
       <NavigationMenuItem>
         <NavigationMenuLink asChild className={navLinkClass}>
@@ -231,24 +231,6 @@ function DesktopNavLinks() {
         </NavigationMenuLink>
       </NavigationMenuItem>
     </>
-  );
-}
-
-function ExploreMegaMenu() {
-  return (
-    <div className="w-[min(18rem,calc(100vw-2rem))] max-w-[calc(100vw-2rem)] overflow-hidden rounded-xl bg-white p-3">
-      <ul className="grid gap-1">
-        {exploreMenuLinks.map((link) => (
-          <li key={link.id}>
-            <NavigationMenuLink asChild>
-              <Link href={link.url} className={cn(menuLinkClass, "px-3 py-2")}>
-                {link.title}
-              </Link>
-            </NavigationMenuLink>
-          </li>
-        ))}
-      </ul>
-    </div>
   );
 }
 
@@ -278,7 +260,7 @@ export function SiteHeader() {
     <Navbar className="pointer-events-none fixed inset-x-0 top-0 z-50 mx-auto flex max-w-7xl justify-center overflow-visible px-4 sm:px-10">
       <NavBody
         className={cn(
-          "pointer-events-auto h-12 gap-1 overflow-visible px-4 sm:h-20 sm:gap-2 sm:px-5",
+          "pointer-events-auto h-12 gap-1 overflow-visible px-4 md:hidden sm:h-20 sm:gap-2 sm:px-5 xl:flex",
           headerShellClass,
         )}
       >
@@ -312,7 +294,7 @@ export function SiteHeader() {
 
       <MobileNav
         className={cn(
-          "pointer-events-auto overflow-visible rounded-2xl px-5 py-2 sm:px-6",
+          "pointer-events-auto overflow-visible rounded-2xl px-5 py-2 md:flex sm:px-6 xl:hidden",
           headerShellClass,
         )}
       >

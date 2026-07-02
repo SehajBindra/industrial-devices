@@ -24,9 +24,10 @@ export const chemicalDosingSystemProduct = {
     {
       id: "chemical-dosing-system",
       heading: "Precision Dosing Solutions for Efficient Process",
-      imageSrc: productImage("dosing-system.jpg"),
+      imageSrc: productImage("chemical-dosing-system.jpg"),
       imageAlt:
         "INDEVICE chemical dosing system with storage tanks, metering pumps, and control panel",
+
       descriptionPoints: [
         "The INDEVICE Chemical Dosing System is engineered to deliver accurate, reliable, and automated chemical dosing for a wide range of water and wastewater treatment, and other applications. Designed to optimize treatment efficiency and minimize chemical consumption, our dosing systems ensure precise injection of treatment chemicals such as sodium hypochlorite, alum, PAC, polymers, caustic soda, acids, antiscalant, corrosion inhibitors, and other process chemicals.",
         "Each system is custom-designed to meet specific process requirements and is supplied as a complete package comprising chemical storage tanks, dosing pumps, agitators, calibration columns, valves, piping, instrumentation, and control panels. Available in manual, semi-automatic, and fully automated configurations, the systems can be seamlessly integrated with PLC, SCADA, flow meters, analysers, and other process control equipment for intelligent and proportionate dosing.",

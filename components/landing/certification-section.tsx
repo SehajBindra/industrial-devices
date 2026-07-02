@@ -1,6 +1,7 @@
 "use client";
 
 import { Download, ExternalLink, ShieldCheck } from "lucide-react";
+import Image from "next/image";
 import Link from "next/link";
 
 import { SectionIntro } from "@/components/landing/section-intro";
@@ -23,10 +24,10 @@ function RegistrationMark({ className }: { className?: string }) {
 
 function CertificateDocumentFrame({
   title,
-  file,
+  previewImage,
 }: {
   title: string;
-  file: string;
+  previewImage: string;
 }) {
   return (
     <div className="relative overflow-hidden rounded-md border border-neutral-200/90 bg-[linear-gradient(180deg,#fcfcfc_0%,#f4f6f8_100%)] p-3 shadow-[inset_0_1px_0_rgba(255,255,255,0.9),0_18px_50px_rgba(15,23,42,0.06)] sm:p-4">
@@ -44,10 +45,12 @@ function CertificateDocumentFrame({
       </div>
 
       <div className="relative aspect-3/4 overflow-hidden rounded-sm border border-neutral-200/80 bg-white shadow-sm">
-        <iframe
-          src={`${file}#toolbar=0&navpanes=0`}
-          title={`${title} preview`}
-          className="absolute inset-0 h-full w-full border-0"
+        <Image
+          src={previewImage}
+          alt={`${title} certificate`}
+          fill
+          sizes="(max-width: 1024px) 100vw, 50vw"
+          className="object-contain object-center"
         />
       </div>
     </div>
@@ -159,10 +162,7 @@ export function CertificationSection() {
                 </div>
 
                 <div
-                  className={cn(
-                    "relative",
-                    index % 2 === 1 && "lg:order-1",
-                  )}
+                  className={cn("relative", index % 2 === 1 && "lg:order-1")}
                 >
                   <div
                     aria-hidden
@@ -170,7 +170,7 @@ export function CertificationSection() {
                   />
                   <CertificateDocumentFrame
                     title={certificate.title}
-                    file={certificate.file}
+                    previewImage={certificate.previewImage}
                   />
                 </div>
               </article>

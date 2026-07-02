@@ -103,7 +103,7 @@ export const NavBody = ({ children, className, visible }: NavBodyProps) => {
         boxShadow: visible
           ? "0 8px 30px -10px rgba(15, 23, 42, 0.12), 0 2px 8px -4px rgba(15, 23, 42, 0.06)"
           : "none",
-        width: visible ? "min(56rem, calc(100vw - 2rem))" : "100%",
+        width: visible ? "min(72rem, calc(100vw - 2rem))" : "100%",
         borderRadius: visible ? "9999px" : "0px",
         marginTop: visible ? 20 : 0,
       }}

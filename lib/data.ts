@@ -186,6 +186,7 @@ export type SiteCertification = {
   description: string;
   file: string;
   fileName: string;
+  previewImage: string;
 };
 
 export const certifications: SiteCertification[] = [
@@ -197,6 +198,7 @@ export const certifications: SiteCertification[] = [
       "Certified quality management system covering design, manufacture, and supply of chlorination and water treatment equipment.",
     file: "/product/ISO-9001%20.pdf",
     fileName: "ISO-9001.pdf",
+    previewImage: "/product/iso-9001-certificate.png",
   },
   {
     id: "iso-ohsas",
@@ -206,6 +208,7 @@ export const certifications: SiteCertification[] = [
       "Certified occupational health and safety management system for manufacturing, commissioning, and project site operations.",
     file: "/product/ISO-OHSAS-Latest.pdf",
     fileName: "ISO-OHSAS.pdf",
+    previewImage: "/product/iso-ohsas-certificate.png",
   },
 ];
 

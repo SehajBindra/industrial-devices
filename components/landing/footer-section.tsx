@@ -1,9 +1,9 @@
 import dynamic from "next/dynamic";
-import { ChevronRightIcon, ClockIcon } from "lucide-react";
+import { ChevronRightIcon } from "lucide-react";
 import Image from "next/image";
 import Link from "next/link";
 
-import { contactInfo, siteConfig } from "@/lib/data";
+import { siteConfig } from "@/lib/data";
 
 const FooterFlickeringGrid = dynamic(
   () =>
@@ -50,18 +50,14 @@ export function FooterSection() {
             <Image
               src="/product/IDI LOGO.JPG"
               alt="Industrial Devices (India) logo"
-              width={80}
-              height={80}
-              className="size-12 shrink-0 object-contain sm:size-20"
+              width={112}
+              height={112}
+              className="size-16 shrink-0 object-contain sm:size-28"
             />
             <div className="flex flex-col justify-center gap-1">
-              <h3 className="text-base font-semibold text-primary">
+              <h3 className="text-xl font-semibold text-primary sm:text-2xl">
                 Industrial Devices
               </h3>
-              <p className="flex items-center gap-1.5 text-xs text-muted-foreground">
-                <ClockIcon className="size-3.5 shrink-0 text-primary/80" />
-                <span>{contactInfo.hours}</span>
-              </p>
             </div>
           </div>
           <p className="mt-3 text-sm font-medium tracking-tight text-muted-foreground">
