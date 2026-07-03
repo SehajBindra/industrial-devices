@@ -1,6 +1,12 @@
 {
   "version": 1,
   "skills": {
+    "agency-client-audit": {
+      "source": "techking007/agency-client-audit-skill",
+      "sourceType": "github",
+      "skillPath": "skills/agency-client-audit/SKILL.md",
+      "computedHash": "b176361866d79d2cdbf2d48f45423d4b8b49e7a8c48b583bc57854ac8106c035"
+    },
     "emil-design-eng": {
       "source": "emilkowalski/skill",
       "sourceType": "github",

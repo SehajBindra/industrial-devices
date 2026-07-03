@@ -54,7 +54,7 @@ const productMenuColumns: readonly ProductMenuColumn[] = [
         items: [
           "Steam Heated Vaporizer",
           "Electrically Heated Vaporizer",
-          "Hot Water Heated Vaporizer",
+          "Hot Water Circulated Vaporizer",
         ],
       },
       {
@@ -80,7 +80,7 @@ const productMenuColumns: readonly ProductMenuColumn[] = [
           "Emergency Repair Kit for Cylinders",
           "Self-Contained Breathing Apparatus (SCBA)",
           "Emergency Eye Wash & Safety Shower",
-          "Instant Resuscitator",
+          "Instant Manual Resuscitator",
           "Canister Type Gas Mask",
           "Protective Clothing",
         ],

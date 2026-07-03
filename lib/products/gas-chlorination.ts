@@ -29,20 +29,24 @@ export const gasChlorinationProduct = {
       imageAlt: "Cylinder and tonner mounted chlorinator",
       descriptionPoints: [
         "**Reliable & Efficient Chlorination Solutions**",
-        "INDEVICE Cylinder Mounted Chlorinators deliver versatile, cost-effective chlorine dosing. These vacuum-operated systems ensure safe, reliable chlorine feed across water treatment applications.",
-        "Mounted directly onto chlorine cylinders or ton containers via a robust yoke clamp, providing secure, leak-proof installation for enhanced safety.",
+        "INDEVICE Cylinder Mounted Chlorinators deliver versatile, cost-effective chlorine dosing.",
+        "These vacuum-operated systems ensure safe, reliable chlorine feed across water treatment applications.",
+        "Mounted directly onto chlorine cylinders or ton containers via a robust yoke clamp for chlorine tonner and straight connector for chlorine cylinder providing secure, leak-proof installation for enhanced safety.",
         "Each chlorinator includes essential components:",
+        "**Vacuum Regulator**",
         "**Chlorine Flow Meter**",
         "**Flow Control Valve**",
         "**Pressure Relief Valve**",
-        "An exclusively designed vacuum regulator operates only when the injector generates vacuum. It shuts off automatically when vacuum falls below the set limit, preventing chlorine leakage.",
+        "**Check Valve**",
+        "**Injector**",
+        "An exclusively designed vacuum regulator operates only when the injector generates vacuum.",
+        "It shuts off automatically when vacuum falls below the set limit, preventing chlorine leakage.",
       ],
       specs: [
         { label: "Capacity", value: "100 g/hr to 10 kg/hr" },
         {
           label: "Applications",
-          value:
-            "Swimming pools, drinking water treatment, small-capacity water treatment plants, and potable water treatment in power plants.",
+          value: "Swimming Pools and Drinking Water Treatment Plants.",
         },
       ],
     },
@@ -63,16 +67,17 @@ export const gasChlorinationProduct = {
         "**Injector**",
         "**Drain Valve**",
         "**Non-Return Valve**",
-        "A simple yet advanced design minimizes maintenance while ensuring long-term reliability. All major components are accessible from the rear for easy inspection.",
+        "A simple yet advanced design minimizes maintenance while ensuring long-term reliability.",
+        "All major components are accessible from the rear for easy inspection.",
         "Each unit is factory pre-assembled and tested under simulated conditions, reducing installation time and ensuring hassle-free start-up.",
-        "Optional proportionate dosing enables automatic feed from an on-line chlorine analyzer or flow meter.",
+        "Optional: Proportionate dosing enables automatic feed from an on-line chlorine analyzer or flow meter.",
       ],
       specs: [
         { label: "Capacity", value: "100 g/hr to 1000 kg/hr" },
         {
           label: "Applications",
           value:
-            "Drinking water treatment, effluent treatment plants (ETP), sewage treatment plants (STP), cooling water treatment, and raw water treatment in power plants.",
+            "Water Treatment Plants (WTPs), Effluent Treatment Plants (ETPs), Sewage Treatment Plants (STPs), Cooling Water Treatment, and Raw Water Treatment in Power Plants.",
         },
       ],
     },
@@ -85,14 +90,14 @@ export const gasChlorinationProduct = {
         "**Compact & Reliable Chlorination Solutions**",
         "INDEVICE Wall Mounted Chlorinators are compact, vacuum-operated systems for accurate chlorine dosing in smaller to medium-capacity applications.",
         "Built with high-quality components including pressure & vacuum gauges, vacuum regulator, flow meter, flow control valve, injector, drain valve, and non-return valve.",
-        "Robust and efficient design ensures safe operation, precise dosing, and low maintenance for continuous water disinfection.",
+        "Robust, efficient, space saving design ensures safe operation, precise dosing and low maintenance for continuous water disinfection.",
       ],
       specs: [
         { label: "Capacity", value: "100 g/hr to 5 kg/hr" },
         {
           label: "Applications",
           value:
-            "Drinking water treatment, water treatment plants, and potable water treatment in power plants.",
+            "Water Treatment Plants (WTPs), Effluent Treatment Plants (ETPs), Sewage Treatment Plants (STPs), Cooling Water Treatment, and Raw Water Treatment in Power Plants.",
         },
       ],
     },

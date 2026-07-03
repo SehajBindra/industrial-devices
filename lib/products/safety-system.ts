@@ -18,7 +18,8 @@ const safetyModels = [
     imageSrc: productImage("tonner-full-hood.jpg"),
     imageAlt: "Full tonner hood for chlorine container leak containment",
     descriptionPoints: [
-      "The Full Tonner Hood provides complete enclosure of a one-ton chlorine container during emergency leak situations. Connected to a leak absorption system, it safely contains and directs escaping chlorine gas for neutralization, minimizing risk to personnel and surrounding areas.",
+      "The Full Tonner Hood provides complete enclosure of chlorine container during emergency leak situations.",
+      "Connected to a leak absorption system, it safely contains and directs escaping chlorine gas to neutralization system, minimizing risk to personnel and surrounding areas.",
     ],
     specs: [],
   },
@@ -40,7 +41,10 @@ const safetyModels = [
     imageSrc: productImage("chlorine-leak-detector.png"),
     imageAlt: "Chlorine leak detector with audible and visual alarms",
     descriptionPoints: [
-      "The INDEVICE Chlorine Leak Detector continuously monitors ambient air for the presence of chlorine gas, providing early warning through audible and visual alarms. Designed for high sensitivity and reliability, it enhances plant safety by enabling rapid response to chlorine leaks.",
+      "The INDEVICE Chlorine Leak Detector continuously monitors ambient air for the presence of chlorine gas, providing early warning through audible and visual alarms.",
+      "Designed for high sensitivity and reliability, it enhances plant safety by enabling rapid response to chlorine leaks.",
+      "The output of the detector has two potential free outputs and one 4-20 mA analogue output.",
+      "Leak Detector is housed in a wall mountable poly carbonate cabinet, conforming to IP 67.",
     ],
     specs: [],
   },
@@ -50,7 +54,9 @@ const safetyModels = [
     imageSrc: productImage("emergency-tonner-repair-kit.jpg"),
     imageAlt: "Emergency repair kit for one-ton chlorine containers",
     descriptionPoints: [
-      "The Emergency Repair Kit for Tonners is designed to temporarily seal leaks from one-ton chlorine containers. Manufactured in accordance with industry standards, the kit includes specialized tools and sealing devices for quick and safe emergency leak control.",
+      "The Emergency Repair Kit for Tonners is designed to temporarily seal leaks from one-ton chlorine containers.",
+      "Manufactured in accordance with Chlorine Institute USA, the kit includes specialized tools and sealing devices for quick and safe emergency leak control.",
+      "It contains devices to control leak from the valves, body and inspection plug. This includes other supervisory items such as Gas Mask, Protective Clothing, 30 mtrs. PVC tube, etc.",
     ],
     specs: [],
   },
@@ -62,7 +68,8 @@ const safetyModels = [
     imageWidth: 1086,
     imageHeight: 1448,
     descriptionPoints: [
-      "The Emergency Repair Kit for Cylinders enables rapid containment of leaks from standard chlorine cylinders. The kit includes purpose-built clamps, gaskets, and accessories to safely control valve and container leaks until permanent repairs can be carried out.",
+      "The Emergency Repair Kit for Cylinders enables rapid containment of leaks from standard chlorine cylinders manufactured as per Chlorine Institute USA standards.",
+      "The kit includes purpose-built clamps, gaskets, and accessories to safely control valve and container leaks until permanent repairs can be carried out.",
     ],
     specs: [],
   },
@@ -72,7 +79,8 @@ const safetyModels = [
     imageSrc: productImage("self-contained-air-breathing-apperatus.png"),
     imageAlt: "Self-contained breathing apparatus for chlorine-contaminated areas",
     descriptionPoints: [
-      "The Self-Contained Breathing Apparatus (SCBA) provides a continuous supply of breathable air, enabling personnel to safely enter chlorine-contaminated areas during maintenance and emergency response. Lightweight, durable, and ergonomically designed, it offers maximum protection in hazardous environments.",
+      "The Self-Contained Breathing Apparatus (SCBA) provides a continuous supply of breathable air, enabling personnel to safely enter chlorine-contaminated areas during maintenance and emergency response.",
+      "Light-weight, durable, and ergonomically designed, it offers maximum protection in hazardous environments.",
     ],
     specs: [],
   },
@@ -88,11 +96,12 @@ const safetyModels = [
   },
   {
     id: "instant-resuscitator",
-    heading: "Instant Resuscitator",
+    heading: "Instant Manual Resuscitator",
     imageSrc: productImage("resus.png"),
     imageAlt: "Instant resuscitator for emergency oxygen delivery",
     descriptionPoints: [
-      "The Instant Resuscitator is an emergency oxygen delivery system designed to provide immediate respiratory support to personnel affected by chlorine gas exposure. Compact and easy to operate, it is an essential component of any chlorine safety program.",
+      "The Instant Resuscitator is an emergency device designed to provide immediate respiratory support to personnel affected by chlorine gas exposure.",
+      "Compact and easy to operate, it is an essential component of any chlorine safety program.",
     ],
     specs: [],
   },

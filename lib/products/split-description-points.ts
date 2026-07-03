@@ -2,6 +2,7 @@ const PROTECTED_PATTERNS = [
   /\d+\.\d+/g,
   /Inc\./g,
   /Part-II\./g,
+  /mtrs\./gi,
   /etc\./gi,
   /e\.g\./gi,
   /i\.e\./gi,

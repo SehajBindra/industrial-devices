@@ -55,7 +55,7 @@ export const productHrefByLabel: Partial<Record<string, string>> = {
     "chlorine-vaporizer",
     "electrically-heated",
   ),
-  "Hot Water Heated Vaporizer": productAnchor(
+  "Hot Water Circulated Vaporizer": productAnchor(
     "chlorine-vaporizer",
     "hot-water-heated",
   ),
@@ -91,7 +91,7 @@ export const productHrefByLabel: Partial<Record<string, string>> = {
     "safety-system",
     "eyewash-shower",
   ),
-  "Instant Resuscitator": productAnchor(
+  "Instant Manual Resuscitator": productAnchor(
     "safety-system",
     "instant-resuscitator",
   ),
