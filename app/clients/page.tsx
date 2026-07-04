@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 
 import { ClientLogoMarquee } from "@/components/landing/client-logo-marquee";
-import { clientLogos, clientNames } from "@/lib/data";
+import { clientNames } from "@/lib/data";
 import { createPageMetadata } from "@/lib/site-metadata";
 
 export const metadata: Metadata = createPageMetadata({

@@ -126,10 +126,10 @@ export const chlorinationAccessoriesProduct = {
     {
       id: "load-indicator",
       heading: "Load Indicator",
-      imageSrc: productImage("load-indicator.webp"),
+      imageSrc: productImage("load-indicator-white-bg.webp"),
       imageAlt: "Electronic crane weigher load indicator for chlorine ton containers",
-      imageWidth: 600,
-      imageHeight: 900,
+      imageWidth: 1160,
+      imageHeight: 2000,
       descriptionPoints: [
         "**Electronic Crane Weigher**",
         "The Electronic Crane Weigher is designed for the safe and accurate weighing of chlorine ton containers during loading, unloading, and handling operations.",
