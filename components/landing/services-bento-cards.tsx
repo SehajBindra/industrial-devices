@@ -158,7 +158,7 @@ export function AuditsAssessmentsBentoCard(props: ServiceBentoCardProps) {
   return (
     <ServiceBentoCardShell
       {...props}
-      description="Tonner handling systems, trunnion supports, manifolds, ball valves, motorized valves, pressure gauges, and pressure reducing valves for chlorination systems."
+      description="Auxiliary valves, flexible connectors, manifold valves, gas filters, pressure instruments, lifting beams, load indicators, and analyzers for chlorination systems."
       href={productPath("chlorination-accessories")}
       imageAlt="Auxiliary container valve and chlorination accessory by Industrial Devices"
       imageSrc={PRODUCT_IMAGES.vacuumRegulators}

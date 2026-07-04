@@ -100,14 +100,6 @@ export const productHrefByLabel: Partial<Record<string, string>> = {
     "canister-gas-mask",
   ),
   "Protective Clothing": productAnchor("safety-system", "protective-clothing"),
-  "Tonner Handling System": productAnchor(
-    "chlorination-accessories",
-    "tonner-handling-system",
-  ),
-  "Trunnion Roller Support": productAnchor(
-    "chlorination-accessories",
-    "trunnion-roller-support",
-  ),
   "Auxiliary Container Valve": productAnchor(
     "chlorination-accessories",
     "auxiliary-container-valve",
@@ -116,33 +108,39 @@ export const productHrefByLabel: Partial<Record<string, string>> = {
     "chlorination-accessories",
     "flexible-copper-connector",
   ),
-  "Chlorine Gas Manifold": productAnchor(
+  "Manifold Valve": productAnchor(
     "chlorination-accessories",
     "chlorine-gas-manifold",
   ),
-  "Chlorine Gas Filter": productAnchor(
+  "Gas Filter": productAnchor(
     "chlorination-accessories",
     "chlorine-gas-filter",
   ),
-  "Chlorine Ball Valve": productAnchor(
+  "Pressure Reducing Valve": productAnchor(
     "chlorination-accessories",
-    "chlorine-ball-valve",
-  ),
-  "Motorized Ball Valve": productAnchor(
-    "chlorination-accessories",
-    "motorized-ball-valve",
-  ),
-  "Online Residual Chlorine Analyzer": productAnchor(
-    "chlorination-accessories",
-    "online-residual-chlorine-analyzer",
+    "pressure-reducing-valve",
   ),
   "Pressure Gauge": productAnchor(
     "chlorination-accessories",
     "pressure-gauge",
   ),
-  "Pressure Reducing Valve": productAnchor(
+  "Ball Valve": productAnchor(
     "chlorination-accessories",
-    "pressure-reducing-valve",
+    "chlorine-ball-valve",
+  ),
+  "Motorized Valve": productAnchor(
+    "chlorination-accessories",
+    "motorized-ball-valve",
+  ),
+  "Trunnion Roller Support": productAnchor(
+    "chlorination-accessories",
+    "trunnion-roller-support",
+  ),
+  "Lifting Beam": productAnchor("chlorination-accessories", "lifting-beam"),
+  "Load Indicator": productAnchor("chlorination-accessories", "load-indicator"),
+  "Residual Chlorine Analyzer": productAnchor(
+    "chlorination-accessories",
+    "online-residual-chlorine-analyzer",
   ),
 };
 
