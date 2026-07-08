@@ -44,7 +44,8 @@ export const chlorinationAccessoriesProduct = {
     {
       id: "chlorine-gas-manifold",
       heading: "Manifold Valve",
-      imageSrc: productImage("chlorine-gas-manifold.jpg"),
+      imageSrc: productImage("chlorine-valve.webp"),
+
       imageAlt: "Manifold valve for multiple chlorine cylinder supply",
       descriptionPoints: [
         "The Manifold Valve is engineered for the safe distribution of chlorine gas from multiple cylinders or ton containers to the chlorination system. Its modular design ensures continuous gas supply, easy cylinder changeover, and dependable system operation.",
@@ -127,7 +128,8 @@ export const chlorinationAccessoriesProduct = {
       id: "load-indicator",
       heading: "Load Indicator",
       imageSrc: productImage("load-indicator-white-bg.webp"),
-      imageAlt: "Electronic crane weigher load indicator for chlorine ton containers",
+      imageAlt:
+        "Electronic crane weigher load indicator for chlorine ton containers",
       imageWidth: 1160,
       imageHeight: 2000,
       descriptionPoints: [

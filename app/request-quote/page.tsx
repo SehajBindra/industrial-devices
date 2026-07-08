@@ -41,6 +41,13 @@ export default function RequestQuotePage() {
                 >
                   {contactInfo.phone.display}
                 </Link>{" "}
+                email{" "}
+                <Link
+                  href={contactInfo.email.href}
+                  className="font-medium text-primary hover:underline"
+                >
+                  {contactInfo.email.display}
+                </Link>{" "}
                 or reach us on{" "}
                 <Link
                   href={contactInfo.whatsapp.href}

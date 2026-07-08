@@ -6,6 +6,7 @@ import { HashScroll } from "@/components/landing/hash-scroll";
 import { SectionIntro } from "@/components/landing/section-intro";
 import { splitDescriptionPoints } from "@/lib/products/split-description-points";
 import type { ProductPage, ProductSpec } from "@/lib/products/types";
+import { cn } from "@/lib/utils";
 
 function renderDescriptionPoint(point: string) {
   const parts = point.split(/(\*\*[^*]+\*\*)/g);
@@ -105,6 +106,7 @@ export function ProductPageContent({ product }: ProductPageContentProps) {
                 imageAlt,
                 imageWidth = 1200,
                 imageHeight = 900,
+                imageSize = "default",
                 images = [],
                 descriptionPoints,
                 specs,
@@ -120,15 +122,15 @@ export function ProductPageContent({ product }: ProductPageContentProps) {
                   alt: imageAlt,
                   width: imageWidth,
                   height: imageHeight,
+                  size: imageSize,
                 },
-                ...images.map(
-                  ({ src, alt, width = 1200, height = 900 }) => ({
-                    src,
-                    alt,
-                    width,
-                    height,
-                  }),
-                ),
+                ...images.map(({ src, alt, width = 1200, height = 900 }) => ({
+                  src,
+                  alt,
+                  width,
+                  height,
+                  size: "default" as const,
+                })),
               ];
 
               return (
@@ -154,9 +156,7 @@ export function ProductPageContent({ product }: ProductPageContentProps) {
                     id={id}
                     className="scroll-mt-28 grid grid-cols-1 items-start gap-8 rounded-sm sm:scroll-mt-32 lg:grid-cols-2 lg:gap-10"
                   >
-                    <div
-                      className={index % 2 === 1 ? "lg:order-2" : undefined}
-                    >
+                    <div className={index % 2 === 1 ? "lg:order-2" : undefined}>
                       <div className="grid gap-3">
                         {modelImages.map((image, imageIndex) => (
                           <div
@@ -176,16 +176,19 @@ export function ProductPageContent({ product }: ProductPageContentProps) {
                                   : "lazy"
                               }
                               sizes="(max-width: 1024px) 100vw, 50vw"
-                              className="h-auto w-full rounded-md bg-white object-contain"
+                              className={cn(
+                                "w-full rounded-md bg-white object-contain",
+                                image.size === "large"
+                                  ? "max-h-[520px] sm:max-h-[640px] lg:max-h-[720px]"
+                                  : "max-h-[400px]",
+                              )}
                             />
                           </div>
                         ))}
                       </div>
                     </div>
 
-                    <div
-                      className={index % 2 === 1 ? "lg:order-1" : undefined}
-                    >
+                    <div className={index % 2 === 1 ? "lg:order-1" : undefined}>
                       <h2 className="text-2xl font-medium tracking-tight text-primary sm:text-3xl">
                         {heading}
                       </h2>

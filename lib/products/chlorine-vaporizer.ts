@@ -52,6 +52,9 @@ export const chlorineVaporizerProduct = {
       heading: "Steam Heated Vaporizer",
       imageSrc: productImage("steam-heated-vaporizer.jpg"),
       imageAlt: "Steam heated chlorine vaporizer",
+      imageWidth: 841,
+      imageHeight: 1440,
+      imageSize: "large",
       descriptionPoints: [
         "**Efficient & Reliable Chlorine Vaporization for High-Capacity Applications**",
         "INDEVICE Steam Heated Vaporizers convert liquid chlorine into dry gas using steam as the heating medium.",
@@ -80,10 +83,10 @@ export const chlorineVaporizerProduct = {
     {
       id: "hot-water-heated",
       heading: "Hot Water Circulated Vaporizer",
-      imageSrc: productImage("vaporizer-drawing.png"),
-      imageAlt: "Hot water heated chlorine vaporizer drawing",
-      imageWidth: 1750,
-      imageHeight: 2480,
+      imageSrc: productImage("hot-water-vaporizer-cutout.webp"),
+      imageAlt: "Hot water circulated chlorine vaporizer",
+      imageWidth: 510,
+      imageHeight: 1629,
       descriptionPoints: [
         "**Efficient & Controlled Chlorine Vaporization for High-Demand Applications**",
         "INDEVICE Hot Water Heated Vaporizers convert liquid chlorine into dry gas using hot water as the heating medium.",

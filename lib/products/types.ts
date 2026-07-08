@@ -25,6 +25,7 @@ export type ProductModel = {
   imageAlt: string;
   imageWidth?: number;
   imageHeight?: number;
+  imageSize?: "default" | "large";
   images?: readonly ProductImage[];
   descriptionPoints: string[];
   specs: ProductSpec[];
