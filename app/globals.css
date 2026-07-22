@@ -311,3 +311,11 @@
     opacity: 1;
   }
 }
+
+/* Soft image save deterrent */
+img,
+picture {
+  -webkit-user-drag: none;
+  user-select: none;
+  -webkit-user-select: none;
+}

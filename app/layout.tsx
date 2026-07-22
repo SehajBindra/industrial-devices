@@ -3,6 +3,7 @@ import dynamic from "next/dynamic";
 import { Geist, Geist_Mono } from "next/font/google";
 
 import { HashScrollHandler } from "@/components/hash-scroll-handler";
+import { ImageProtection } from "@/components/image-protection";
 import { FooterSection } from "@/components/landing/footer-section";
 import { SiteHeader } from "@/components/landing/site-header";
 import { ThemeProvider } from "@/components/theme-provider";
@@ -55,6 +56,7 @@ export default function RootLayout({
         >
           <div className="flex min-h-full w-full mx-auto flex-1 flex-col">
             <HashScrollHandler />
+            <ImageProtection />
             <SiteHeader />
             {children}
             <CTASection />
