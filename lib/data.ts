@@ -551,7 +551,7 @@ export const siteConfig = {
         {
           id: "contact",
           title: "Contact",
-          url: "mailto:info@industrialdevices.in",
+          url: "/contact",
         },
         { id: "downloads", title: "Downloads", url: "/downloads" },
         {
