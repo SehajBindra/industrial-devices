@@ -139,7 +139,7 @@ export default async function BlogPost({ params }: PageProps) {
 
   return (
     <div
-      className="relative left-1/2 min-h-screen w-screen -translate-x-1/2 max-w-6xl mx-auto bg-white pt-14 sm:pt-16"
+      className="relative left-1/2 min-h-screen w-screen -translate-x-1/2  mx-auto bg-white pt-14 sm:pt-16"
       style={magicBlogTheme}
     >
       <div className="absolute top-0 left-0 z-0 w-full h-[200px] [mask-image:linear-gradient(to_top,transparent_25%,black_95%)]">
