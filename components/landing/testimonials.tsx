@@ -67,6 +67,8 @@ export default function WallOfLoveSection() {
                       alt=""
                       width={40}
                       height={40}
+                      unoptimized
+                      loading="lazy"
                       className="size-full object-contain"
                     />
                   </div>

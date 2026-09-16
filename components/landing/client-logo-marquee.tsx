@@ -29,6 +29,8 @@ export function ClientLogoMarquee({ className }: ClientLogoMarqueeProps) {
                 alt={`${client.name} logo`}
                 width={180}
                 height={88}
+                unoptimized
+                loading="lazy"
                 sizes="(max-width: 640px) 176px, 208px"
                 className="max-h-16 w-auto max-w-full object-contain sm:max-h-20"
               />

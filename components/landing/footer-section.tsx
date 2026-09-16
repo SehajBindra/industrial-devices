@@ -52,6 +52,8 @@ export function FooterSection() {
               alt="Industrial Devices (India) logo"
               width={112}
               height={112}
+              unoptimized
+              loading="lazy"
               className="size-16 shrink-0 object-contain sm:size-28"
             />
             <div className="flex flex-col justify-center gap-1">

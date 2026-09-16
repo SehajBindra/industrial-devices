@@ -180,14 +180,15 @@ function SiteBrand() {
   return (
     <>
       <Image
-        src="/product/IDI LOGO.JPG"
+        src="/product/idi-logo-144.png"
         alt="Industrial Devices (India) logo"
         width={72}
         height={72}
         priority
+        unoptimized
         className={cn(
           "shrink-0 object-contain transition-[width,height] duration-300",
-          "size-11 sm:size-[4.5rem]",
+          "size-11 sm:size-[3.5rem]",
         )}
       />
       <span

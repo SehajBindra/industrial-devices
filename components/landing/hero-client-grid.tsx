@@ -121,6 +121,8 @@ function ClientLogo({ cell }: { cell: RotatingCell }) {
       alt={imgAlt}
       width={160}
       height={48}
+      unoptimized
+      loading="lazy"
       draggable={false}
       className={cn(
         "h-auto w-auto max-h-12 shrink-0 select-none object-contain",

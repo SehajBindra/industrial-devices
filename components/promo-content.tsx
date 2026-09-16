@@ -23,6 +23,7 @@ export function PromoContent({
             alt="Industrial Devices (India) logo"
             width={32}
             height={32}
+            unoptimized
             className="h-8 w-8 shrink-0 rounded object-cover"
           />
           <div className="min-w-0 flex-1">
@@ -55,6 +56,7 @@ export function PromoContent({
           alt="Industrial Devices (India) logo"
           width={320}
           height={160}
+          unoptimized
           className="h-40 w-full rounded-md object-cover"
         />
         <div className="flex flex-col gap-1">
