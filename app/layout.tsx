@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import dynamic from "next/dynamic";
 import { Geist, Geist_Mono } from "next/font/google";
+import Script from "next/script";
 
 import { HashScrollHandler } from "@/components/hash-scroll-handler";
 import { ImageProtection } from "@/components/image-protection";
@@ -33,6 +34,8 @@ const geistMono = Geist_Mono({
 
 export const metadata: Metadata = rootMetadata;
 
+const gaMeasurementId = process.env.NEXT_PUBLIC_GA_MEASUREMENT_ID;
+
 export default function RootLayout({
   children,
 }: Readonly<{
@@ -64,6 +67,16 @@ export default function RootLayout({
           </div>
           <Toaster richColors closeButton position="bottom-right" />
         </ThemeProvider>
+        <Script
+          src={`https://www.googletagmanager.com/gtag/js?id=${gaMeasurementId}`}
+          strategy="afterInteractive"
+        />
+        <Script id="google-analytics" strategy="afterInteractive">
+          {`window.dataLayer = window.dataLayer || [];
+function gtag(){dataLayer.push(arguments);}
+gtag('js', new Date());
+gtag('config', '${gaMeasurementId}');`}
+        </Script>
       </body>
     </html>
   );
