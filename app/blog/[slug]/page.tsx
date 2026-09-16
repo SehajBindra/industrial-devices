@@ -19,6 +19,8 @@ type PageProps = {
   params: Promise<{ slug: string }>;
 };
 
+export const dynamicParams = false;
+
 const magicBlogTheme = {
   "--primary": "oklch(0.205 0 0)",
   "--primary-foreground": "oklch(0.985 0 0)",
