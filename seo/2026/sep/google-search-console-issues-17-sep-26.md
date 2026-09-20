@@ -21,12 +21,12 @@ Cause: old Webazaar `.html` / `http` / non-www URLs no longer exist on Next.js. 
 
 Solution taken:
 - `next.config.ts` `redirects()` (Next.js emits `permanent: true` as **308**, `permanent: false` as **307** - Google treats 308 as permanent, SEO-safe):
-  - `/home.html` -> `/` (308)
-  - `/index.html` -> `/` (308)
-  - `/how-to-control-chlorine-leaks.html` -> `/blog/advanced-safety-protocols-chlorine-handling` (308, closest topical match)
-  - `/thank-you.html` intentionally left as **404** (review decision - thank-you and contact pages are not equivalent; redirect could confuse returning visitors / encourage duplicate submissions; keep 404 unless backlinks prove otherwise)
-  - spam `/uploads/*.pdfIn` left as 404 (no value, let Google drop them)
-- GSC: Validate Fix on this reason after deploy.
+  - `/home.html` -> `/` (308, live verified 20 Sep 2026)
+  - `/index.html` -> `/` (308, live verified)
+  - `/how-to-control-chlorine-leaks.html` -> `/blog/advanced-safety-protocols-chlorine-handling` (308, closest topical match, live verified)
+  - `/thank-you.html` intentionally left as **404** (review decision - thank-you and contact pages are not equivalent; redirect could confuse returning visitors / encourage duplicate submissions; keep 404 unless backlinks prove otherwise; live verified 404)
+  - spam `/uploads/*.pdfIn` left as 404 (no value, let Google drop them naturally; live verified 404)
+- GSC: do NOT Validate Fix on the whole 404 reason - intentional 404s remain by design and validation may fail. Instead request recrawling of the 3 redirected URLs via URL Inspection (see Next steps).
 
 ## 2. Server error (5xx) - 15 pages - Source: Website
 
@@ -42,7 +42,8 @@ Cause: spam/hack remnants in Webazaar `uploads/` folder. Old server errored serv
 
 Solution taken:
 - No redirect (never redirect spam to homepage).
-- GSC: Removals request for `/uploads/*.pdf*` if still showing, then Validate Fix.
+- Live returns 404 (verified 20 Sep 2026). Let them drop naturally.
+- GSC: Validate Fix on the 5xx reason. Optional temporary Removals request using the URL-prefix option for the `/uploads/` path if they still appear (Removals does not use wildcards; removal is temporary).
 
 ## 3. Page with redirect - 3 pages - Source: Website
 
@@ -62,7 +63,7 @@ Example:
 
 Cause: obsolete admin page, never existed on Next.js. Now returns **404** live (verified).
 
-Solution taken: intentionally **no redirect** (review decision - redirecting obsolete admin to homepage would be treated as soft 404; real 404 drops naturally; 410 optional but unnecessary for 1 URL). GSC: leave / Validate Fix.
+Solution taken: intentionally **no redirect** (review decision - redirecting obsolete admin to homepage would be treated as soft 404; real 404 drops naturally; 410 optional but unnecessary for 1 URL). No GSC removal needed for this URL - leave it.
 
 ## 5. Discovered - currently not indexed - 2 pages - Source: Google systems
 
@@ -79,19 +80,28 @@ Solution taken: no code change. GSC: URL Inspection > Request Indexing for both;
 
 Cause: static font asset got crawled. Harmless - Google already chose not to index it.
 
-Solution taken (review correction applied 20 Sep 2026): **do NOT disallow `/_next/` in robots.txt** - Google needs JS/CSS/fonts to render pages; blocking hurts rendering and page-quality evaluation. `app/robots.ts` now only `Disallow: /api/` (keeps crawl budget off API routes; robots.txt does not deindex already-indexed URLs, but nothing is indexed here so fine). Optional GSC Removals request for the `.woff2` URL.
+Solution taken (review correction applied 20 Sep 2026): **do NOT disallow `/_next/` in robots.txt** - Google needs JS/CSS/fonts to render pages; blocking hurts rendering and page-quality evaluation. `app/robots.ts` now only `Disallow: /api/` (harmless, but there are currently no API routes so it provides no practical benefit). No GSC removal needed for the font URL - Google already chose not to index it.
 
 ## Code changes (this round)
 
 - `app/robots.ts`: removed `/_next/` from disallow (was added then reverted per review). Final: `allow: /`, `disallow: [/api/]`. Verified live `/robots.txt`.
 - `next.config.ts`: `redirects()` keeps only the 3 equivalent-URL 308s above; removed `/thank-you.html -> /contact` and `/admin/:path* -> /` per review (both stay 404). Verified: `/home.html` 308 -> `/`, `/thank-you.html` 404, `/admin/login.html` 404. `bun run build` passes.
 
-## Next steps (GSC, after deploy)
+## Execution log (21 Sep 2026, via browser)
 
-1. Deploy to Vercel, re-check live `/robots.txt`, `/sitemap.xml`, and one redirect (`/home.html`).
-2. GSC Removals (temporary): `/uploads/*.pdf*`, `/admin/*`, the `.woff2` URL - only if they still appear.
-3. Pages > Validate Fix on: Not found (404), Server error (5xx).
-4. URL Inspection > Request Indexing: the 2 Discovered URLs.
-5. Ignore: Page-with-redirect (3), noindex admin (1), crawled font (1).
-6. Resubmit `sitemap.xml` in GSC > Sitemaps (sitemap content unchanged, still canonical `https://www...` URLs).
-7. Wait 2-3 weeks for re-crawl;Stale `lastmod 2026-07-08` in `app/sitemap.ts` is cosmetic - update when content actually changes.
+- 5xx Validate Fix: started ("Validation started 9/21/26", confirmation email received).
+- URL Inspection + live test + Request Indexing: `/home.html` (308 -> `/`, canonical `/`), `/index.html` (308 -> `/`), `/how-to-control-chlorine-leaks.html` (308 -> safety blog), `/blog/chlorine-dioxide-real-world-applications` (200). `/product/safety-system` already indexed - no action.
+- Sitemap resubmitted ("Sitemap processed successfully", 25 pages).
+- Not validated: whole-404 reason (intentional 404s remain). No removals filed.
+- New referring pages spotted in inspection: `thermal-power-plant.html`, `chlorine-dosing-system.html`, `credentials.html` (old internal links, all 404 now - add redirects later only if EXPORT shows traffic/backlinks).
+
+## Next steps (GSC, post-deploy - live verified 20 Sep 2026)
+
+1. Done - deploy live. Verified: `/robots.txt` contains `Disallow: /api/` (no `/_next/` block); `/home.html`, `/index.html`, `/how-to-control-chlorine-leaks.html` return 308 to correct targets; `/thank-you.html`, `/admin/login.html`, spam PDFs return 404; both Discovered pages return 200.
+2. Pages > Validate Fix on: Server error (5xx) only.
+3. URL Inspection > Test Live URL + Request Indexing for the 3 redirected URLs (`/home.html`, `/index.html`, `/how-to-control-chlorine-leaks.html`) so Google recrawls the 308s.
+4. URL Inspection > Request Indexing: the 2 Discovered URLs (`/blog/chlorine-dioxide-real-world-applications`, `/product/safety-system`).
+5. Let intentional 404s (`/thank-you.html`, `/admin/*`, spam `/uploads/*`) disappear naturally - do not validate the whole 404 reason.
+6. Ignore: Page-with-redirect (3), noindex admin (1), crawled font (1).
+7. Resubmit `sitemap.xml` in GSC > Sitemaps (content unchanged, still canonical `https://www...` URLs).
+8. Wait 2-3 weeks for re-crawl; stale `lastmod 2026-07-08` in `app/sitemap.ts` is cosmetic - update when content actually changes.
