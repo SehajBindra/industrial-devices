@@ -8,6 +8,26 @@ const nextConfig: NextConfig = {
   turbopack: {
     root: projectRoot,
   },
+  async redirects() {
+    return [
+      // Old Webazaar (.html) URLs still in Google index -> Next.js routes.
+      // First detected in GSC Page indexing report Sep 2026 (35x 404).
+      // NOTE: Next.js emits permanent:true as 308 (not 301) - Google treats
+      // 308 as a permanent redirect, so this is SEO-safe.
+      { source: "/home.html", destination: "/", permanent: true },
+      { source: "/index.html", destination: "/", permanent: true },
+      {
+        source: "/how-to-control-chlorine-leaks.html",
+        destination: "/blog/advanced-safety-protocols-chlorine-handling",
+        permanent: true,
+      },
+      // NOTE: /thank-you.html intentionally left as 404 (not redirected to
+      // /contact) - thank-you and contact pages are not equivalent, and a
+      // redirect could confuse returning visitors / duplicate submissions.
+      // NOTE: /admin/* intentionally left as 404 - redirecting an obsolete
+      // admin page to the homepage would be treated as a soft 404.
+    ];
+  },
   images: {
     qualities: [75, 90],
     // 30 days: bounds staleness when a file is replaced at the same URL
